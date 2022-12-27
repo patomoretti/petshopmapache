@@ -1,0 +1,1505 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Galdeano', sans-serif;
+    font-size: large;
+    
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: small;
+        font-family: 'Galdeano', sans-serif;
+    }
+}
+
+body{
+
+    background: linear-gradient(to top, #FFEDF0, #FFFFF0, #FFEDF0 );
+    width: 100%;
+    font-family: 'Galdeano', sans-serif;
+    font-size: larger;
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    body{
+        background: linear-gradient(to top, #FFEDF0, #FFFFF0, #FFEDF0);
+        font-size: smaller;
+        font-family: 'Galdeano', sans-serif;
+
+    }
+    
+}
+
+.posicionamiento{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: larger;
+}
+
+
+/* INDEX */
+
+#logo{
+
+    text-align: center;
+    width: auto;
+}
+
+
+#inicio_principal{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 50% 40%;
+    grid-template-areas:
+    
+    "titulo titulo"
+    "fotolocal galeria"
+    "sobrenosotros_texto sobrenosotros_texto"
+
+    ;
+
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#titulo{
+    grid-area: titulo;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: larger;
+    padding-bottom: 10%;
+}
+
+#galeria{
+    grid-area: galeria;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#sobrenosotros{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+
+.fotolocal{
+
+    grid-area: fotolocal;
+    width: 70%;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+
+}
+
+.sobrenosotros_texto{
+
+    grid-area: sobrenosotros_texto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
+    margin: auto;
+    padding: auto;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+
+.texto{
+
+    border-radius: 10%;
+    display: flex;
+    align-content: center;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 90%;
+    
+}
+
+
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    #logo{
+        display: flex;
+        text-align: center;
+        align-items: flex-start;
+    
+    }
+
+    #inicio_principal{
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 1fr 20% 1fr;
+        grid-template-areas:
+        
+        "titulo"
+        "fotolocal"
+        "sobrenosotros_texto"
+        "galeria"
+
+        ;
+
+        gap:1%
+
+    }
+
+    #titulo{
+
+        grid-area: titulo;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-size: larger;
+    }
+    
+    #galeria{
+
+        grid-area: galeria;
+        display: flex;
+        margin: auto;
+       
+        
+    }
+
+    #sobrenosotros{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        width: auto;
+      
+    
+    }
+    
+    
+    .fotolocal{
+    
+        grid-area: fotolocal;
+        width: 80%;
+        text-align: center;
+        padding-bottom: 10%;
+    
+    }
+
+}
+
+
+/* ANIMALES */
+#animales{
+
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+
+    "animal_pajaro animal_peces animal_cobayos"
+
+    ;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-left: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    #animales{
+
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+
+        "animal_pajaro"
+        "animal_peces"
+        "animal_cobayos"
+
+        ;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        margin-left: 30%;
+
+
+    }
+
+}
+
+.animales{
+    grid-area: animal_pajaro;
+    background-color: #FBFCFC;
+    border-radius: 10%;
+    padding-block: 5%;
+    width: 60%;
+    height: 80%;
+    text-align: center;
+}
+
+.animales:hover{
+    transform:scale(1.1,1.1);
+    transition: 0.3s;
+}
+
+.animales:nth-child(2){
+    grid-area: animal_peces;
+}
+
+.animales:nth-child(3){
+    grid-area: animal_cobayos;
+}
+
+
+
+.animales_articulo{
+
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 0px 5px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin: auto;
+}
+
+.titulo_animales{
+    text-align: center;
+}
+
+.texto_animales{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: auto; 
+}
+
+
+
+
+/* ANIMALES PAJAROS */
+#animales_pajaros{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+
+.diferentes_pajaros{
+
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    
+    "pajaro1 pajaro2 pajaro3"
+    "pajaro4 pajaro5 pajaro6"
+    "pajaro7 pajaro8 pajaro9"
+
+    ;
+
+    padding-top: 5%;
+    margin: auto;
+    gap: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.tipospajaros{
+    grid-area: pajaro1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: #FBFCFC;
+    border-radius: 5%;
+    
+}
+
+.tipospajaros:nth-child(2){
+    grid-area: pajaro2;
+}
+
+.tipospajaros:nth-child(3){
+    grid-area: pajaro3;
+}
+
+.tipospajaros:nth-child(4){
+    grid-area: pajaro4;
+}
+
+.tipospajaros:nth-child(5){
+    grid-area: pajaro5;
+}
+
+.tipospajaros:nth-child(6){
+    grid-area: pajaro6;
+}
+
+.tipospajaros:nth-child(7){
+    grid-area: pajaro7;
+}
+
+.tipospajaros:nth-child(8){
+    grid-area: pajaro8;
+}
+
+.tipospajaros:nth-child(9){
+    grid-area: pajaro9;
+}
+
+.tipospajaros:hover{
+    transform:scale(1.1,1.1);
+    transition: 0.3s;
+}
+
+.video_pajaros{
+
+    display: flex;
+    justify-content: center;
+    padding-top: 20%;
+    margin: auto;
+    
+}
+
+.pajaros_articulo{
+
+    display: flex;
+    flex-direction: column;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 0px 5px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin: auto;
+    margin-top: 15%;
+}
+
+.titulo_pajaros{
+    text-align: center;
+}
+
+.texto_pajaros{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: auto; 
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    .diferentes_pajaros{
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        
+        "pajaro1 pajaro2"
+        "pajaro3 pajaro4"
+        "pajaro5 pajaro6"
+        "pajaro7 pajaro8"
+        "pajaro9 pajaro9"
+    
+        ;
+    
+        padding-top: 5%;
+        padding-bottom: 10%;
+        margin: auto;
+        gap: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+
+    .video_pajaros{
+
+        display: flex;
+        justify-content: center;
+        width:auto;
+        margin-top: 40%;
+        
+    }
+    
+}
+
+
+
+/* ANIMALES PECES */
+#animales_peces{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+.diferentes_peces{
+
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    
+    "peces1 peces2 peces3"
+    "peces4 peces5 peces6"
+    
+    ;
+
+    padding-top: 5%;
+    margin: auto;
+    gap: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.tipospeces{
+    grid-area: peces1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: #FBFCFC;
+    border-radius: 5%;
+    margin-bottom: 10%;
+    
+}
+
+.tipospeces:nth-child(2){
+    grid-area: peces2;
+}
+
+.tipospeces:nth-child(3){
+    grid-area: peces3;
+}
+
+.tipospeces:nth-child(4){
+    grid-area: peces4;
+}
+
+.tipospeces:nth-child(5){
+    grid-area: peces5;
+}
+
+.tipospeces:nth-child(6){
+    grid-area: peces6;
+}
+
+.tipospeces:hover{
+    transform:scale(1.1,1.1);
+    transition: 0.3s;
+}
+
+.peces_articulo{
+
+    display: flex;
+    flex-direction: column;
+
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 0px 5px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin: auto;
+    margin-top: 10%;
+}
+
+.titulo_peces{
+    text-align: center;
+}
+
+.texto_peces{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: auto; 
+}
+
+.variedad_titulo{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    box-shadow: 0px 0px 5px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    .diferentes_peces{
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        
+        "peces1 peces2"
+        "peces3 peces4"
+        "peces5 peces6"
+        
+        ;
+    
+        padding-top: 5%;
+        margin: auto;
+        gap: 5%;
+        padding-bottom: 10%;
+        text-align: center;
+        
+    }
+
+    .peces_articulo{
+
+        display: flex;
+        flex-direction: column;
+        background: rgba( 255, 255, 255, 0.35 );
+        box-shadow: 0 0px 5px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 0px );
+        -webkit-backdrop-filter: blur( 0px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        margin-top: 10%;
+        
+    }
+
+    .variedad_titulo{
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20%;
+        box-shadow: 0px 0px 5px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 0px );
+        -webkit-backdrop-filter: blur( 0px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
+    }
+
+}
+
+
+/* ANIMALES COBAYOS */
+
+#animales_cobayos{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+.diferentes_cobayos{
+
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+    
+    "cobayo1 cobayo2 cobayo3"
+    "cobayo4 cobayo5 cobayo6"
+    ;
+
+    padding-top: 5%;
+    margin: auto;
+    gap: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.tiposcobayos{
+    grid-area: cobayo1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: #FBFCFC;
+    border-radius: 5%;
+    
+}
+
+.tiposcobayos:nth-child(2){
+    grid-area: cobayo2;
+}
+
+.tiposcobayos:nth-child(3){
+    grid-area: cobayo3;
+}
+
+.tiposcobayos:nth-child(4){
+    grid-area: cobayo4;
+}
+
+.tiposcobayos:nth-child(5){
+    grid-area: cobayo5;
+}
+
+.tiposcobayos:nth-child(6){
+    grid-area: cobayo6;
+}
+
+.tiposcobayos:hover{
+    transform:scale(1.1,1.1);
+    transition: 0.3s;
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    .diferentes_cobayos{
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        
+        "cobayo1 cobayo2"
+        "cobayo3 cobayo4"
+        "cobayo5 cobayo6"
+        ;
+    
+        padding-top: 5%;
+        margin: auto;
+        gap: 5%;
+        padding-bottom: 10%;
+    
+    }
+
+    .tiposcobayos{
+        grid-area: cobayo1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        background-color: #FBFCFC;
+        border-radius: 5%;
+        
+    }
+
+    .tiposcobayos:nth-child(2){
+        grid-area: cobayo2;
+    }
+    
+    .tiposcobayos:nth-child(3){
+        grid-area: cobayo3;
+    }
+    
+    .tiposcobayos:nth-child(4){
+        grid-area: cobayo4;
+    }
+    
+    .tiposcobayos:nth-child(5){
+        grid-area: cobayo5;
+    }
+    
+    .tiposcobayos:nth-child(6){
+        grid-area: cobayo6;
+    }
+
+}
+
+
+
+
+/* ACCESORIOS */
+
+#accesorios{
+
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+
+    "acceso_pajaros acceso_peces acceso_cobayos"
+
+    ;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-left: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    #accesorios{
+
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+
+        "acceso_pajaros"
+        "acceso_peces"
+        "acceso_cobayos"
+
+        ;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        margin-left: 30%;
+
+
+    }
+
+}
+
+.accesorios{
+    grid-area: acceso_pajaros;
+    background-color: #FBFCFC;
+    border-radius: 10%;
+    padding-block: 5%;
+    width: 60%;
+    height: 80%;
+    text-align: center;
+
+}
+
+.accesorios:hover{
+    transform:scale(1.1,1.1);
+    transition: 0.3s;
+}
+
+.accesorios:nth-child(2){
+    grid-area: acceso_peces;
+}
+
+.accesorios:nth-child(3){
+    grid-area: acceso_cobayos;
+}
+
+
+
+/* ACCESORIOS PAJAROS */
+
+#accesorios_pajaros{
+
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    grid-template-rows: auto;
+    grid-template-areas:
+
+    "a b c"
+    "d e f"
+    "g h i"
+    ;
+
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+
+.diferentes_accesorios{
+    grid-area: a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FBFCFC;
+    border-radius: 5%;
+    text-align: center;
+    margin-bottom: 5%;
+    margin-right: 5%;
+ 
+}
+
+.diferentes_accesorios:nth-child(2){
+    grid-area: b;
+    
+}
+
+.diferentes_accesorios:nth-child(3){
+    grid-area: c;
+    
+}
+
+.diferentes_accesorios:nth-child(4){
+    grid-area: d;
+}
+
+.diferentes_accesorios:nth-child(5){
+    grid-area: e;
+}
+
+.diferentes_accesorios:nth-child(6){
+    grid-area: f;
+}
+
+.diferentes_accesorios:nth-child(7){
+    grid-area: g;
+}
+
+.diferentes_accesorios:nth-child(8){
+    grid-area: h;
+}
+
+.diferentes_accesorios:nth-child(9){
+    grid-area: i;
+}
+
+
+.acceso_pajaros_texto{
+
+    font-size:medium ;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items:baseline;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    #accesorios_pajaros{
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas:
+
+        "a b"
+        "c d"
+        "e f"
+        "g h"
+        "i i"
+
+        ;
+    
+        margin: auto;
+        
+    }
+
+    .diferentes_accesorios{
+        grid-area: a;
+        background-color: #F1F1F1;
+        border-radius: 5%;
+        padding-block: 5%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+    
+    
+    .diferentes_accesorios:nth-child(2){
+        grid-area: b;  
+    }
+    
+    .diferentes_accesorios:nth-child(3){
+        grid-area: c;
+        
+    }
+    
+    .diferentes_accesorios:nth-child(4){
+        grid-area: d;
+    }
+    
+    .diferentes_accesorios:nth-child(5){
+        grid-area: e;
+    }
+    
+    .diferentes_accesorios:nth-child(6){
+        grid-area: f;
+    }
+    
+    .diferentes_accesorios:nth-child(7){
+        grid-area: g;
+    }
+    
+    .diferentes_accesorios:nth-child(8){
+        grid-area: h;
+    }
+    
+    .diferentes_accesorios:nth-child(9){
+        grid-area: i;
+    }
+    
+
+}
+
+/* ACCESORIOS PECES */
+#accesorios_peces{
+
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-around;
+    width: auto;
+    height: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+
+/* ACCESORIOS COBAYOS */
+
+#accesorios_cobayos{
+
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-around;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+
+
+/* PROMOCIONES */
+
+#metodosdepago{
+
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+
+    "tarjeta mercadopago efectivo"
+
+    ;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    #metodosdepago{
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-areas:
+
+        "tarjeta"
+        "mercadopago"
+        "efectivo"
+
+        ;
+        
+    }
+
+    .pagos{
+        grid-area: tarjeta;
+        margin-left: 10%;
+        text-align: center;
+
+    }
+
+    .pagos:nth-child(2){
+        grid-area: mercadopago;
+    }
+    
+    .pagos:nth-child(3){
+        grid-area: efectivo;
+    }
+
+}
+
+
+.pagos{
+    grid-area: tarjeta;
+    padding-block: 5%;
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    text-align: center;
+    line-height: 0.7;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+
+.pagos:nth-child(2){
+    grid-area: mercadopago;
+}
+
+.pagos:nth-child(3){
+    grid-area: efectivo;
+}
+
+
+/* CONTACTO */
+
+#contacto{
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 25% 25%;
+    grid-template-areas:
+
+    "contactoubicacion mapanegocio"
+    "servicios_pension formulariocontacto"
+    "servicios_envios formulariocontacto"
+    
+
+
+    ;
+    align-items: stretch;
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+    
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    #contacto{
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas:
+
+        "contactoubicacion"
+        "mapanegocio"
+        "servicios_pension"
+        "servicios_envios"
+        "formulariocontacto"
+
+        ;
+
+        padding-block: 10%;
+    }
+
+    .contactoubicacion{
+        
+        grid-area: contactoubicacion;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        line-height: 1.5;
+        
+    }
+
+    .transporte{
+       display: flex;
+    }
+
+    .mapanegocio{
+        grid-area: mapanegocio;
+        margin-left: 8%;
+        
+    }
+
+    .servicios_pension{
+
+        grid-area: servicios_pension;
+        line-height: 1.5;
+        font-size: smaller;
+        padding-bottom: 10%;
+      
+    }
+    
+    .servicios_envios{
+        
+        grid-area: servicios_envios;
+        line-height: 1.5;
+        font-size: smaller;
+        border-width: auto;
+        padding-top: 20%;
+        
+    }
+
+    .contactotitulo{
+        padding-bottom: 12%;
+        padding-top: 20%;
+    }
+
+    .formulariocontacto{
+        grid-area: formulariocontacto;
+        display: flex;
+        padding-bottom: 10%;
+        border-radius: 10%;
+        margin-top: 10%;
+    }
+
+    .formulariocontacto_celdas{
+
+       width: 80%;
+
+    }
+   
+    
+}
+
+.contactoubicacion{
+
+    grid-area: contactoubicacion;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: #FBFCFC;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding-block: 5%;
+    line-height: 1.5;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin-bottom: 15%;
+    
+}
+.transporte{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 5%;
+}
+
+
+.mapanegocio{
+
+    grid-area: mapanegocio;
+    margin-bottom: 15%;
+    padding: auto;
+    margin-left: 5%;
+
+}
+
+.servicios_pension{
+
+    grid-area: servicios_pension;
+    background-color: #FBFCFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: 10%;
+    line-height: 1.5;
+    border-radius: 10px;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin-bottom: 5%;
+    
+}
+
+.servicios_envios{
+
+    grid-area: servicios_envios;
+    background-color: #FBFCFC;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: 10%;
+    line-height: 1.5;
+    border-radius: 10px;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin-top: 5%;
+
+}
+
+
+.formulariocontacto{
+    grid-area: formulariocontacto;
+    background-color: #FBFCFC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 20%;
+    padding-right: 20%;
+    border-radius: 3%;
+    margin-left: 5%;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+.contactotitulo{
+
+    display: flex;
+    padding-bottom: 5%;
+    
+}
+
+.formulariocontacto_celdas{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+    align-items: flex-start;
+    align-content: space-around;
+    
+}
+
+
+
+/* FOOTER */
+footer{
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+	align-items:stretch;
+	align-content: space-evenly;
+    background-color: black;
+    color:white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+
+}
+
+
+#redes{
+
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 100%;
+}
+
+.redes_sociales{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.redes_especifico{
+
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items:stretch;
+	align-content: space-evenly;
+    
+
+}
+
+.redes_especifico_vip{
+
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 10px;
+    padding-top: 5px;
+    color: white;
+
+}
+
+
+.redes_especifico_vip_p{
+
+    display: flex;
+    flex-wrap: nowrap;
+    color: white; 
+    
+}
+
+
+.horario_atencion{
+    display: flex;
+    flex-direction: column;
+    line-height: 0.5;
+    
+}
+
+.horario_titulo{
+
+    display: flex;
+    text-align: center;
+    flex-wrap: nowrap;
+    padding-bottom: 5%;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+
+    footer{
+        background-color: black;
+        color:white;
+    }
+
+    #redes{
+        display: grid;
+        grid-template-columns: 70%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+
+        "horario_atencion"
+        "redes_sociales"
+    
+        ;
+        gap: 5%;
+
+    }
+
+    .redes_sociales{
+        grid-area: redes_sociales;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+    }
+
+    .redes_especifico{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+    
+    }
+    
+    .redes_especifico_vip{
+        display: flex;
+        padding-top: 5px;
+        text-align: center;
+        color: white;
+    }
+    
+    .redes_especifico_vip_p{
+    
+        display: flex;
+        color: white;
+    
+    }
+
+    .horario_atencion{
+        grid-area: horario_atencion;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        padding-top: 5%;
+    
+    }
+    
+    .horario_titulo{
+    
+        display: flex;
+        text-align: center;
+        flex-wrap: nowrap;
+        padding-top: 5%;
+        padding-bottom: 2%;
+    }
+
+    .horario{
+
+        line-height: 1.0;
+    }
+
+
+}
+
