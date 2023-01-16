@@ -1,0 +1,1753 @@
+@use "_commons" as c;
+
+* {
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Galdeano', sans-serif;
+
+}
+
+body {
+
+    background: c.$fondo-principal;
+    width: 100%;
+    font-family: 'Galdeano', sans-serif;
+
+    header {
+        background: c.$fondo-header;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: small;
+        font-family: 'Galdeano', sans-serif;
+    }
+
+    body {
+        background: c.$fondo-principal;
+        font-size: smaller;
+        font-family: 'Galdeano', sans-serif;
+
+    }
+
+    #navegacion {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas:
+
+            "logo"
+            "navbar"
+        ;
+
+        background-color: c.$fondo-header;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        border-color: black;
+        color: black;
+
+    }
+}
+
+.posicionamiento {
+
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    text-align: center;
+}
+
+.d-flex {
+    margin-left: 5%;
+}
+
+@media screen and (min-width: 768px) {
+
+    #navegacion {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+
+            "logo navbar"
+            "logo navbar"
+        ;
+
+        margin-bottom: 5%;
+        padding-bottom: 3%;
+
+        .logo {
+            grid-area: logo;
+            display: flex;
+        }
+
+        .navbar {
+            grid-area: navbar;
+            display: flex;
+            flex-direction: row;
+            padding-top: 1%;
+            padding-right: 10%;
+            color: black;
+
+            .dropdown-menu {
+                position: absolute;
+            }
+
+        }
+
+        .btn {
+            border-color: black;
+            color: black;
+
+            &:hover {
+                background-color: #FBFCFC;
+            }
+        }
+
+        .position-fixed {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+    }
+
+}
+
+
+/* INDEX */
+
+@media screen and (min-width: 768px) {
+
+    #inicio_principal {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+
+            "titulo titulo"
+            "galeria galeria"
+            "fotolocal sobrenosotros_texto"
+
+        ;
+
+        padding-left: 10%;
+        padding-right: 10%;
+        gap: 5%;
+        padding-bottom: 10%;
+
+        #titulo {
+            grid-area: titulo;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: center;
+            font-size: larger;
+        }
+
+        #galeria {
+            grid-area: galeria;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 5%;
+            width: 50%;
+            height: 10%;
+            margin: auto;
+        }
+
+        #sobrenosotros {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            width: auto;
+            padding-left: 10%;
+            padding-right: 10%;
+            border-top: solid;
+            border-bottom: solid;
+            border-width: 1px;
+
+            .sobrenosotros_texto {
+
+                grid-area: sobrenosotros_texto;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+                align-items: center;
+                text-align: center;
+                line-height: 1.5;
+                margin: auto;
+                padding: auto;
+
+            }
+
+            .texto {
+
+                border-radius: 10%;
+                display: flex;
+                align-content: flex-start;
+                text-align: center;
+
+
+            }
+
+        }
+
+        .fotolocal {
+            grid-area: fotolocal;
+            width: 100%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            padding-right: 10%;
+
+        }
+
+    }
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    #logo {
+        display: flex;
+        text-align: center;
+        align-items: flex-start;
+
+    }
+
+    #inicio_principal {
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas:
+
+            "titulo"
+            "galeria"
+            "fotolocal"
+            "sobrenosotros_texto"
+
+        ;
+
+
+    }
+
+    #titulo {
+        grid-area: titulo;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-size: larger;
+        margin-top: 5%;
+    }
+
+    #galeria {
+        grid-area: galeria;
+        display: flex;
+        margin: auto;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        width: 80%;
+
+    }
+
+    #sobrenosotros {
+        display: flex;
+        flex-direction: column;
+        border-top: solid;
+        border-bottom: solid;
+        border-width: 1px;
+        align-items: center;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+
+
+        .fotolocal {
+            grid-area: fotolocal;
+            display: flex;
+            width: 50%;
+            padding-bottom: 5%;
+            padding-top: 10%;
+        }
+
+        .sobrenosotros_texto {
+            grid-area: sobrenosotros_texto;
+            display: flex;
+            padding-bottom: 5%;
+            text-align: center;
+        }
+    }
+
+
+}
+
+
+
+/* ANIMALES */
+#animales {
+
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+
+        "animal_pajaro animal_peces animal_cobayos"
+
+    ;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    #animales {
+
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+
+            "animal_pajaro"
+            "animal_peces"
+            "animal_cobayos"
+
+        ;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        margin-left: 30%;
+
+
+    }
+
+}
+
+.animales {
+    grid-area: animal_pajaro;
+    background-color: c.$fondo-box;
+    border-radius: 10%;
+    padding-block: 5%;
+    width: 60%;
+    height: 80%;
+    text-align: center;
+
+    .animales:hover {
+        transform: scale(1.1, 1.1);
+        transition: 0.3s;
+    }
+
+    .animales:nth-child(2) {
+        grid-area: animal_peces;
+    }
+
+    .animales:nth-child(3) {
+        grid-area: animal_cobayos;
+    }
+}
+
+.animales_articulo {
+
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+
+    .titulo_animales {
+        text-align: center;
+    }
+
+    .texto_animales {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
+    }
+
+}
+
+.variedad_titulo {
+    display: flex;
+    padding-left: 5%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 2%;
+
+}
+
+
+/* ANIMALES PAJAROS */
+
+#animales_pajaros {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+.diferentes_pajaros {
+
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+    grid-template-areas:
+
+        "pajaro1 pajaro2 pajaro3"
+        "pajaro4 pajaro5 pajaro6"
+        "pajaro7 pajaro8 pajaro9"
+
+    ;
+
+    padding-top: 5%;
+    margin: auto;
+    gap: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    .tipospajaros {
+        grid-area: pajaro1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 80%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        background-color: c.$letra;
+        border-radius: 5%;
+
+    }
+
+    .tipospajaros:nth-child(2) {
+        grid-area: pajaro2;
+    }
+
+    .tipospajaros:nth-child(3) {
+        grid-area: pajaro3;
+    }
+
+    .tipospajaros:nth-child(4) {
+        grid-area: pajaro4;
+    }
+
+    .tipospajaros:nth-child(5) {
+        grid-area: pajaro5;
+    }
+
+    .tipospajaros:nth-child(6) {
+        grid-area: pajaro6;
+    }
+
+    .tipospajaros:nth-child(7) {
+        grid-area: pajaro7;
+    }
+
+    .tipospajaros:nth-child(8) {
+        grid-area: pajaro8;
+    }
+
+    .tipospajaros:nth-child(9) {
+        grid-area: pajaro9;
+    }
+
+    .tipospajaros:hover {
+        transform: scale(1.1, 1.1);
+        transition: 0.3s;
+    }
+}
+
+
+.video_pajaros {
+
+    display: flex;
+    justify-content: center;
+    padding-top: 20%;
+    margin: auto;
+
+}
+
+.pajaros_articulo {
+
+    display: flex;
+    flex-direction: column;
+    background: c.$fondo-texto;
+    box-shadow: c.$sombra;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: c.$borde;
+    margin: auto;
+    margin-top: 15%;
+
+    .titulo_pajaros {
+        text-align: center;
+    }
+
+    .texto_pajaros {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
+    }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    .diferentes_pajaros {
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas:
+
+            "pajaro1 pajaro2"
+            "pajaro3 pajaro4"
+            "pajaro5 pajaro6"
+            "pajaro7 pajaro8"
+            "pajaro9 pajaro9"
+
+        ;
+
+        padding-top: 5%;
+        padding-bottom: 10%;
+        margin: auto;
+        gap: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+
+    .video_pajaros {
+
+        display: flex;
+        justify-content: center;
+        width: auto;
+        margin-top: 40%;
+
+    }
+
+    .animales_articulo {
+        width: 100%;
+        margin-top: 7%;
+    }
+
+}
+
+
+/* ANIMALES PECES */
+#animales_peces {
+    @extend #animales_pajaros;
+}
+
+
+.diferentes_peces {
+
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+    grid-template-areas:
+
+        "peces1 peces2 peces3"
+        "peces4 peces5 peces6"
+
+    ;
+
+    padding-top: 5%;
+    margin: auto;
+    gap: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    .tipospeces {
+        grid-area: peces1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        background-color: c.$fondo-box;
+        border-radius: 5%;
+        margin-bottom: 10%;
+
+    }
+
+    .tipospeces:nth-child(2) {
+        grid-area: peces2;
+    }
+
+    .tipospeces:nth-child(3) {
+        grid-area: peces3;
+    }
+
+    .tipospeces:nth-child(4) {
+        grid-area: peces4;
+    }
+
+    .tipospeces:nth-child(5) {
+        grid-area: peces5;
+    }
+
+    .tipospeces:nth-child(6) {
+        grid-area: peces6;
+    }
+
+    .tipospeces:hover {
+        transform: scale(1.1, 1.1);
+        transition: 0.3s;
+    }
+}
+
+.peces_articulo {
+
+    display: flex;
+    flex-direction: column;
+
+    background: c.$fondo-texto;
+    box-shadow: c.$sombra;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: c.$borde;
+    margin: auto;
+    margin-top: 10%;
+
+    .titulo_peces {
+        text-align: center;
+    }
+
+    .texto_peces {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
+    }
+}
+
+
+
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    .diferentes_peces {
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas:
+
+            "peces1 peces2"
+            "peces3 peces4"
+            "peces5 peces6"
+
+        ;
+
+        padding-top: 5%;
+        margin: auto;
+        gap: 5%;
+        padding-bottom: 10%;
+        text-align: center;
+
+    }
+
+    .peces_articulo {
+
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.35);
+        box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        margin-top: 10%;
+
+    }
+
+    .variedad_titulo {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20%;
+        box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+    }
+
+}
+
+
+
+/* ANIMALES COBAYOS */
+
+#animales_cobayos {
+    @extend #animales_pajaros;
+}
+
+
+.diferentes_cobayos {
+
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+
+        "cobayo1 cobayo2 cobayo3"
+        "cobayo4 cobayo5 cobayo6"
+    ;
+
+    padding-top: 5%;
+    margin: auto;
+    gap: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    .tiposcobayos {
+        grid-area: cobayo1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        background-color: c.$fondo-box;
+        border-radius: 5%;
+
+    }
+
+    .tiposcobayos:nth-child(2) {
+        grid-area: cobayo2;
+    }
+
+    .tiposcobayos:nth-child(3) {
+        grid-area: cobayo3;
+    }
+
+    .tiposcobayos:nth-child(4) {
+        grid-area: cobayo4;
+    }
+
+    .tiposcobayos:nth-child(5) {
+        grid-area: cobayo5;
+    }
+
+    .tiposcobayos:nth-child(6) {
+        grid-area: cobayo6;
+    }
+
+    .tiposcobayos:hover {
+        transform: scale(1.1, 1.1);
+        transition: 0.3s;
+    }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    .diferentes_cobayos {
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas:
+
+            "cobayo1 cobayo2"
+            "cobayo3 cobayo4"
+            "cobayo5 cobayo6"
+        ;
+
+        padding-top: 5%;
+        margin: auto;
+        gap: 5%;
+        padding-bottom: 10%;
+
+    }
+
+    .tiposcobayos {
+        grid-area: cobayo1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        background-color: #FBFCFC;
+        border-radius: 5%;
+
+    }
+
+    .tiposcobayos:nth-child(2) {
+        grid-area: cobayo2;
+    }
+
+    .tiposcobayos:nth-child(3) {
+        grid-area: cobayo3;
+    }
+
+    .tiposcobayos:nth-child(4) {
+        grid-area: cobayo4;
+    }
+
+    .tiposcobayos:nth-child(5) {
+        grid-area: cobayo5;
+    }
+
+    .tiposcobayos:nth-child(6) {
+        grid-area: cobayo6;
+    }
+
+}
+
+
+/* ACCESORIOS */
+
+#accesorios {
+
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+
+        "acceso_pajaros acceso_peces acceso_cobayos"
+
+    ;
+
+    padding-bottom: 5%;
+    margin-left: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    .accesorios {
+        grid-area: acceso_pajaros;
+        background-color: c.$fondo-box;
+        border-radius: 10%;
+        padding-block: 5%;
+        width: 60%;
+        height: 80%;
+        text-align: center;
+
+    }
+
+    &:hover {
+        transform: scale(1.1, 1.1);
+        transition: 0.3s;
+    }
+
+    .accesorios:nth-child(2) {
+        grid-area: acceso_peces;
+    }
+
+    .accesorios:nth-child(3) {
+        grid-area: acceso_cobayos;
+    }
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    #accesorios {
+
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+
+            "acceso_pajaros"
+            "acceso_peces"
+            "acceso_cobayos"
+
+        ;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        margin-left: 30%;
+
+
+    }
+
+}
+
+
+.accesorio_articulo {
+
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: c.$fondo-texto;
+    box-shadow: c.$sombra;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: c.$borde;
+    margin: auto;
+
+    .titulo_accesorio {
+        text-align: center;
+    }
+
+    .texto_accesorio {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
+    }
+}
+
+.texto-box {
+    display: flex;
+    padding-top: 5%;
+    justify-content: center;
+}
+
+
+
+/* ACCESORIOS PAJAROS */
+
+#accesorios_pajaros {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+.diferentes_pajarosaccesorios {
+
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas:
+
+        "accesopa1 accesopa2 accesopa3 accesopa4"
+        "accesopa5 accesopa6 accesopa7 accesopa8"
+        "accesopa9 accesopa10 accesopa11 accesopa12"
+    ;
+
+    padding-top: 5%;
+    margin: auto;
+    gap: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    .tiposaccesopajaros {
+        grid-area: accesopa1;
+        display: flex;
+        flex-direction: column;
+        background-color: c.$fondo-box;
+        margin-top: 15%;
+        text-align: center;
+    }
+
+    .tiposaccesopajaros:nth-child(2) {
+        grid-area: accesopa2;
+    }
+
+    .tiposaccesopajaros:nth-child(3) {
+        grid-area: accesopa3;
+
+    }
+
+    .tiposaccesopajaros:nth-child(4) {
+        grid-area: accesopa4;
+    }
+
+    .tiposaccesopajaros:nth-child(5) {
+        grid-area: accesopa5;
+    }
+
+    .tiposaccesopajaros:nth-child(6) {
+        grid-area: accesopa6;
+    }
+
+    .tiposaccesopajaros:nth-child(7) {
+        grid-area: accesopa7;
+    }
+
+    .tiposaccesopajaros:nth-child(8) {
+        grid-area: accesopa8;
+    }
+
+    .tiposaccesopajaros:nth-child(9) {
+        grid-area: accesopa9;
+    }
+
+    .tiposaccesopajaros:nth-child(10) {
+        grid-area: accesopa10;
+    }
+
+    .tiposaccesopajaros:nth-child(11) {
+        grid-area: accesopa11;
+    }
+
+    .tiposaccesopajaros:nth-child(12) {
+        grid-area: accesopa12;
+    }
+
+}
+
+
+.acceso_pajaros_texto {
+
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: baseline;
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    #accesorios_pajaros {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+
+    }
+
+    .diferentes_pajarosaccesorios {
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(6, 2fr);
+        grid-template-areas:
+
+            "accesopa1 accesopa2"
+            "accesopa3 accesopa4"
+            "accesopa5 accesopa6"
+            "accesopa7 accesopa8"
+            "accesopa9 accesopa10"
+            "accesopa11 accesopa12"
+        ;
+
+        padding-top: 5%;
+        margin: auto;
+        gap: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+
+    }
+
+
+
+}
+
+
+
+/* ACCESORIOS PECES */
+#accesorios_peces {
+    @extend #accesorios_pajaros;
+    margin-bottom: 10%;
+
+}
+
+.diferentes_pecesaccesorios {
+
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas:
+
+        "accesope1 accesope2 accesope3 accesope15"
+        "accesope4 accesope4 accesope4 accesope4"
+        "accesope5 accesope6 accesope7 accesope8"
+        "accesope9 accesope10 accesope11 accesope12"
+
+    ;
+
+    padding-top: 5%;
+    margin: auto;
+    gap: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    .tiposaccesopeces {
+        grid-area: accesope1;
+        display: flex;
+        flex-direction: column;
+        background-color: c.$fondo-box;
+        margin-top: 15%;
+        text-align: center;
+    }
+
+    .tiposaccesopeces:nth-child(2) {
+        grid-area: accesope2;
+    }
+
+    .tiposaccesopeces:nth-child(3) {
+        grid-area: accesope3;
+
+    }
+
+    /* TABLA */
+    .tabla_peceras {
+        grid-area: accesope4;
+        display: flex;
+        flex-direction: column;
+        background-color: c.$fondo-box;
+        margin-top: 5%;
+        padding-bottom: 5%;
+        text-align: center;
+        border: solid;
+        border-width: 1px;
+
+        .variedad_titulo_accesopeces {
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            box-shadow: c.$sombra;
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            border-radius: 10px;
+            border: c.$borde;
+            width: 33%;
+        }
+
+        .variedad_titulo_accesopeces_2 {
+            @extend .variedad_titulo_accesopeces;
+            margin-top: 6%;
+        }
+
+    }
+
+
+
+    /* FIN TABLA */
+
+    .tiposaccesopeces:nth-child(5) {
+        grid-area: accesope5;
+    }
+
+    .tiposaccesopeces:nth-child(6) {
+        grid-area: accesope6;
+    }
+
+    .tiposaccesopeces:nth-child(7) {
+        grid-area: accesope7;
+    }
+
+    .tiposaccesopeces:nth-child(8) {
+        grid-area: accesope8;
+    }
+
+    .tiposaccesopeces:nth-child(9) {
+        grid-area: accesope9;
+    }
+
+    .tiposaccesopeces:nth-child(10) {
+        grid-area: accesope10;
+    }
+
+    .tiposaccesopeces:nth-child(11) {
+        grid-area: accesope11;
+    }
+
+    .tiposaccesopeces:nth-child(12) {
+        grid-area: accesope12;
+    }
+
+    .tiposaccesopeces:nth-child(13) {
+        grid-area: accesope13;
+    }
+
+}
+
+
+.acceso_peces_texto {
+
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: baseline;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    #accesorios_peces {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .accesorio_articulo {
+        width: 100%;
+    }
+
+    .diferentes_pecesaccesorios {
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(7, 2fr);
+        grid-template-areas:
+
+            "accesope1 accesope2"
+            "accesope4 accesope4"
+            "accesope3 accesope5"
+            "accesope6 accesope7"
+            "accesope8 accesope9"
+            "accesope10 accesope11"
+            "accesope12 accesope12"
+
+        ;
+
+        padding-top: 5%;
+        margin: auto;
+        gap: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+
+        .tiposaccesopeces {
+            grid-area: accesope1;
+            display: flex;
+            flex-direction: column;
+            background-color: #FBFCFC;
+            padding: 1%;
+            text-align: center;
+        }
+    }
+
+    .variedad_titulo_accesopeces {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 80%;
+
+    }
+
+    .variedad_titulo_accesopeces_2 {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 6%;
+        margin-bottom: 3%;
+        box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 80%;
+    }
+
+
+}
+
+
+
+/* ACCESORIOS COBAYOS */
+
+#accesorios_cobayos {
+    @extend #accesorios_pajaros;
+
+}
+
+.diferentes_cobayosaccesorios {
+
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas:
+
+        "accesoco1 accesoco2 accesoco3 accesoco4"
+        "accesoco5 accesoco6 accesoco7 accesoco8"
+        "accesoco9 accesoco10 accesoco11 accesoco12"
+    ;
+
+    padding-top: 5%;
+    margin: auto;
+    gap: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    .tiposaccesocobayos {
+        grid-area: accesoco1;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: c.$letra;
+        margin-bottom: 20%;
+    }
+
+    .tiposaccesocobayos:nth-child(2) {
+        grid-area: accesoco2;
+    }
+
+    .tiposaccesocobayos:nth-child(3) {
+        grid-area: accesoco3;
+
+    }
+
+    .tiposaccesocobayos:nth-child(4) {
+        grid-area: accesoco4;
+    }
+
+    .tiposaccesocobayos:nth-child(5) {
+        grid-area: accesoco5;
+    }
+
+    .tiposaccesocobayos:nth-child(6) {
+        grid-area: accesoco6;
+    }
+
+    .tiposaccesocobayos:nth-child(7) {
+        grid-area: accesoco7;
+    }
+
+    .tiposaccesocobayos:nth-child(8) {
+        grid-area: accesoco8;
+    }
+
+    .tiposaccesocobayos:nth-child(9) {
+        grid-area: accesoco9;
+    }
+
+    .tiposaccesocobayos:nth-child(10) {
+        grid-area: accesoco10;
+    }
+
+    .tiposaccesocobayos:nth-child(11) {
+        grid-area: accesoco11;
+    }
+
+    .tiposaccesocobayos:nth-child(12) {
+        grid-area: accesoco12;
+    }
+
+}
+
+
+.acceso_cobayos_texto {
+
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: baseline;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    #accesorios_cobayos {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+
+    }
+
+    .diferentes_cobayosaccesorios {
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(4, 2fr);
+        grid-template-areas:
+
+            "accesoco1 accesoco2"
+            "accesoco3 accesoco4"
+            "accesoco5 accesoco6"
+            "accesoco7 accesoco8"
+        ;
+
+        padding-top: 5%;
+        margin: auto;
+        gap: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+
+    }
+
+}
+
+
+/* PROMOCIONES */
+
+#promociones {
+
+    .titulo_promociones {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 50%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        background: c.$fondo-texto;
+        box-shadow: c.$sombra;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border-radius: 10px;
+        border: c.$borde;
+        margin: auto;
+
+
+    }
+
+    .metodosdepago {
+
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: 1fr;
+        grid-template-areas:
+
+            "tarjeta mercadopago efectivo"
+
+        ;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
+
+
+        .pagos {
+            grid-area: tarjeta;
+            padding-block: 5%;
+            width: 80%;
+            height: 80%;
+            margin-left: 10%;
+            text-align: center;
+            line-height: 0.7;
+            background: c.$fondo-texto;
+            box-shadow: c.$sombra;
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            border-radius: 10px;
+            border: c.$borde;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .pagos:nth-child(2) {
+            grid-area: mercadopago;
+            padding-bottom: 20%;
+        }
+
+        .pagos:nth-child(3) {
+            grid-area: efectivo;
+        }
+
+    }
+
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+    
+    #promociones{
+        padding-top: 5%;
+        padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+
+        .titulo_promociones{
+            display: flex;
+            width: 100%;
+        }
+    
+        .metodosdepago {
+    
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(3,1fr);
+            grid-template-areas:
+    
+                "tarjeta"
+                "mercadopago"
+                "efectivo"
+    
+            ;
+    
+            .pagos {
+                grid-area: tarjeta;
+                width: 60%;
+                margin-left: auto;
+                margin-right: auto;
+        
+            }
+        
+            .pagos:nth-child(2) {
+                grid-area: mercadopago;
+            }
+        
+            .pagos:nth-child(3) {
+                grid-area: efectivo;
+            }
+    
+        }
+    }
+
+
+}
+
+
+
+/* CONTACTO */
+
+#contacto {
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 25% 25%;
+    grid-template-areas:
+
+        "contactoubicacion mapanegocio"
+        "servicios_pension formulariocontacto"
+        "servicios_envios formulariocontacto"
+
+    ;
+    align-items: stretch;
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    #contacto {
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas:
+
+            "contactoubicacion"
+            "mapanegocio"
+            "servicios_pension"
+            "servicios_envios"
+            "formulariocontacto"
+
+        ;
+
+        padding-block: 10%;
+    }
+
+    .contactoubicacion {
+
+        grid-area: contactoubicacion;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        line-height: 1.5;
+
+    }
+
+    .transporte {
+        display: flex;
+    }
+
+    .mapanegocio {
+        grid-area: mapanegocio;
+        margin-left: 8%;
+
+    }
+
+    .servicios_pension {
+
+        grid-area: servicios_pension;
+        line-height: 1.5;
+        font-size: smaller;
+        padding-bottom: 10%;
+
+    }
+
+    .servicios_envios {
+
+        grid-area: servicios_envios;
+        line-height: 1.5;
+        font-size: smaller;
+        border-width: auto;
+        padding-top: 20%;
+
+    }
+
+    .contactotitulo {
+        padding-bottom: 12%;
+        padding-top: 20%;
+    }
+
+    .formulariocontacto {
+        grid-area: formulariocontacto;
+        display: flex;
+        padding-bottom: 10%;
+        border-radius: 10%;
+        margin-top: 10%;
+    }
+
+    .formulariocontacto_celdas {
+
+        width: 80%;
+
+    }
+
+
+}
+
+.contactoubicacion {
+
+    grid-area: contactoubicacion;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-left: 10%;
+    margin-bottom: 15%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding-block: 5%;
+    line-height: 1.5;
+    background: c.$fondo-texto;
+    box-shadow: c.$sombra;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: c.$borde;
+
+
+    .transporte {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+        margin-right: 5%;
+    }
+
+
+}
+
+
+.mapanegocio {
+
+    grid-area: mapanegocio;
+    margin-bottom: 15%;
+    padding: auto;
+    margin-left: 5%;
+
+}
+
+.servicios_pension {
+
+    grid-area: servicios_pension;
+    background-color: #FBFCFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: 10%;
+    line-height: 1.5;
+    border-radius: 10px;
+    background: c.$fondo-texto;
+    box-shadow: c.$sombra;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: c.$borde;
+    margin-bottom: 5%;
+
+}
+
+.servicios_envios {
+    @extend .servicios_pension;
+    grid-area: servicios_envios;
+
+}
+
+.formulariocontacto {
+    grid-area: formulariocontacto;
+    background-color: c.$fondo-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 20%;
+    padding-right: 20%;
+    border-radius: 3%;
+    margin-left: 5%;
+    background: c.$fondo-texto;
+    box-shadow: c.$sombra;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: c.$borde;
+    height: 94%;
+
+    .contactotitulo {
+
+        display: flex;
+        padding-bottom: 5%;
+
+    }
+
+    .formulariocontacto_celdas {
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-content: space-around;
+
+    }
+
+}
