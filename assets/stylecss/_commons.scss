@@ -1,11 +1,11 @@
 //Diferentes colores//
 
-$fondo-principal: linear-gradient(to bottom,#FFF1F0, #FFFFF0, #FFF1F0);
+$fondo-principal: linear-gradient(to bottom, #FFF1F0, #FFFFF0, #FFF1F0);
 $fondo-header: linear-gradient(to bottom, white, white, #FFF1F0);
 $fondo-box: #FBFCFC;
-$sombra: 0 0px 5px 0 rgba( 31, 38, 135, 0.37 );
-$borde: 1px solid rgba( 255, 255, 255, 0.18 );
-$fondo-texto: rgba( 255, 255, 255, 0.35 );
+$sombra: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+$borde: 1px solid rgba(255, 255, 255, 0.18);
+$fondo-texto: rgba(255, 255, 255, 0.35);
 $letra: white;
 
 
@@ -13,3 +13,4 @@ $letra: white;
 //Diferentes anchos//
 $ancho-6: 60%;
 
+// Mixins //

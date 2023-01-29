@@ -1,4 +1,4 @@
-@use "_commons" as c;
+@use "commons" as c;
 
 * {
 
@@ -17,6 +17,70 @@ body {
     header {
         background: c.$fondo-header;
     }
+}
+
+.posicionamiento {
+
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    text-align: center;
+}
+
+.d-flex {
+    margin-left: 5%;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    #navegacion {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+
+            "logo navbar"
+            "logo navbar"
+        ;
+
+        margin-bottom: 5%;
+
+        .logo {
+            grid-area: logo;
+            display: flex;
+        }
+
+        .navbar {
+            grid-area: navbar;
+            display: flex;
+            flex-direction: row;
+            padding-top: 1%;
+            color: black;
+            padding-left: 5%;
+
+            .dropdown-menu {
+                position: absolute;
+            }
+
+        }
+
+        .btn {
+            border-color: black;
+            color: black;
+
+            &:hover {
+                background-color: #FBFCFC;
+            }
+        }
+
+        .position-fixed {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+    }
+
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
@@ -50,77 +114,14 @@ body {
 
     .logo {
         display: flex;
-        justify-content: center;
+        text-align: center;
     }
 
     .btn {
         border-color: black;
         color: black;
-
     }
-}
 
-.posicionamiento {
-
-    display: flex;
-    justify-content: center;
-    font-size: larger;
-    text-align: center;
-}
-
-.d-flex {
-    margin-left: 5%;
-}
-
-@media screen and (min-width: 768px) {
-
-    #navegacion {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 50% 50%;
-        grid-template-areas:
-
-            "logo navbar"
-            "logo navbar"
-        ;
-
-        margin-bottom: 5%;
-        padding-bottom: 3%;
-
-        .logo {
-            grid-area: logo;
-            display: flex;
-        }
-
-        .navbar {
-            grid-area: navbar;
-            display: flex;
-            flex-direction: row;
-            padding-top: 1%;
-            padding-right: 10%;
-            color: black;
-
-            .dropdown-menu {
-                position: absolute;
-            }
-
-        }
-
-        .btn {
-            border-color: black;
-            color: black;
-
-            &:hover {
-                background-color: #FBFCFC;
-            }
-        }
-
-        .position-fixed {
-            display: flex;
-            justify-content: flex-start;
-        }
-
-    }
 
 }
 
@@ -137,14 +138,14 @@ body {
 
             "titulo titulo"
             "galeria galeria"
-            "fotolocal sobrenosotros_texto"
+            "fotolocal sobrenosotros_texto_foto"
+            "mascotas mascotas"
+            "articulos articulos"
 
         ;
 
         padding-left: 10%;
         padding-right: 10%;
-        gap: 5%;
-        padding-bottom: 10%;
 
         #titulo {
             grid-area: titulo;
@@ -160,30 +161,36 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-bottom: 5%;
-            width: 50%;
-            height: 10%;
+            width: 60%;
             margin: auto;
+            margin-top: 3%;
+            margin-bottom: 5%;
         }
 
         #sobrenosotros {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             flex-wrap: nowrap;
             justify-content: flex-end;
             align-items: center;
-            width: auto;
             padding-left: 10%;
             padding-right: 10%;
+            padding-bottom: 5%;
             border-top: solid;
-            border-bottom: solid;
             border-width: 1px;
 
-            .sobrenosotros_texto {
-
-                grid-area: sobrenosotros_texto;
+            .titulo_sobrenosotros {
                 display: flex;
-                flex-direction: column;
+                width: 100%;
+                padding-top: 2%;
+                padding-bottom: 2%;
+            }
+
+            .sobrenosotros_texto_foto {
+
+                grid-area: sobrenosotros_texto_foto;
+                display: flex;
+                flex-direction: row;
                 flex-wrap: nowrap;
                 justify-content: space-around;
                 align-items: center;
@@ -191,33 +198,126 @@ body {
                 line-height: 1.5;
                 margin: auto;
                 padding: auto;
+                gap: 15%;
 
-            }
+                .fotolocal {
+                    display: flex;
 
-            .texto {
+                }
 
-                border-radius: 10%;
-                display: flex;
-                align-content: flex-start;
-                text-align: center;
-
-
+                .texto {
+                    border-radius: 10%;
+                    display: flex;
+                    align-content: flex-start;
+                    text-align: center;
+                }
             }
 
         }
 
-        .fotolocal {
-            grid-area: fotolocal;
-            width: 100%;
-            padding-top: 5%;
-            padding-bottom: 5%;
+        .mascotas {
+            grid-area: mascotas;
+            display: flex;
+            flex-direction: column;
+            border-top: solid;
+            border-width: 1px;
+            padding-left: 10%;
             padding-right: 10%;
+            padding-top: 3%;
+            padding-bottom: 3%;
+
+            .tipos_mascotas {
+                display: grid;
+                grid-template-columns: repeat(4, 25%);
+                grid-template-rows: auto;
+                grid-template-areas:
+
+                    "card1 card2 card3 card4"
+                    "card5 card6 card7 card8"
+
+                ;
+
+                padding-top: 5%;
+                padding-bottom: 5%;
+                gap: 3%;
+
+                .card {
+                    grid-area: card1;
+                    margin-bottom: 5%;
+                }
+
+                .card:nth-child(2) {
+                    grid-area: card2;
+                }
+
+                .card:nth-child(3) {
+                    grid-area: card3;
+                }
+
+                .card:nth-child(4) {
+                    grid-area: card4;
+                }
+
+                .card:nth-child(5) {
+                    grid-area: card5;
+                }
+
+                .card:nth-child(6) {
+                    grid-area: card6;
+                }
+
+                .card:nth-child(7) {
+                    grid-area: card7;
+                }
+
+                .card:nth-child(8) {
+                    grid-area: card8;
+                }
+            }
+        }
+
+        .articulos {
+            grid-area: articulos;
+            display: flex;
+            flex-direction: column;
+            border-top: solid;
+            border-width: 1px;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            margin-bottom: 5%;
+
+
+            .tipos_articulos {
+                display: grid;
+                grid-template-columns: repeat(4, 25%);
+                grid-template-rows: auto;
+                grid-template-areas:
+
+                    "card1 card2 card3 card4"
+                    "card5 card6 card7 card8"
+
+                ;
+
+                padding-top: 5%;
+                padding-bottom: 5%;
+                gap: 3%;
+            }
+
+            .card{
+                width: 18rem;
+                margin-bottom: 5%;
+            }
 
         }
 
+        .card{
+            width: 18rem;
+        }
     }
-
 }
+
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
 
@@ -239,9 +339,10 @@ body {
             "galeria"
             "fotolocal"
             "sobrenosotros_texto"
+            "mascotas"
+            "articulos"
 
         ;
-
 
     }
 
@@ -269,7 +370,6 @@ body {
         display: flex;
         flex-direction: column;
         border-top: solid;
-        border-bottom: solid;
         border-width: 1px;
         align-items: center;
         margin-top: 10%;
@@ -278,23 +378,106 @@ body {
         margin-left: auto;
         margin-right: auto;
 
-
-        .fotolocal {
-            grid-area: fotolocal;
+        .titulo_sobrenosotros {
             display: flex;
-            width: 50%;
-            padding-bottom: 5%;
-            padding-top: 10%;
+            padding-top: 5%;
         }
 
-        .sobrenosotros_texto {
-            grid-area: sobrenosotros_texto;
-            display: flex;
-            padding-bottom: 5%;
-            text-align: center;
+        .sobrenosotros_texto_foto {
+
+            .fotolocal {
+                grid-area: fotolocal;
+                display: flex;
+                width: 50%;
+                padding-bottom: 5%;
+                padding-top: 5%;
+                margin: auto;
+
+            }
+
+            .texto {
+                grid-area: sobrenosotros_texto;
+                display: flex;
+                padding-bottom: 5%;
+                text-align: center;
+            }
+
         }
+
     }
 
+    .novedades {
+
+        .titulo_novedades {
+            display: flex;
+            justify-content: center;
+            border-top: solid;
+            border-width: 1px;
+            margin-top: 10%;
+            margin-bottom: 10%;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 5%;
+
+        }
+
+        .mascotas {
+
+            .tipos_mascotas {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: auto;
+                grid-template-areas:
+
+                    "card1 card2"
+                    "card3 card4"
+                    "card5 card6"
+                    "card7 card8"
+
+                ;
+
+                padding-left: 5%;
+                padding-bottom: 10%;
+
+                .card {
+                    width: 90%;
+                    margin-bottom: 15%;
+                }
+
+            }
+
+            
+        }
+
+        .articulos {
+
+
+            .tipos_articulos {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: auto;
+                grid-template-areas:
+
+                    "card1 card2"
+                    "card3 card4"
+                    "card5 card6"
+                    "card7 card8"
+
+                ;
+
+                padding-left: 5%;
+                padding-bottom: 10%;
+
+                .card {
+                    width: 90%;
+                    margin-bottom: 15%;
+                }
+            }
+
+        }
+
+    }
 
 }
 
@@ -304,8 +487,8 @@ body {
 #animales {
 
     display: grid;
-    grid-template-columns: repeat(3, 33%);
-    grid-template-rows: 1fr;
+    grid-template-columns:33% 33% 33%;
+    grid-template-rows: auto;
     grid-template-areas:
 
         "animal_pajaro animal_peces animal_cobayos"
@@ -317,51 +500,28 @@ body {
     padding-left: 10%;
     padding-right: 10%;
 
-}
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-
-    #animales {
-
-        display: grid;
-        grid-template-columns: 90%;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas:
-
-            "animal_pajaro"
-            "animal_peces"
-            "animal_cobayos"
-
-        ;
-        padding-top: 10%;
-        padding-bottom: 10%;
-        margin-left: 30%;
-
-
+    .animales-cat{
+        grid-area: animal_pajaro;
+        background-color: c.$fondo-box;
+        border-radius: 10%;
+        padding-block: 5%;
+        width: 60%;
+        height: 80%;
+        text-align: center;
+    
     }
 
-}
-
-.animales {
-    grid-area: animal_pajaro;
-    background-color: c.$fondo-box;
-    border-radius: 10%;
-    padding-block: 5%;
-    width: 60%;
-    height: 80%;
-    text-align: center;
-
-    .animales:hover {
-        transform: scale(1.1, 1.1);
-        transition: 0.3s;
-    }
-
-    .animales:nth-child(2) {
+    .animales-cat:nth-child(2) {
         grid-area: animal_peces;
     }
 
-    .animales:nth-child(3) {
+    .animales-cat:nth-child(3) {
         grid-area: animal_cobayos;
+    }
+
+    .animales-cat:hover {
+        transform: scale(1.1, 1.1);
+        transition: 0.3s;
     }
 }
 
@@ -369,25 +529,30 @@ body {
 
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 80%;
     background: rgba(255, 255, 255, 0.35);
     box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     margin: auto;
 
+
     .titulo_animales {
         text-align: center;
+        padding-top: 1%;
+        padding-bottom: 1%;
     }
 
     .texto_animales {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 70%;
+        text-align: center;
+        width: 95%;
         margin: auto;
+        padding-bottom: 1%;
     }
 
 }
@@ -398,11 +563,26 @@ body {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
     border-top-style: solid;
     border-width: 1px;
     padding-top: 2%;
+    margin-top: 10%;
 
+}
+
+.box-style-animales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5%;
+    background-color: c.$fondo-box;
+    margin-top: 10%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    width: 80%;
 }
 
 
@@ -425,6 +605,7 @@ body {
         "pajaro1 pajaro2 pajaro3"
         "pajaro4 pajaro5 pajaro6"
         "pajaro7 pajaro8 pajaro9"
+        "video_pajaros video_pajaros video_pajaros"
 
     ;
 
@@ -433,19 +614,11 @@ body {
     gap: 5%;
     padding-left: 10%;
     padding-right: 10%;
+    margin-bottom: 20%;
 
     .tipospajaros {
         grid-area: pajaro1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 80%;
-        padding-top: 5%;
-        padding-bottom: 5%;
-        background-color: c.$letra;
-        border-radius: 5%;
-
+        @extend .box-style-animales;
     }
 
     .tipospajaros:nth-child(2) {
@@ -486,13 +659,22 @@ body {
     }
 }
 
-
 .video_pajaros {
-
-    display: flex;
-    justify-content: center;
-    padding-top: 20%;
-    margin: auto;
+    grid-area: video_pajaros;
+    
+    .video {
+        display: flex;
+        justify-content: center;
+        padding-left: 5%;
+        padding-bottom: 5%;
+        padding-top: 2%;
+        margin-top: 10%;
+        margin: auto;
+        border-bottom-style: solid;
+        border-width: 1px;
+        width: 90%;
+        
+    }
 
 }
 
@@ -500,6 +682,7 @@ body {
 
     display: flex;
     flex-direction: column;
+    width: 80%;
     background: c.$fondo-texto;
     box-shadow: c.$sombra;
     backdrop-filter: blur(0px);
@@ -507,21 +690,26 @@ body {
     border-radius: 10px;
     border: c.$borde;
     margin: auto;
-    margin-top: 15%;
+    margin-top: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
 
     .titulo_pajaros {
         text-align: center;
+        padding-top: 1%;
+        padding-bottom: 1%;
     }
 
     .texto_pajaros {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 70%;
+        width: 95%;
         margin: auto;
+        padding-bottom: 1%;
     }
 }
-
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
 
@@ -543,19 +731,26 @@ body {
         padding-top: 5%;
         padding-bottom: 10%;
         margin: auto;
-        gap: 5%;
-        padding-left: 10%;
-        padding-right: 10%;
+
+        
+        .tipospajaros {
+            width: 100%;
+        }
     }
 
-
     .video_pajaros {
-
-        display: flex;
-        justify-content: center;
-        width: auto;
-        margin-top: 40%;
-
+        grid-area: video_pajaros;
+        margin-top: 80%;
+    
+        .video {
+            display: flex;
+            border-bottom-style: solid;
+            border-width: 1px;
+            padding-bottom: 5%;
+            height: 50%!important;
+            margin: auto;
+        }
+    
     }
 
     .animales_articulo {
@@ -563,6 +758,25 @@ body {
         margin-top: 7%;
     }
 
+    .pajaros_articulo {
+
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.35);
+        box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        margin-top: 20%;
+        width: 100%;
+        margin-bottom: 10%;
+
+        .texto_pajaros {
+            text-align: center;
+            width: 90%;
+        }
+    }
 }
 
 
@@ -570,7 +784,6 @@ body {
 #animales_peces {
     @extend #animales_pajaros;
 }
-
 
 .diferentes_peces {
 
@@ -592,16 +805,7 @@ body {
 
     .tipospeces {
         grid-area: peces1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-        padding-top: 5%;
-        padding-bottom: 5%;
-        background-color: c.$fondo-box;
-        border-radius: 5%;
-        margin-bottom: 10%;
-
+        @extend .box-style-animales
     }
 
     .tipospeces:nth-child(2) {
@@ -634,30 +838,34 @@ body {
 
     display: flex;
     flex-direction: column;
-
+    width: 80%;
     background: c.$fondo-texto;
     box-shadow: c.$sombra;
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-    border-radius: 10px;
+    border-radius: 5px;
     border: c.$borde;
     margin: auto;
     margin-top: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
 
     .titulo_peces {
         text-align: center;
+        padding-top: 1%;
+        padding-bottom: 1%;
     }
 
     .texto_peces {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 70%;
+        width: 95%;
         margin: auto;
+        padding-bottom: 1%;
     }
 }
-
-
 
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
@@ -681,6 +889,9 @@ body {
         padding-bottom: 10%;
         text-align: center;
 
+        .tipospeces {
+            width: 100% !important;
+        }
     }
 
     .peces_articulo {
@@ -693,22 +904,22 @@ body {
         -webkit-backdrop-filter: blur(0px);
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.18);
-        margin-top: 10%;
+        margin-top: 20%;
+        width: 100%;
+        text-align: center;
 
     }
 
     .variedad_titulo {
         display: flex;
         justify-content: center;
-        width: 50%;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 20%;
-        box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(0px);
-        -webkit-backdrop-filter: blur(0px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        margin-top: 30%;
+        border-top-style: solid;
+        border-width: 1px;
+        padding-top: 5%;
 
     }
 
@@ -720,14 +931,14 @@ body {
 
 #animales_cobayos {
     @extend #animales_pajaros;
+    text-align: center;
 }
-
 
 .diferentes_cobayos {
 
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 50% 50%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
     grid-template-areas:
 
         "cobayo1 cobayo2 cobayo3"
@@ -740,16 +951,11 @@ body {
     padding-left: 10%;
     padding-right: 10%;
 
+
+
     .tiposcobayos {
         grid-area: cobayo1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-        padding-top: 5%;
-        padding-bottom: 5%;
-        background-color: c.$fondo-box;
-        border-radius: 5%;
+        @extend .box-style-animales;
 
     }
 
@@ -797,20 +1003,16 @@ body {
         padding-top: 5%;
         margin: auto;
         gap: 5%;
-        padding-bottom: 10%;
+        padding-bottom: 20%;
+
 
     }
 
     .tiposcobayos {
         grid-area: cobayo1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
         padding-top: 5%;
         padding-bottom: 5%;
-        background-color: #FBFCFC;
-        border-radius: 5%;
+        width: 100% !important;
 
     }
 
@@ -835,6 +1037,7 @@ body {
     }
 
 }
+
 
 
 /* ACCESORIOS */
@@ -916,29 +1119,53 @@ body {
     box-shadow: c.$sombra;
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-    border-radius: 10px;
+    border-radius: 5px;
     border: c.$borde;
     margin: auto;
 
     .titulo_accesorio {
         text-align: center;
+        padding-bottom: 1%;
     }
 
     .texto_accesorio {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        text-align: center;
         width: 70%;
         margin: auto;
+        padding-bottom: 1%;
     }
 }
 
 .texto-box {
     display: flex;
-    padding-top: 5%;
     justify-content: center;
+    margin-bottom: 3%;
+    padding: 5%;
+
 }
 
+.acceso_p {
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5%;
+
+}
+
+.box-style-accesorios {
+    display: flex;
+    flex-direction: column;
+    background-color: c.$fondo-box;
+    margin-top: 15%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+}
 
 
 /* ACCESORIOS PAJAROS */
@@ -947,7 +1174,7 @@ body {
     padding-bottom: 5%;
     padding-left: 10%;
     padding-right: 10%;
-
+    margin-bottom: 5%;
 }
 
 .diferentes_pajarosaccesorios {
@@ -970,11 +1197,7 @@ body {
 
     .tiposaccesopajaros {
         grid-area: accesopa1;
-        display: flex;
-        flex-direction: column;
-        background-color: c.$fondo-box;
-        margin-top: 15%;
-        text-align: center;
+        @extend .box-style-accesorios
     }
 
     .tiposaccesopajaros:nth-child(2) {
@@ -1025,16 +1248,6 @@ body {
 }
 
 
-.acceso_pajaros_texto {
-
-    font-size: medium;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: baseline;
-}
-
-
 @media screen and (min-width: 0px) and (max-width: 768px) {
 
     #accesorios_pajaros {
@@ -1068,8 +1281,6 @@ body {
 
     }
 
-
-
 }
 
 
@@ -1078,7 +1289,6 @@ body {
 #accesorios_peces {
     @extend #accesorios_pajaros;
     margin-bottom: 10%;
-
 }
 
 .diferentes_pecesaccesorios {
@@ -1088,10 +1298,10 @@ body {
     grid-template-rows: auto;
     grid-template-areas:
 
-        "accesope1 accesope2 accesope3 accesope15"
+        "accesope1 accesope2 accesope3 accesope5"
         "accesope4 accesope4 accesope4 accesope4"
-        "accesope5 accesope6 accesope7 accesope8"
-        "accesope9 accesope10 accesope11 accesope12"
+        "accesope6 accesope7 accesope8 accesope9"
+        "accesope10 accesope11 accesope12 accesope15"
 
     ;
 
@@ -1103,11 +1313,7 @@ body {
 
     .tiposaccesopeces {
         grid-area: accesope1;
-        display: flex;
-        flex-direction: column;
-        background-color: c.$fondo-box;
-        margin-top: 15%;
-        text-align: center;
+        @extend .box-style-accesorios;
     }
 
     .tiposaccesopeces:nth-child(2) {
@@ -1128,8 +1334,10 @@ body {
         margin-top: 5%;
         padding-bottom: 5%;
         text-align: center;
-        border: solid;
+        border-radius: 5px;
+        border-style: solid;
         border-width: 1px;
+        border-color: rgb(209, 209, 209);
 
         .variedad_titulo_accesopeces {
             display: flex;
@@ -1152,7 +1360,6 @@ body {
         }
 
     }
-
 
 
     /* FIN TABLA */
@@ -1195,15 +1402,6 @@ body {
 
 }
 
-
-.acceso_peces_texto {
-
-    font-size: medium;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: baseline;
-}
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
 
@@ -1314,11 +1512,7 @@ body {
 
     .tiposaccesocobayos {
         grid-area: accesoco1;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: c.$letra;
-        margin-bottom: 20%;
+        @extend .box-style-accesorios
     }
 
     .tiposaccesocobayos:nth-child(2) {
@@ -1421,8 +1615,8 @@ body {
         flex-direction: column;
         text-align: center;
         width: 50%;
-        padding-top: 2%;
-        padding-bottom: 2%;
+        padding-top: 1%;
+        padding-bottom: 1%;
         background: c.$fondo-texto;
         box-shadow: c.$sombra;
         backdrop-filter: blur(0px);
@@ -1484,48 +1678,51 @@ body {
 }
 
 
-@media screen and (min-width: 0px) and (max-width: 768px){
-    
-    #promociones{
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    #promociones {
         padding-top: 5%;
         padding-bottom: 5%;
         padding-left: 5%;
         padding-right: 5%;
 
-        .titulo_promociones{
+
+        .titulo_promociones {
             display: flex;
             width: 100%;
+            margin-bottom: 15%;
         }
-    
+
         .metodosdepago {
-    
+
             display: grid;
             grid-template-columns: 100%;
-            grid-template-rows: repeat(3,1fr);
+            grid-template-rows: repeat(3, 1fr);
             grid-template-areas:
-    
+
                 "tarjeta"
                 "mercadopago"
                 "efectivo"
-    
+
             ;
-    
+
+
             .pagos {
                 grid-area: tarjeta;
-                width: 60%;
+                width: 100%;
                 margin-left: auto;
                 margin-right: auto;
-        
+
             }
-        
+
             .pagos:nth-child(2) {
                 grid-area: mercadopago;
             }
-        
+
             .pagos:nth-child(3) {
                 grid-area: efectivo;
             }
-    
+
         }
     }
 
@@ -1535,6 +1732,36 @@ body {
 
 
 /* CONTACTO */
+
+.contacto_articulo {
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background: c.$fondo-texto;
+    box-shadow: c.$sombra;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: c.$borde;
+    margin: auto;
+
+    .titulo_contacto {
+        text-align: center;
+    }
+
+    .texto_contacto {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
+    }
+
+}
 
 #contacto {
 
@@ -1548,16 +1775,158 @@ body {
         "servicios_envios formulariocontacto"
 
     ;
-    align-items: stretch;
+
     padding-top: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
     padding-bottom: 5%;
+    padding-left: auto;
+    padding-right: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    .contactoubicacion {
+
+        grid-area: contactoubicacion;
+        padding-left: 2%;
+        padding-right: 2%;
+        margin-bottom: 15%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        padding-block: 5%;
+        line-height: 1.5;
+        background: c.$fondo-texto;
+        box-shadow: c.$sombra;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border-radius: 10px;
+        border: c.$borde;
+        width: 90%;
 
 
+        .transporte {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-end;
+            margin-right: 5%;
+        }
+
+
+    }
+
+    .mapanegocio {
+
+        grid-area: mapanegocio;
+        margin-bottom: 15%;
+        padding: auto;
+        margin-left: 5%;
+        width: 90%;
+
+    }
+
+    .servicios_pension {
+        grid-area: servicios_pension;
+        background-color: #FBFCFC;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-top: 15%;
+        padding-bottom: 15%;
+        padding-left: 10%;
+        padding-right: 10%;
+        line-height: 1.5;
+        border-radius: 10px;
+        background: c.$fondo-texto;
+        box-shadow: c.$sombra;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border: c.$borde;
+        margin-bottom: 5%;
+        width: 90%;
+
+    }
+
+    .servicios_envios {
+        grid-area: servicios_envios;
+        background-color: #FBFCFC;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-top: 15%;
+        padding-bottom: 15%;
+        padding-left: 10%;
+        padding-right: 10%;
+        line-height: 1.5;
+        border-radius: 10px;
+        background: c.$fondo-texto;
+        box-shadow: c.$sombra;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border: c.$borde;
+        margin-bottom: 5%;
+        width: 90%;
+
+    }
+
+    .formulariocontacto {
+        grid-area: formulariocontacto;
+        background-color: c.$fondo-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 3%;
+        margin-left: 5%;
+        background: c.$fondo-texto;
+        box-shadow: c.$sombra;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border-radius: 10px;
+        border: c.$borde;
+        height: 94%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        width: 90%;
+
+        .contactotitulo {
+
+            display: flex;
+            padding-bottom: 5%;
+
+        }
+
+        .formulariocontacto_celdas {
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            align-content: space-around;
+
+        }
+
+        .boton_enviar {
+            margin-top: 5%;
+        }
+    }
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
+
+    .contacto_articulo {
+        display: flex;
+        width: 90%;
+        margin-bottom: 10%;
+        margin-top: 5%;
+
+    }
 
     #contacto {
 
@@ -1572,182 +1941,78 @@ body {
             "servicios_envios"
             "formulariocontacto"
 
+
         ;
 
-        padding-block: 10%;
-    }
-
-    .contactoubicacion {
-
-        grid-area: contactoubicacion;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: flex-start;
-        line-height: 1.5;
-
-    }
-
-    .transporte {
-        display: flex;
-    }
-
-    .mapanegocio {
-        grid-area: mapanegocio;
-        margin-left: 8%;
-
-    }
-
-    .servicios_pension {
-
-        grid-area: servicios_pension;
-        line-height: 1.5;
-        font-size: smaller;
-        padding-bottom: 10%;
-
-    }
-
-    .servicios_envios {
-
-        grid-area: servicios_envios;
-        line-height: 1.5;
-        font-size: smaller;
-        border-width: auto;
-        padding-top: 20%;
-
-    }
-
-    .contactotitulo {
-        padding-bottom: 12%;
-        padding-top: 20%;
-    }
-
-    .formulariocontacto {
-        grid-area: formulariocontacto;
-        display: flex;
-        padding-bottom: 10%;
-        border-radius: 10%;
-        margin-top: 10%;
-    }
-
-    .formulariocontacto_celdas {
-
-        width: 80%;
-
-    }
-
-
-}
-
-.contactoubicacion {
-
-    grid-area: contactoubicacion;
-    padding-left: 2%;
-    padding-right: 2%;
-    margin-left: 10%;
-    margin-bottom: 15%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    padding-block: 5%;
-    line-height: 1.5;
-    background: c.$fondo-texto;
-    box-shadow: c.$sombra;
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-radius: 10px;
-    border: c.$borde;
-
-
-    .transporte {
-
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-end;
-        margin-right: 5%;
-    }
-
-
-}
-
-
-.mapanegocio {
-
-    grid-area: mapanegocio;
-    margin-bottom: 15%;
-    padding: auto;
-    margin-left: 5%;
-
-}
-
-.servicios_pension {
-
-    grid-area: servicios_pension;
-    background-color: #FBFCFC;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-top: 15%;
-    padding-bottom: 15%;
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-left: 10%;
-    line-height: 1.5;
-    border-radius: 10px;
-    background: c.$fondo-texto;
-    box-shadow: c.$sombra;
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border: c.$borde;
-    margin-bottom: 5%;
-
-}
-
-.servicios_envios {
-    @extend .servicios_pension;
-    grid-area: servicios_envios;
-
-}
-
-.formulariocontacto {
-    grid-area: formulariocontacto;
-    background-color: c.$fondo-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding-left: 20%;
-    padding-right: 20%;
-    border-radius: 3%;
-    margin-left: 5%;
-    background: c.$fondo-texto;
-    box-shadow: c.$sombra;
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-radius: 10px;
-    border: c.$borde;
-    height: 94%;
-
-    .contactotitulo {
-
-        display: flex;
+        padding-top: 5%;
         padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin: auto;
 
-    }
 
-    .formulariocontacto_celdas {
+        .contactoubicacion {
 
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        align-items: flex-start;
-        align-content: space-around;
+            grid-area: contactoubicacion;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            line-height: 1.5;
+            margin: auto;
+            margin-bottom: 10%;
 
+            .transporte {
+                display: flex;
+            }
+
+        }
+
+        .mapanegocio {
+            grid-area: mapanegocio;
+            margin: auto;
+            margin-bottom: 30%;
+            height: 80%;
+        }
+
+        .servicios_pension {
+
+            grid-area: servicios_pension;
+            line-height: 1.5;
+            font-size: smaller;
+            padding-bottom: 10%;
+            margin: auto;
+            margin-bottom: 15%;
+
+        }
+
+        .servicios_envios {
+
+            grid-area: servicios_envios;
+            line-height: 1.5;
+            font-size: smaller;
+            margin: auto;
+            margin-bottom: 10%;
+
+        }
+
+        .formulariocontacto {
+            grid-area: formulariocontacto;
+            display: flex;
+            padding-bottom: 10%;
+            margin-top: 5%;
+            margin-bottom: 10%;
+
+            .contactotitulo {
+                padding-bottom: 5%;
+                padding-top: 10%;
+            }
+
+            .formulariocontacto_celdas {
+                display: flex;
+                width: 250px;
+
+            }
+        }
     }
 
 }

@@ -58,6 +58,7 @@ footer{
                 grid-area: pajaros;
                 color: c.$letra;
                 padding-top: 5%;
+                
             }
 
             .productosyservicios_p:nth-child(2){
@@ -152,9 +153,13 @@ footer{
         justify-content: center;
         border-top-style: solid;
         border-width: 1px;
-        margin-top: 4%;
-        padding-top: 2%;
+        margin-top: 10%;
+        padding-top: 1%;
         width: 100%;
+        
+        .p{
+            color: #FFFFF0;
+        }
 
     }
 

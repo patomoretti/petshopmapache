@@ -13,6 +13,52 @@ body header {
   background: linear-gradient(to bottom, white, white, #FFF1F0);
 }
 
+.posicionamiento {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  text-align: center;
+}
+
+.d-flex {
+  margin-left: 5%;
+}
+
+@media screen and (min-width: 768px) {
+  #navegacion {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "logo navbar" "logo navbar";
+    margin-bottom: 5%;
+  }
+  #navegacion .logo {
+    grid-area: logo;
+    display: flex;
+  }
+  #navegacion .navbar {
+    grid-area: navbar;
+    display: flex;
+    flex-direction: row;
+    padding-top: 1%;
+    color: black;
+    padding-left: 5%;
+  }
+  #navegacion .navbar .dropdown-menu {
+    position: absolute;
+  }
+  #navegacion .btn {
+    border-color: black;
+    color: black;
+  }
+  #navegacion .btn:hover {
+    background-color: #FBFCFC;
+  }
+  #navegacion .position-fixed {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
 @media screen and (min-width: 0px) and (max-width: 768px) {
   * {
     margin: 0;
@@ -34,58 +80,11 @@ body header {
   }
   .logo {
     display: flex;
-    justify-content: center;
+    text-align: center;
   }
   .btn {
     border-color: black;
     color: black;
-  }
-}
-.posicionamiento {
-  display: flex;
-  justify-content: center;
-  font-size: larger;
-  text-align: center;
-}
-
-.d-flex {
-  margin-left: 5%;
-}
-
-@media screen and (min-width: 768px) {
-  #navegacion {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    grid-template-areas: "logo navbar" "logo navbar";
-    margin-bottom: 5%;
-    padding-bottom: 3%;
-  }
-  #navegacion .logo {
-    grid-area: logo;
-    display: flex;
-  }
-  #navegacion .navbar {
-    grid-area: navbar;
-    display: flex;
-    flex-direction: row;
-    padding-top: 1%;
-    padding-right: 10%;
-    color: black;
-  }
-  #navegacion .navbar .dropdown-menu {
-    position: absolute;
-  }
-  #navegacion .btn {
-    border-color: black;
-    color: black;
-  }
-  #navegacion .btn:hover {
-    background-color: #FBFCFC;
-  }
-  #navegacion .position-fixed {
-    display: flex;
-    justify-content: flex-start;
   }
 }
 /* INDEX */
@@ -94,11 +93,9 @@ body header {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: "titulo titulo" "galeria galeria" "fotolocal sobrenosotros_texto";
+    grid-template-areas: "titulo titulo" "galeria galeria" "fotolocal sobrenosotros_texto_foto" "mascotas mascotas" "articulos articulos";
     padding-left: 10%;
     padding-right: 10%;
-    gap: 5%;
-    padding-bottom: 10%;
   }
   #inicio_principal #titulo {
     grid-area: titulo;
@@ -113,28 +110,33 @@ body header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 5%;
-    width: 50%;
-    height: 10%;
+    width: 60%;
     margin: auto;
+    margin-top: 3%;
+    margin-bottom: 5%;
   }
   #inicio_principal #sobrenosotros {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-end;
     align-items: center;
-    width: auto;
     padding-left: 10%;
     padding-right: 10%;
+    padding-bottom: 5%;
     border-top: solid;
-    border-bottom: solid;
     border-width: 1px;
   }
-  #inicio_principal #sobrenosotros .sobrenosotros_texto {
-    grid-area: sobrenosotros_texto;
+  #inicio_principal #sobrenosotros .titulo_sobrenosotros {
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  #inicio_principal #sobrenosotros .sobrenosotros_texto_foto {
+    grid-area: sobrenosotros_texto_foto;
+    display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
@@ -142,19 +144,89 @@ body header {
     line-height: 1.5;
     margin: auto;
     padding: auto;
+    gap: 15%;
   }
-  #inicio_principal #sobrenosotros .texto {
+  #inicio_principal #sobrenosotros .sobrenosotros_texto_foto .fotolocal {
+    display: flex;
+  }
+  #inicio_principal #sobrenosotros .sobrenosotros_texto_foto .texto {
     border-radius: 10%;
     display: flex;
     align-content: flex-start;
     text-align: center;
   }
-  #inicio_principal .fotolocal {
-    grid-area: fotolocal;
-    width: 100%;
+  #inicio_principal .mascotas {
+    grid-area: mascotas;
+    display: flex;
+    flex-direction: column;
+    border-top: solid;
+    border-width: 1px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+  #inicio_principal .mascotas .tipos_mascotas {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas: "card1 card2 card3 card4" "card5 card6 card7 card8";
     padding-top: 5%;
     padding-bottom: 5%;
+    gap: 3%;
+  }
+  #inicio_principal .mascotas .tipos_mascotas .card {
+    grid-area: card1;
+    margin-bottom: 5%;
+  }
+  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(2) {
+    grid-area: card2;
+  }
+  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(3) {
+    grid-area: card3;
+  }
+  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(4) {
+    grid-area: card4;
+  }
+  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(5) {
+    grid-area: card5;
+  }
+  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(6) {
+    grid-area: card6;
+  }
+  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(7) {
+    grid-area: card7;
+  }
+  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(8) {
+    grid-area: card8;
+  }
+  #inicio_principal .articulos {
+    grid-area: articulos;
+    display: flex;
+    flex-direction: column;
+    border-top: solid;
+    border-width: 1px;
+    padding-left: 10%;
     padding-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-bottom: 5%;
+  }
+  #inicio_principal .articulos .tipos_articulos {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas: "card1 card2 card3 card4" "card5 card6 card7 card8";
+    padding-top: 5%;
+    padding-bottom: 5%;
+    gap: 3%;
+  }
+  #inicio_principal .articulos .card {
+    width: 18rem;
+    margin-bottom: 5%;
+  }
+  #inicio_principal .card {
+    width: 18rem;
   }
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
@@ -167,7 +239,7 @@ body header {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
-    grid-template-areas: "titulo" "galeria" "fotolocal" "sobrenosotros_texto";
+    grid-template-areas: "titulo" "galeria" "fotolocal" "sobrenosotros_texto" "mascotas" "articulos";
   }
   #titulo {
     grid-area: titulo;
@@ -190,7 +262,6 @@ body header {
     display: flex;
     flex-direction: column;
     border-top: solid;
-    border-bottom: solid;
     border-width: 1px;
     align-items: center;
     margin-top: 10%;
@@ -199,25 +270,66 @@ body header {
     margin-left: auto;
     margin-right: auto;
   }
-  #sobrenosotros .fotolocal {
+  #sobrenosotros .titulo_sobrenosotros {
+    display: flex;
+    padding-top: 5%;
+  }
+  #sobrenosotros .sobrenosotros_texto_foto .fotolocal {
     grid-area: fotolocal;
     display: flex;
     width: 50%;
     padding-bottom: 5%;
-    padding-top: 10%;
+    padding-top: 5%;
+    margin: auto;
   }
-  #sobrenosotros .sobrenosotros_texto {
+  #sobrenosotros .sobrenosotros_texto_foto .texto {
     grid-area: sobrenosotros_texto;
     display: flex;
     padding-bottom: 5%;
     text-align: center;
   }
+  .novedades .titulo_novedades {
+    display: flex;
+    justify-content: center;
+    border-top: solid;
+    border-width: 1px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+  }
+  .novedades .mascotas .tipos_mascotas {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "card1 card2" "card3 card4" "card5 card6" "card7 card8";
+    padding-left: 5%;
+    padding-bottom: 10%;
+  }
+  .novedades .mascotas .tipos_mascotas .card {
+    width: 90%;
+    margin-bottom: 15%;
+  }
+  .novedades .articulos .tipos_articulos {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "card1 card2" "card3 card4" "card5 card6" "card7 card8";
+    padding-left: 5%;
+    padding-bottom: 10%;
+  }
+  .novedades .articulos .tipos_articulos .card {
+    width: 90%;
+    margin-bottom: 15%;
+  }
 }
 /* ANIMALES */
 #animales {
   display: grid;
-  grid-template-columns: repeat(3, 33%);
-  grid-template-rows: 1fr;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: auto;
   grid-template-areas: "animal_pajaro animal_peces animal_cobayos";
   padding-top: 5%;
   padding-bottom: 5%;
@@ -225,19 +337,7 @@ body header {
   padding-left: 10%;
   padding-right: 10%;
 }
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-  #animales {
-    display: grid;
-    grid-template-columns: 90%;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "animal_pajaro" "animal_peces" "animal_cobayos";
-    padding-top: 10%;
-    padding-bottom: 10%;
-    margin-left: 30%;
-  }
-}
-.animales {
+#animales .animales-cat {
   grid-area: animal_pajaro;
   background-color: #FBFCFC;
   border-radius: 10%;
@@ -246,38 +346,42 @@ body header {
   height: 80%;
   text-align: center;
 }
-.animales .animales:hover {
-  transform: scale(1.1, 1.1);
-  transition: 0.3s;
-}
-.animales .animales:nth-child(2) {
+#animales .animales-cat:nth-child(2) {
   grid-area: animal_peces;
 }
-.animales .animales:nth-child(3) {
+#animales .animales-cat:nth-child(3) {
   grid-area: animal_cobayos;
+}
+#animales .animales-cat:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.3s;
 }
 
 .animales_articulo {
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 80%;
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   margin: auto;
 }
 .animales_articulo .titulo_animales {
   text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 .animales_articulo .texto_animales {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 70%;
+  text-align: center;
+  width: 95%;
   margin: auto;
+  padding-bottom: 1%;
 }
 
 .variedad_titulo {
@@ -286,10 +390,25 @@ body header {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
   border-top-style: solid;
   border-width: 1px;
   padding-top: 2%;
+  margin-top: 10%;
+}
+
+.box-style-animales, .diferentes_cobayos .tiposcobayos, .diferentes_peces .tipospeces, .diferentes_pajaros .tipospajaros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5%;
+  background-color: #FBFCFC;
+  margin-top: 10%;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+  width: 80%;
 }
 
 /* ANIMALES PAJAROS */
@@ -303,24 +422,16 @@ body header {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: auto;
-  grid-template-areas: "pajaro1 pajaro2 pajaro3" "pajaro4 pajaro5 pajaro6" "pajaro7 pajaro8 pajaro9";
+  grid-template-areas: "pajaro1 pajaro2 pajaro3" "pajaro4 pajaro5 pajaro6" "pajaro7 pajaro8 pajaro9" "video_pajaros video_pajaros video_pajaros";
   padding-top: 5%;
   margin: auto;
   gap: 5%;
   padding-left: 10%;
   padding-right: 10%;
+  margin-bottom: 20%;
 }
 .diferentes_pajaros .tipospajaros {
   grid-area: pajaro1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 80%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  background-color: white;
-  border-radius: 5%;
 }
 .diferentes_pajaros .tipospajaros:nth-child(2) {
   grid-area: pajaro2;
@@ -352,15 +463,25 @@ body header {
 }
 
 .video_pajaros {
+  grid-area: video_pajaros;
+}
+.video_pajaros .video {
   display: flex;
   justify-content: center;
-  padding-top: 20%;
+  padding-left: 5%;
+  padding-bottom: 5%;
+  padding-top: 2%;
+  margin-top: 10%;
   margin: auto;
+  border-bottom-style: solid;
+  border-width: 1px;
+  width: 90%;
 }
 
 .pajaros_articulo {
   display: flex;
   flex-direction: column;
+  width: 80%;
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
@@ -368,17 +489,22 @@ body header {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   margin: auto;
-  margin-top: 15%;
+  margin-top: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 .pajaros_articulo .titulo_pajaros {
   text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 .pajaros_articulo .texto_pajaros {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 70%;
+  width: 95%;
   margin: auto;
+  padding-bottom: 1%;
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
@@ -390,19 +516,42 @@ body header {
     padding-top: 5%;
     padding-bottom: 10%;
     margin: auto;
-    gap: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
+  }
+  .diferentes_pajaros .tipospajaros {
+    width: 100%;
   }
   .video_pajaros {
+    grid-area: video_pajaros;
+    margin-top: 80%;
+  }
+  .video_pajaros .video {
     display: flex;
-    justify-content: center;
-    width: auto;
-    margin-top: 40%;
+    border-bottom-style: solid;
+    border-width: 1px;
+    padding-bottom: 5%;
+    height: 50% !important;
+    margin: auto;
   }
   .animales_articulo {
     width: 100%;
     margin-top: 7%;
+  }
+  .pajaros_articulo {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-top: 20%;
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  .pajaros_articulo .texto_pajaros {
+    text-align: center;
+    width: 90%;
   }
 }
 /* ANIMALES PECES */
@@ -419,15 +568,6 @@ body header {
 }
 .diferentes_peces .tipospeces {
   grid-area: peces1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  background-color: #FBFCFC;
-  border-radius: 5%;
-  margin-bottom: 10%;
 }
 .diferentes_peces .tipospeces:nth-child(2) {
   grid-area: peces2;
@@ -452,24 +592,30 @@ body header {
 .peces_articulo {
   display: flex;
   flex-direction: column;
+  width: 80%;
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   margin: auto;
   margin-top: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 .peces_articulo .titulo_peces {
   text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 .peces_articulo .texto_peces {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 70%;
+  width: 95%;
   margin: auto;
+  padding-bottom: 1%;
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
@@ -484,6 +630,9 @@ body header {
     padding-bottom: 10%;
     text-align: center;
   }
+  .diferentes_peces .tipospeces {
+    width: 100% !important;
+  }
   .peces_articulo {
     display: flex;
     flex-direction: column;
@@ -493,27 +642,31 @@ body header {
     -webkit-backdrop-filter: blur(0px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    margin-top: 10%;
+    margin-top: 20%;
+    width: 100%;
+    text-align: center;
   }
   .variedad_titulo {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20%;
-    box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-top: 30%;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 5%;
   }
 }
 /* ANIMALES COBAYOS */
+#animales_cobayos {
+  text-align: center;
+}
+
 .diferentes_cobayos {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
   grid-template-areas: "cobayo1 cobayo2 cobayo3" "cobayo4 cobayo5 cobayo6";
   padding-top: 5%;
   margin: auto;
@@ -523,14 +676,6 @@ body header {
 }
 .diferentes_cobayos .tiposcobayos {
   grid-area: cobayo1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  background-color: #FBFCFC;
-  border-radius: 5%;
 }
 .diferentes_cobayos .tiposcobayos:nth-child(2) {
   grid-area: cobayo2;
@@ -561,18 +706,13 @@ body header {
     padding-top: 5%;
     margin: auto;
     gap: 5%;
-    padding-bottom: 10%;
+    padding-bottom: 20%;
   }
   .tiposcobayos {
     grid-area: cobayo1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
     padding-top: 5%;
     padding-bottom: 5%;
-    background-color: #FBFCFC;
-    border-radius: 5%;
+    width: 100% !important;
   }
   .tiposcobayos:nth-child(2) {
     grid-area: cobayo2;
@@ -642,25 +782,48 @@ body header {
   box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   margin: auto;
 }
 .accesorio_articulo .titulo_accesorio {
   text-align: center;
+  padding-bottom: 1%;
 }
 .accesorio_articulo .texto_accesorio {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  text-align: center;
   width: 70%;
   margin: auto;
+  padding-bottom: 1%;
 }
 
 .texto-box {
   display: flex;
-  padding-top: 5%;
   justify-content: center;
+  margin-bottom: 3%;
+  padding: 5%;
+}
+
+.acceso_p {
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5%;
+}
+
+.box-style-accesorios, .diferentes_cobayosaccesorios .tiposaccesocobayos, .diferentes_pecesaccesorios .tiposaccesopeces, .diferentes_pajarosaccesorios .tiposaccesopajaros {
+  display: flex;
+  flex-direction: column;
+  background-color: #FBFCFC;
+  margin-top: 15%;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
 }
 
 /* ACCESORIOS PAJAROS */
@@ -668,6 +831,7 @@ body header {
   padding-bottom: 5%;
   padding-left: 10%;
   padding-right: 10%;
+  margin-bottom: 5%;
 }
 
 .diferentes_pajarosaccesorios {
@@ -683,11 +847,6 @@ body header {
 }
 .diferentes_pajarosaccesorios .tiposaccesopajaros {
   grid-area: accesopa1;
-  display: flex;
-  flex-direction: column;
-  background-color: #FBFCFC;
-  margin-top: 15%;
-  text-align: center;
 }
 .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(2) {
   grid-area: accesopa2;
@@ -723,14 +882,6 @@ body header {
   grid-area: accesopa12;
 }
 
-.acceso_pajaros_texto {
-  font-size: medium;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: baseline;
-}
-
 @media screen and (min-width: 0px) and (max-width: 768px) {
   #accesorios_pajaros, #accesorios_cobayos, #accesorios_peces {
     padding-top: 5%;
@@ -759,7 +910,7 @@ body header {
   display: grid;
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: auto;
-  grid-template-areas: "accesope1 accesope2 accesope3 accesope15" "accesope4 accesope4 accesope4 accesope4" "accesope5 accesope6 accesope7 accesope8" "accesope9 accesope10 accesope11 accesope12";
+  grid-template-areas: "accesope1 accesope2 accesope3 accesope5" "accesope4 accesope4 accesope4 accesope4" "accesope6 accesope7 accesope8 accesope9" "accesope10 accesope11 accesope12 accesope15";
   padding-top: 5%;
   margin: auto;
   gap: 2%;
@@ -770,11 +921,6 @@ body header {
 }
 .diferentes_pecesaccesorios .tiposaccesopeces {
   grid-area: accesope1;
-  display: flex;
-  flex-direction: column;
-  background-color: #FBFCFC;
-  margin-top: 15%;
-  text-align: center;
 }
 .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(2) {
   grid-area: accesope2;
@@ -790,8 +936,10 @@ body header {
   margin-top: 5%;
   padding-bottom: 5%;
   text-align: center;
-  border: solid;
+  border-radius: 5px;
+  border-style: solid;
   border-width: 1px;
+  border-color: rgb(209, 209, 209);
 }
 .diferentes_pecesaccesorios .tabla_peceras .variedad_titulo_accesopeces, .diferentes_pecesaccesorios .tabla_peceras .variedad_titulo_accesopeces_2 {
   display: flex;
@@ -836,14 +984,6 @@ body header {
 }
 .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(13) {
   grid-area: accesope13;
-}
-
-.acceso_peces_texto {
-  font-size: medium;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: baseline;
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
@@ -918,11 +1058,6 @@ body header {
 }
 .diferentes_cobayosaccesorios .tiposaccesocobayos {
   grid-area: accesoco1;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: white;
-  margin-bottom: 20%;
 }
 .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(2) {
   grid-area: accesoco2;
@@ -991,8 +1126,8 @@ body header {
   flex-direction: column;
   text-align: center;
   width: 50%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
@@ -1047,6 +1182,7 @@ body header {
   #promociones .titulo_promociones {
     display: flex;
     width: 100%;
+    margin-bottom: 15%;
   }
   #promociones .metodosdepago {
     display: grid;
@@ -1056,7 +1192,7 @@ body header {
   }
   #promociones .metodosdepago .pagos {
     grid-area: tarjeta;
-    width: 60%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1068,75 +1204,48 @@ body header {
   }
 }
 /* CONTACTO */
+.contacto_articulo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: auto;
+}
+.contacto_articulo .titulo_contacto {
+  text-align: center;
+}
+.contacto_articulo .texto_contacto {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: auto;
+}
+
 #contacto {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 25% 25%;
   grid-template-areas: "contactoubicacion mapanegocio" "servicios_pension formulariocontacto" "servicios_envios formulariocontacto";
-  align-items: stretch;
   padding-top: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
   padding-bottom: 5%;
+  padding-left: auto;
+  padding-right: auto;
+  margin-left: 10%;
+  margin-right: 10%;
 }
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-  #contacto {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
-    grid-template-areas: "contactoubicacion" "mapanegocio" "servicios_pension" "servicios_envios" "formulariocontacto";
-    padding-block: 10%;
-  }
-  .contactoubicacion {
-    grid-area: contactoubicacion;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    line-height: 1.5;
-  }
-  .transporte {
-    display: flex;
-  }
-  .mapanegocio {
-    grid-area: mapanegocio;
-    margin-left: 8%;
-  }
-  .servicios_pension, .servicios_envios {
-    grid-area: servicios_pension;
-    line-height: 1.5;
-    font-size: smaller;
-    padding-bottom: 10%;
-  }
-  .servicios_envios {
-    grid-area: servicios_envios;
-    line-height: 1.5;
-    font-size: smaller;
-    border-width: auto;
-    padding-top: 20%;
-  }
-  .contactotitulo {
-    padding-bottom: 12%;
-    padding-top: 20%;
-  }
-  .formulariocontacto {
-    grid-area: formulariocontacto;
-    display: flex;
-    padding-bottom: 10%;
-    border-radius: 10%;
-    margin-top: 10%;
-  }
-  .formulariocontacto_celdas {
-    width: 80%;
-  }
-}
-.contactoubicacion {
+#contacto .contactoubicacion {
   grid-area: contactoubicacion;
   padding-left: 2%;
   padding-right: 2%;
-  margin-left: 10%;
   margin-bottom: 15%;
   display: flex;
   flex-direction: column;
@@ -1150,25 +1259,26 @@ body header {
   -webkit-backdrop-filter: blur(0px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
 }
-.contactoubicacion .transporte {
+#contacto .contactoubicacion .transporte {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-end;
   margin-right: 5%;
 }
-
-.mapanegocio {
+#contacto .mapanegocio {
   grid-area: mapanegocio;
   margin-bottom: 15%;
   padding: auto;
   margin-left: 5%;
+  width: 90%;
 }
-
-.servicios_pension, .servicios_envios {
+#contacto .servicios_pension {
   grid-area: servicios_pension;
   background-color: #FBFCFC;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -1177,7 +1287,6 @@ body header {
   padding-bottom: 15%;
   padding-left: 10%;
   padding-right: 10%;
-  margin-left: 10%;
   line-height: 1.5;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.35);
@@ -1186,21 +1295,37 @@ body header {
   -webkit-backdrop-filter: blur(0px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   margin-bottom: 5%;
+  width: 90%;
 }
-
-.servicios_envios {
+#contacto .servicios_envios {
   grid-area: servicios_envios;
+  background-color: #FBFCFC;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
+  line-height: 1.5;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin-bottom: 5%;
+  width: 90%;
 }
-
-.formulariocontacto {
+#contacto .formulariocontacto {
   grid-area: formulariocontacto;
   background-color: #FBFCFC;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding-left: 20%;
-  padding-right: 20%;
   border-radius: 3%;
   margin-left: 5%;
   background: rgba(255, 255, 255, 0.35);
@@ -1210,12 +1335,15 @@ body header {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   height: 94%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  width: 90%;
 }
-.formulariocontacto .contactotitulo {
+#contacto .formulariocontacto .contactotitulo {
   display: flex;
   padding-bottom: 5%;
 }
-.formulariocontacto .formulariocontacto_celdas {
+#contacto .formulariocontacto .formulariocontacto_celdas {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -1223,7 +1351,77 @@ body header {
   align-items: flex-start;
   align-content: space-around;
 }
+#contacto .formulariocontacto .boton_enviar {
+  margin-top: 5%;
+}
 
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .contacto_articulo {
+    display: flex;
+    width: 90%;
+    margin-bottom: 10%;
+    margin-top: 5%;
+  }
+  #contacto {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: "contactoubicacion" "mapanegocio" "servicios_pension" "servicios_envios" "formulariocontacto";
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: auto;
+  }
+  #contacto .contactoubicacion {
+    grid-area: contactoubicacion;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    line-height: 1.5;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+  #contacto .contactoubicacion .transporte {
+    display: flex;
+  }
+  #contacto .mapanegocio {
+    grid-area: mapanegocio;
+    margin: auto;
+    margin-bottom: 30%;
+    height: 80%;
+  }
+  #contacto .servicios_pension {
+    grid-area: servicios_pension;
+    line-height: 1.5;
+    font-size: smaller;
+    padding-bottom: 10%;
+    margin: auto;
+    margin-bottom: 15%;
+  }
+  #contacto .servicios_envios {
+    grid-area: servicios_envios;
+    line-height: 1.5;
+    font-size: smaller;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+  #contacto .formulariocontacto {
+    grid-area: formulariocontacto;
+    display: flex;
+    padding-bottom: 10%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+  #contacto .formulariocontacto .contactotitulo {
+    padding-bottom: 5%;
+    padding-top: 10%;
+  }
+  #contacto .formulariocontacto .formulariocontacto_celdas {
+    display: flex;
+    width: 250px;
+  }
+}
 footer {
   display: flex;
   flex-direction: row;
@@ -1336,9 +1534,12 @@ footer {
     justify-content: center;
     border-top-style: solid;
     border-width: 1px;
-    margin-top: 4%;
-    padding-top: 2%;
+    margin-top: 10%;
+    padding-top: 1%;
     width: 100%;
+  }
+  .texto_creador .p {
+    color: #FFFFF0;
   }
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
