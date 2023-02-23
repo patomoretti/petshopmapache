@@ -1,3 +1,4 @@
+/*PAGINA EN GENERAL*/
 * {
   margin: 0;
   padding: 0;
@@ -87,15 +88,18 @@ body header {
     color: black;
   }
 }
+/*MIXINS*/
 /* INDEX */
 @media screen and (min-width: 768px) {
   #inicio_principal {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: "titulo titulo" "galeria galeria" "fotolocal sobrenosotros_texto_foto" "mascotas mascotas" "articulos articulos";
+    grid-template-areas: "titulo titulo" "galeria galeria" "fotolocal sobrenosotros_texto_foto" "novedades novedades";
+    padding-bottom: 5%;
     padding-left: 10%;
     padding-right: 10%;
+    margin-bottom: 5%;
   }
   #inicio_principal #titulo {
     grid-area: titulo;
@@ -155,8 +159,8 @@ body header {
     align-content: flex-start;
     text-align: center;
   }
-  #inicio_principal .mascotas {
-    grid-area: mascotas;
+  #inicio_principal .novedades {
+    grid-area: novedades;
     display: flex;
     flex-direction: column;
     border-top: solid;
@@ -166,66 +170,57 @@ body header {
     padding-top: 3%;
     padding-bottom: 3%;
   }
-  #inicio_principal .mascotas .tipos_mascotas {
+  #inicio_principal .novedades .tipos_novedades {
     display: grid;
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: auto;
-    grid-template-areas: "card1 card2 card3 card4" "card5 card6 card7 card8";
+    grid-template-areas: "card1 card2 card3 card4" "card5 card6 card7 card8" "card9 card10 card11 card12";
     padding-top: 5%;
     padding-bottom: 5%;
-    gap: 3%;
   }
-  #inicio_principal .mascotas .tipos_mascotas .card {
+  #inicio_principal .novedades .tipos_novedades .card {
     grid-area: card1;
-    margin-bottom: 5%;
+    margin-left: 8%;
+    margin-right: 8%;
   }
-  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(2) {
+  #inicio_principal .novedades .tipos_novedades .card:nth-child(2) {
     grid-area: card2;
   }
-  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(3) {
+  #inicio_principal .novedades .tipos_novedades .card:nth-child(3) {
     grid-area: card3;
   }
-  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(4) {
+  #inicio_principal .novedades .tipos_novedades .card:nth-child(4) {
     grid-area: card4;
   }
-  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(5) {
+  #inicio_principal .novedades .tipos_novedades .card:nth-child(5) {
     grid-area: card5;
   }
-  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(6) {
+  #inicio_principal .novedades .tipos_novedades .card:nth-child(6) {
     grid-area: card6;
   }
-  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(7) {
+  #inicio_principal .novedades .tipos_novedades .card:nth-child(7) {
     grid-area: card7;
   }
-  #inicio_principal .mascotas .tipos_mascotas .card:nth-child(8) {
+  #inicio_principal .novedades .tipos_novedades .card:nth-child(8) {
     grid-area: card8;
   }
-  #inicio_principal .articulos {
-    grid-area: articulos;
-    display: flex;
-    flex-direction: column;
-    border-top: solid;
-    border-width: 1px;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    margin-bottom: 5%;
+  #inicio_principal .novedades .tipos_novedades .card:nth-child(9) {
+    grid-area: card9;
   }
-  #inicio_principal .articulos .tipos_articulos {
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows: auto;
-    grid-template-areas: "card1 card2 card3 card4" "card5 card6 card7 card8";
-    padding-top: 5%;
-    padding-bottom: 5%;
-    gap: 3%;
+  #inicio_principal .novedades .tipos_novedades .card:nth-child(10) {
+    grid-area: card10;
   }
-  #inicio_principal .articulos .card {
+  #inicio_principal .novedades .tipos_novedades .card:nth-child(11) {
+    grid-area: card11;
+  }
+  #inicio_principal .novedades .tipos_novedades .card:nth-child(12) {
+    grid-area: card12;
+  }
+  #inicio_principal .novedades .tipos_novedades .card {
     width: 18rem;
     margin-bottom: 5%;
   }
-  #inicio_principal .card {
+  #inicio_principal .novedades .card {
     width: 18rem;
   }
 }
@@ -239,7 +234,7 @@ body header {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
-    grid-template-areas: "titulo" "galeria" "fotolocal" "sobrenosotros_texto" "mascotas" "articulos";
+    grid-template-areas: "titulo" "galeria" "fotolocal" "sobrenosotros_texto" "novedades";
   }
   #titulo {
     grid-area: titulo;
@@ -288,115 +283,878 @@ body header {
     padding-bottom: 5%;
     text-align: center;
   }
+  .novedades {
+    grid-area: novedades;
+  }
   .novedades .titulo_novedades {
     display: flex;
     justify-content: center;
-    border-top: solid;
-    border-width: 1px;
-    margin-top: 10%;
     margin-bottom: 10%;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 5%;
     width: 80%;
+    margin: auto;
+  }
+  .novedades .tipos_novedades {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "card1 card2" "card3 card4" "card5 card6" "card7 card8" "card9 card10" "card11 card12";
+  }
+  .novedades .tipos_novedades .card {
+    margin-bottom: 20%;
+    margin: auto;
+    height: 100% !important;
+  }
+}
+/*-----------------------------------------------------------*/
+/* AVES */
+/* AVES_ACCESORIOS */
+@media screen and (min-width: 768px) {
+  #accesorios_pajaros {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #accesorios_pajaros .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+  }
+  #accesorios_pajaros .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #accesorios_pajaros .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas: "accesopa1 accesopa2 accesopa3 accesopa4" "accesopa5 accesopa6 accesopa7 accesopa8" "accesopa9 accesopa10 accesopa11 accesopa12" "accesopa13 accesopa14 accesopa15 accesopa16" "accesopa17 accesopa18 accesopa19 accesopa20" "accesopa21 accesopa22 accesopa23 accesopa24" "accesopa25 accesopa26 accesopa27 accesopa28" "accesopa29 accesopa30 accesopa31 accesopa32";
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros {
+    grid-area: accesopa1;
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFCFC;
+    margin-top: 15%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(2) {
+    grid-area: accesopa2;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(3) {
+    grid-area: accesopa3;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(4) {
+    grid-area: accesopa4;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(5) {
+    grid-area: accesopa5;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(6) {
+    grid-area: accesopa6;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(7) {
+    grid-area: accesopa7;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(8) {
+    grid-area: accesopa8;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(9) {
+    grid-area: accesopa9;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(10) {
+    grid-area: accesopa10;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(11) {
+    grid-area: accesopa11;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(12) {
+    grid-area: accesopa12;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(13) {
+    grid-area: accesopa13;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(14) {
+    grid-area: accesopa14;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(15) {
+    grid-area: accesopa15;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(16) {
+    grid-area: accesopa16;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(17) {
+    grid-area: accesopa17;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(18) {
+    grid-area: accesopa18;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(19) {
+    grid-area: accesopa19;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(20) {
+    grid-area: accesopa20;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(21) {
+    grid-area: accesopa21;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(22) {
+    grid-area: accesopa22;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(23) {
+    grid-area: accesopa23;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(24) {
+    grid-area: accesopa24;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(25) {
+    grid-area: accesopa25;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(26) {
+    grid-area: accesopa26;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(27) {
+    grid-area: accesopa27;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(28) {
+    grid-area: accesopa28;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(29) {
+    grid-area: accesopa29;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(30) {
+    grid-area: accesopa30;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #accesorios_pajaros {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #accesorios_pajaros .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+    width: 90% !important;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+  #accesorios_pajaros .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #accesorios_pajaros .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "accesopa1 accesopa2" "accesopa3 accesopa4" "accesopa5 accesopa6" "accesopa7 accesopa8" "accesopa9 accesopa10" "accesopa11 accesopa12" "accesopa13 accesopa14" "accesopa15 accesopa16" "accesopa17 accesopa18" "accesopa19 accesopa20" "accesopa21 accesopa22" "accesopa23 accesopa24" "accesopa25 accesopa26" "accesopa27 accesopa28" "accesopa29 accesopa30" "accesopa31 accesopa32";
+  }
+  #accesorios_pajaros .diferentes_pajarosaccesorios .tiposaccesopajaros {
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFCFC;
+    margin-top: 15%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+}
+/* AVES CANARIOS */
+@media screen and (min-width: 768px) {
+  #animales_pajaros, #animales_cobayoshamsters {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #animales_pajaros .titulo_pagina, #animales_cobayoshamsters .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+  }
+  #animales_pajaros .titulo_pagina .titulo, #animales_cobayoshamsters .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #animales_pajaros .titulo_pagina .texto_titulo, #animales_cobayoshamsters .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #animales_pajaros .variedad_titulo, #animales_cobayoshamsters .variedad_titulo {
+    display: flex;
+    padding-left: 5%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 2%;
+    margin-top: 10%;
+  }
+  #animales_pajaros .diferentes_pajaros, #animales_cobayoshamsters .diferentes_pajaros {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: auto;
+    grid-template-areas: "pajaro1 pajaro2 pajaro3" "pajaro4 pajaro5 pajaro6" "pajaro7 pajaro8 pajaro9" "pajaro10 pajaro11 pajaro12" "video_pajaros video_pajaros video_pajaros";
     padding-top: 5%;
-  }
-  .novedades .mascotas .tipos_mascotas {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
-    grid-template-areas: "card1 card2" "card3 card4" "card5 card6" "card7 card8";
+    margin: auto;
     padding-left: 5%;
-    padding-bottom: 10%;
+    padding-right: 5%;
   }
-  .novedades .mascotas .tipos_mascotas .card {
+  #animales_pajaros .diferentes_pajaros .tipospajaros, #animales_cobayoshamsters .diferentes_pajaros .tipospajaros {
+    grid-area: pajaro1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5%;
+    background-color: #FBFCFC;
+    margin-top: 10%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    width: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:nth-child(2), #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:nth-child(2) {
+    grid-area: pajaro2;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:nth-child(3), #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:nth-child(3) {
+    grid-area: pajaro3;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:nth-child(4), #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:nth-child(4) {
+    grid-area: pajaro4;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:nth-child(5), #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:nth-child(5) {
+    grid-area: pajaro5;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:nth-child(6), #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:nth-child(6) {
+    grid-area: pajaro6;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:nth-child(7), #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:nth-child(7) {
+    grid-area: pajaro7;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:nth-child(8), #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:nth-child(8) {
+    grid-area: pajaro8;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:nth-child(9), #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:nth-child(9) {
+    grid-area: pajaro9;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:nth-child(10), #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:nth-child(10) {
+    grid-area: pajaro10;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:nth-child(11), #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:nth-child(11) {
+    grid-area: pajaro11;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:nth-child(12), #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:nth-child(12) {
+    grid-area: pajaro12;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros:hover, #animales_cobayoshamsters .diferentes_pajaros .tipospajaros:hover {
+    transform: scale(1.1, 1.1);
+    transition: 0.3s;
+  }
+  #animales_pajaros .video_youtube, #animales_cobayoshamsters .video_youtube {
+    grid-area: video_pajaros;
+  }
+  #animales_pajaros .video_youtube .video, #animales_cobayoshamsters .video_youtube .video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin: auto;
+    border-width: 1px;
     width: 90%;
-    margin-bottom: 15%;
   }
-  .novedades .articulos .tipos_articulos {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
-    grid-template-areas: "card1 card2" "card3 card4" "card5 card6" "card7 card8";
-    padding-left: 5%;
-    padding-bottom: 10%;
+  #animales_pajaros .pajaros_articulo, #animales_cobayoshamsters .pajaros_articulo {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+    margin-top: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
   }
-  .novedades .articulos .tipos_articulos .card {
-    width: 90%;
-    margin-bottom: 15%;
+  #animales_pajaros .pajaros_articulo .titulo_pajaros, #animales_cobayoshamsters .pajaros_articulo .titulo_pajaros {
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  #animales_pajaros .pajaros_articulo .texto_pajaros, #animales_cobayoshamsters .pajaros_articulo .texto_pajaros {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: auto;
+    padding-bottom: 1%;
   }
 }
-/* ANIMALES */
-#animales {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: auto;
-  grid-template-areas: "animal_pajaro animal_peces animal_cobayos";
-  padding-top: 5%;
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #animales_pajaros, #animales_cobayoshamsters {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #animales_pajaros .titulo_pagina, #animales_cobayoshamsters .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+    width: 90% !important;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+  #animales_pajaros .titulo_pagina .titulo, #animales_cobayoshamsters .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #animales_pajaros .titulo_pagina .texto_titulo, #animales_cobayoshamsters .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #animales_pajaros .variedad_titulo, #animales_cobayoshamsters .variedad_titulo {
+    display: flex;
+    padding-left: 5%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 2%;
+    margin-top: 10%;
+  }
+  #animales_pajaros .diferentes_pajaros, #animales_cobayoshamsters .diferentes_pajaros {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "pajaro1 pajaro2" "pajaro3 pajaro4" "pajaro5 pajaro6" "pajaro7 pajaro8" "pajaro9 pajaro10" "pajaro11 pajaro12" "video_pajaros video_pajaros";
+    padding-top: 5%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #animales_pajaros .diferentes_pajaros .tipospajaros, #animales_cobayoshamsters .diferentes_pajaros .tipospajaros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5%;
+    background-color: #FBFCFC;
+    margin-top: 10%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    width: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  #animales_pajaros .video_pajaros, #animales_cobayoshamsters .video_pajaros {
+    grid-area: video_pajaros;
+    margin-top: 80%;
+  }
+  #animales_pajaros .video_pajaros .video, #animales_cobayoshamsters .video_pajaros .video {
+    display: flex;
+    border-bottom-style: solid;
+    border-width: 1px;
+    padding-bottom: 5%;
+    height: 50% !important;
+    margin: auto;
+    width: 50% !important;
+  }
+  #animales_pajaros .animales_articulo, #animales_cobayoshamsters .animales_articulo {
+    width: 100%;
+    margin-top: 7%;
+  }
+  #animales_pajaros .pajaros_articulo, #animales_cobayoshamsters .pajaros_articulo {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-top: 20%;
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  #animales_pajaros .pajaros_articulo .texto_pajaros, #animales_cobayoshamsters .pajaros_articulo .texto_pajaros {
+    text-align: center;
+    width: 90%;
+  }
+}
+/*AVES CRIADERO*/
+@media screen and (min-width: 768px) {
+  #criadero {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #criadero .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+  }
+  #criadero .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #criadero .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #criadero .crias {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+    grid-template-areas: "crias1 crias2 crias3" "crias4 crias5 crias6";
+    padding-top: 5%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #criadero .crias .tiposcrias {
+    grid-area: crias1;
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFCFC;
+    margin-top: 15%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  #criadero .crias .tiposcrias:nth-child(2) {
+    grid-area: crias2;
+  }
+  #criadero .crias .tiposcrias:nth-child(3) {
+    grid-area: crias3;
+  }
+  #criadero .crias .tiposcrias:nth-child(4) {
+    grid-area: crias4;
+  }
+  #criadero .crias .tiposcrias:nth-child(5) {
+    grid-area: crias5;
+  }
+  #criadero .crias .tiposcrias:nth-child(6) {
+    grid-area: crias6;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #criadero {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #criadero .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+    width: 90% !important;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+  #criadero .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #criadero .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #criadero .crias {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "crias1 crias2" "crias3 crias4" "crias5 crias6";
+  }
+  #criadero .crias .tiposcrias {
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFCFC;
+    margin-top: 15%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+}
+/*AVES JAULAS*/
+@media screen and (min-width: 768px) {
+  #jaulas {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #jaulas .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+  }
+  #jaulas .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #jaulas .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #jaulas .variedad_titulo {
+    display: flex;
+    padding-left: 5%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 2%;
+    margin-top: 10%;
+  }
+  #jaulas .variedad_jaulas {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+    grid-template-areas: "jaula1 jaula2 jaula3" "jaula4 jaula5 jaula6" "jaula7 jaula8 jaula9" "jaula10 jaula11 jaula12" "jaula13 jaula14 jaula15" "jaula16 jaula17 jaula18" "jaula19 jaula20 jaula21" "jaula22 jaula23 jaula24" "jaula25 jaula26 jaula27" "jaula28 jaula29 jaula30" "jaula31 jaula999 jaula998";
+    padding-top: 5%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas {
+    grid-area: jaula1;
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFCFC;
+    margin-top: 15%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(2) {
+    grid-area: jaula2;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(3) {
+    grid-area: jaula3;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(4) {
+    grid-area: jaula4;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(5) {
+    grid-area: jaula5;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(6) {
+    grid-area: jaula6;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(7) {
+    grid-area: jaula7;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(8) {
+    grid-area: jaula8;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(9) {
+    grid-area: jaula9;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(10) {
+    grid-area: jaula10;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(11) {
+    grid-area: jaula11;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(12) {
+    grid-area: jaula12;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(13) {
+    grid-area: jaula13;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(14) {
+    grid-area: jaula14;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(15) {
+    grid-area: jaula15;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(16) {
+    grid-area: jaula16;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(17) {
+    grid-area: jaula17;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(18) {
+    grid-area: jaula18;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(19) {
+    grid-area: jaula19;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(20) {
+    grid-area: jaula20;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(21) {
+    grid-area: jaula21;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(22) {
+    grid-area: jaula22;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(23) {
+    grid-area: jaula23;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(24) {
+    grid-area: jaula24;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(25) {
+    grid-area: jaula25;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(26) {
+    grid-area: jaula26;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(27) {
+    grid-area: jaula27;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(28) {
+    grid-area: jaula28;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(29) {
+    grid-area: jaula29;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(30) {
+    grid-area: jaula30;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas:nth-child(31) {
+    grid-area: jaula31;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #jaulas {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #jaulas .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+    width: 90% !important;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+  #jaulas .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #jaulas .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #jaulas .variedad_titulo {
+    display: flex;
+    padding-left: 5%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 2%;
+    margin-top: 10%;
+  }
+  #jaulas .variedad_jaulas {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "jaula1 jaula2" "jaula3 jaula4" "jaula5 jaula6" "jaula7 jaula8" "jaula9 jaula10" "jaula11 jaula12" "jaula13 jaula14" "jaula15 jaula16" "jaula17 jaula18" "jaula19 jaula20" "jaula21 jaula22" "jaula23 jaula24" "jaula25 jaula26" "jaula27 jaula28" "jaula29 jaula30" "jaula31 jaula999";
+    padding-top: 5%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #jaulas .variedad_jaulas .tiposjaulas {
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFCFC;
+    margin-top: 15%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+}
+/*AVES PAJARERIA*/
+#avespajareria {
   padding-bottom: 5%;
-  margin-left: 10%;
   padding-left: 10%;
   padding-right: 10%;
+  margin-bottom: 5%;
 }
-#animales .animales-cat {
-  grid-area: animal_pajaro;
-  background-color: #FBFCFC;
-  border-radius: 10%;
-  padding-block: 5%;
-  width: 60%;
-  height: 80%;
-  text-align: center;
-}
-#animales .animales-cat:nth-child(2) {
-  grid-area: animal_peces;
-}
-#animales .animales-cat:nth-child(3) {
-  grid-area: animal_cobayos;
-}
-#animales .animales-cat:hover {
-  transform: scale(1.1, 1.1);
-  transition: 0.3s;
-}
-
-.animales_articulo {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+#avespajareria .pajareria {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: auto;
+  grid-template-areas: "paja1 paja2 paja3" "paja4 paja5 paja6";
+  padding-top: 5%;
   margin: auto;
-}
-.animales_articulo .titulo_animales {
-  text-align: center;
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-.animales_articulo .texto_animales {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-align: center;
-  width: 95%;
-  margin: auto;
-  padding-bottom: 1%;
-}
-
-.variedad_titulo {
-  display: flex;
   padding-left: 5%;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  border-top-style: solid;
-  border-width: 1px;
-  padding-top: 2%;
-  margin-top: 10%;
+  padding-right: 5%;
 }
-
-.box-style-animales, .diferentes_cobayos .tiposcobayos, .diferentes_peces .tipospeces, .diferentes_pajaros .tipospajaros {
+#avespajareria .pajareria .tipospajareria {
+  grid-area: paja1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -409,190 +1167,802 @@ body header {
   border-width: 1px;
   border-color: rgb(209, 209, 209);
   width: 80%;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+#avespajareria .pajareria .tipospajareria:nth-child(2) {
+  grid-area: paja2;
+}
+#avespajareria .pajareria .tipospajareria:nth-child(3) {
+  grid-area: paja3;
+}
+#avespajareria .pajareria .tipospajareria:nth-child(4) {
+  grid-area: paja4;
+}
+#avespajareria .pajareria .tipospajareria:nth-child(5) {
+  grid-area: paja5;
+}
+#avespajareria .pajareria .tipospajareria:nth-child(6) {
+  grid-area: paja6;
 }
 
-/* ANIMALES PAJAROS */
-#animales_pajaros, #animales_cobayos, #animales_peces {
-  padding-bottom: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
+/*AVES EXOTICOS*/
+@media screen and (min-width: 768px) {
+  #avesexoticos {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #avesexoticos .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+  }
+  #avesexoticos .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #avesexoticos .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #avesexoticos .variedad_titulo {
+    display: flex;
+    padding-left: 5%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 2%;
+    margin-top: 10%;
+  }
+  #avesexoticos .exoticos {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: auto;
+    grid-template-areas: "exoticos1 exoticos2 exoticos3" "exoticos4 exoticos5 exoticos6" "exoticos7 exoticos8 exoticos9" "exoticos10 exoticos11 exoticos12" "exoticos13 exoticos14 exoticos15" "exoticos16 exoticos17 exoticos18";
+    padding-top: 5%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #avesexoticos .exoticos .tiposexoticos {
+    grid-area: exoticos1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5%;
+    background-color: #FBFCFC;
+    margin-top: 10%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    width: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(2) {
+    grid-area: exoticos2;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(3) {
+    grid-area: exoticos3;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(4) {
+    grid-area: exoticos4;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(5) {
+    grid-area: exoticos5;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(6) {
+    grid-area: exoticos6;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(7) {
+    grid-area: exoticos7;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(8) {
+    grid-area: exoticos8;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(9) {
+    grid-area: exoticos9;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(10) {
+    grid-area: exoticos10;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(11) {
+    grid-area: exoticos11;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(12) {
+    grid-area: exoticos12;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(13) {
+    grid-area: exoticos13;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(14) {
+    grid-area: exoticos14;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(15) {
+    grid-area: exoticos15;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(16) {
+    grid-area: exoticos16;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(17) {
+    grid-area: exoticos17;
+  }
+  #avesexoticos .exoticos .tiposexoticos:nth-child(18) {
+    grid-area: exoticos18;
+  }
+  #avesexoticos .video_youtube {
+    grid-area: video_pajaros;
+  }
+  #avesexoticos .video_youtube .video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin: auto;
+    border-width: 1px;
+    width: 90%;
+  }
 }
-
-.diferentes_pajaros {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: auto;
-  grid-template-areas: "pajaro1 pajaro2 pajaro3" "pajaro4 pajaro5 pajaro6" "pajaro7 pajaro8 pajaro9" "video_pajaros video_pajaros video_pajaros";
-  padding-top: 5%;
-  margin: auto;
-  gap: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
-  margin-bottom: 20%;
-}
-.diferentes_pajaros .tipospajaros {
-  grid-area: pajaro1;
-}
-.diferentes_pajaros .tipospajaros:nth-child(2) {
-  grid-area: pajaro2;
-}
-.diferentes_pajaros .tipospajaros:nth-child(3) {
-  grid-area: pajaro3;
-}
-.diferentes_pajaros .tipospajaros:nth-child(4) {
-  grid-area: pajaro4;
-}
-.diferentes_pajaros .tipospajaros:nth-child(5) {
-  grid-area: pajaro5;
-}
-.diferentes_pajaros .tipospajaros:nth-child(6) {
-  grid-area: pajaro6;
-}
-.diferentes_pajaros .tipospajaros:nth-child(7) {
-  grid-area: pajaro7;
-}
-.diferentes_pajaros .tipospajaros:nth-child(8) {
-  grid-area: pajaro8;
-}
-.diferentes_pajaros .tipospajaros:nth-child(9) {
-  grid-area: pajaro9;
-}
-.diferentes_pajaros .tipospajaros:hover {
-  transform: scale(1.1, 1.1);
-  transition: 0.3s;
-}
-
-.video_pajaros {
-  grid-area: video_pajaros;
-}
-.video_pajaros .video {
-  display: flex;
-  justify-content: center;
-  padding-left: 5%;
-  padding-bottom: 5%;
-  padding-top: 2%;
-  margin-top: 10%;
-  margin: auto;
-  border-bottom-style: solid;
-  border-width: 1px;
-  width: 90%;
-}
-
-.pajaros_articulo {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  margin: auto;
-  margin-top: 10%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-.pajaros_articulo .titulo_pajaros {
-  text-align: center;
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-.pajaros_articulo .texto_pajaros {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 95%;
-  margin: auto;
-  padding-bottom: 1%;
-}
-
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  .diferentes_pajaros {
+  #avesexoticos {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #avesexoticos .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+    width: 90% !important;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+  #avesexoticos .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #avesexoticos .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #avesexoticos .variedad_titulo {
+    display: flex;
+    padding-left: 5%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 2%;
+    margin-top: 10%;
+  }
+  #avesexoticos .exoticos {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: auto;
-    grid-template-areas: "pajaro1 pajaro2" "pajaro3 pajaro4" "pajaro5 pajaro6" "pajaro7 pajaro8" "pajaro9 pajaro9";
+    grid-template-areas: "exoticos1 exoticos2" "exoticos3 exoticos4" "exoticos5 exoticos6" "exoticos7 exoticos8" "exoticos9 exoticos10" "exoticos11 exoticos12" "exoticos13 exoticos14" "exoticos15 exoticos16" "exoticos17 exoticos18";
     padding-top: 5%;
-    padding-bottom: 10%;
     margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
   }
-  .diferentes_pajaros .tipospajaros {
-    width: 100%;
-  }
-  .video_pajaros {
-    grid-area: video_pajaros;
-    margin-top: 80%;
-  }
-  .video_pajaros .video {
-    display: flex;
-    border-bottom-style: solid;
-    border-width: 1px;
-    padding-bottom: 5%;
-    height: 50% !important;
-    margin: auto;
-  }
-  .animales_articulo {
-    width: 100%;
-    margin-top: 7%;
-  }
-  .pajaros_articulo {
+  #avesexoticos .exoticos .tiposexoticos {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5%;
+    background-color: #FBFCFC;
+    margin-top: 10%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    width: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+}
+/*-----------------------------------------------------------*/
+/*PECES ACCESORIOS*/
+@media screen and (min-width: 768px) {
+  #peces_accesorios {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #peces_accesorios .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+  }
+  #peces_accesorios .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #peces_accesorios .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas: "accesope1 accesope2 accesope3 accesope5" "accesope4 accesope4 accesope4 accesope4" "accesope6 accesope7 accesope8 accesope9" "accesope10 accesope11 accesope12 accesope13" "accesope14 accesope15 accesope16 accesope17" "accesope18 accesope19 accesope20 accesope21" "accesope22 accesope23 accesope24 accesope25" "accesope26 accesope27 accesope28 accesope29";
+    padding-top: 5%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* TABLA */
+    /* FIN TABLA */
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces {
+    grid-area: accesope1;
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFCFC;
+    margin-top: 15%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(2) {
+    grid-area: accesope2;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(3) {
+    grid-area: accesope3;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tabla_peceras {
+    grid-area: accesope4;
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFCFC;
+    margin-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tabla_peceras .variedad_titulo_accesopeces {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
     box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    margin-top: 20%;
-    width: 100%;
+    width: 33%;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tabla_peceras .variedad_titulo_accesopeces_2 {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 33%;
+    margin-top: 6%;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(5) {
+    grid-area: accesope5;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(6) {
+    grid-area: accesope6;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(7) {
+    grid-area: accesope7;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(8) {
+    grid-area: accesope8;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(9) {
+    grid-area: accesope9;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(10) {
+    grid-area: accesope10;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(11) {
+    grid-area: accesope11;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(12) {
+    grid-area: accesope12;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(13) {
+    grid-area: accesope13;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(14) {
+    grid-area: accesope14;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(15) {
+    grid-area: accesope15;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(16) {
+    grid-area: accesope16;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(17) {
+    grid-area: accesope17;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(18) {
+    grid-area: accesope18;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(19) {
+    grid-area: accesope19;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(20) {
+    grid-area: accesope20;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(21) {
+    grid-area: accesope21;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(22) {
+    grid-area: accesope22;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(23) {
+    grid-area: accesope23;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(24) {
+    grid-area: accesope24;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(25) {
+    grid-area: accesope25;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(26) {
+    grid-area: accesope26;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(27) {
+    grid-area: accesope27;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces:nth-child(28) {
+    grid-area: accesope28;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #peces_accesorios {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #peces_accesorios .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+    width: 90% !important;
+    margin-top: 5%;
     margin-bottom: 10%;
   }
-  .pajaros_articulo .texto_pajaros {
+  #peces_accesorios .titulo_pagina .titulo {
     text-align: center;
-    width: 90%;
+    padding-bottom: 1%;
+  }
+  #peces_accesorios .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "accesope1 accesope2" "accesope3 accesope5" "accesope4 accesope4" "accesope6 accesope7" "accesope8 accesope9" "accesope10 accesope11" "accesope12 accesope13" "accesope14 accesope15" "accesope16 accesope17" "accesope18 accesope19" "accesope20 accesope21" "accesope22 accesope23" "accesope24 accesope25" "accesope26 accesope27" "accesope28 accesope29";
+    padding-top: 5%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #peces_accesorios .diferentes_pecesaccesorios .tiposaccesopeces {
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFCFC;
+    margin-top: 15%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  #peces_accesorios .variedad_titulo_accesopeces {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 80%;
+  }
+  #peces_accesorios .variedad_titulo_accesopeces_2 {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    margin-bottom: 3%;
+    box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 80%;
   }
 }
-/* ANIMALES PECES */
-.diferentes_peces {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: auto;
-  grid-template-areas: "peces1 peces2 peces3" "peces4 peces5 peces6";
-  padding-top: 5%;
-  margin: auto;
-  gap: 5%;
+/*PECES ACUARIO*/
+#pecesacuario {
+  padding-bottom: 5%;
   padding-left: 10%;
   padding-right: 10%;
+  margin-bottom: 5%;
 }
-.diferentes_peces .tipospeces {
-  grid-area: peces1;
+#pecesacuario .acuario {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: auto;
+  grid-template-areas: "acua1 acua2 acua3" "acua4 acua5 acua6" "acua7 acua8 acua9";
+  padding-top: 5%;
+  margin: auto;
+  padding-left: 5%;
+  padding-right: 5%;
 }
-.diferentes_peces .tipospeces:nth-child(2) {
-  grid-area: peces2;
-}
-.diferentes_peces .tipospeces:nth-child(3) {
-  grid-area: peces3;
-}
-.diferentes_peces .tipospeces:nth-child(4) {
-  grid-area: peces4;
-}
-.diferentes_peces .tipospeces:nth-child(5) {
-  grid-area: peces5;
-}
-.diferentes_peces .tipospeces:nth-child(6) {
-  grid-area: peces6;
-}
-.diferentes_peces .tipospeces:hover {
-  transform: scale(1.1, 1.1);
-  transition: 0.3s;
-}
-
-.peces_articulo {
+#pecesacuario .acuario .tiposacuario {
+  grid-area: acua1;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5%;
+  background-color: #FBFCFC;
+  margin-top: 10%;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
   width: 80%;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+#pecesacuario .acuario .tiposacuario:nth-child(2) {
+  grid-area: acua2;
+}
+#pecesacuario .acuario .tiposacuario:nth-child(3) {
+  grid-area: acua3;
+}
+#pecesacuario .acuario .tiposacuario:nth-child(4) {
+  grid-area: acua4;
+}
+#pecesacuario .acuario .tiposacuario:nth-child(5) {
+  grid-area: acua5;
+}
+#pecesacuario .acuario .tiposacuario:nth-child(6) {
+  grid-area: acua6;
+}
+#pecesacuario .acuario .tiposacuario:nth-child(7) {
+  grid-area: acua7;
+}
+#pecesacuario .acuario .tiposacuario:nth-child(8) {
+  grid-area: acua8;
+}
+
+/* PECES ANIMALES */
+@media screen and (min-width: 768px) {
+  #animales_peces {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #animales_peces .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+  }
+  #animales_peces .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #animales_peces .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #animales_peces .variedad_titulo {
+    display: flex;
+    padding-left: 5%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 2%;
+    margin-top: 10%;
+  }
+  #animales_peces .diferentes_peces {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+    grid-template-areas: "peces1 peces2 peces3" "peces4 peces5 peces6";
+    padding-top: 5%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #animales_peces .diferentes_peces .tipospeces {
+    grid-area: peces1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5%;
+    background-color: #FBFCFC;
+    margin-top: 10%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    width: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  #animales_peces .diferentes_peces .tipospeces:nth-child(2) {
+    grid-area: peces2;
+  }
+  #animales_peces .diferentes_peces .tipospeces:nth-child(3) {
+    grid-area: peces3;
+  }
+  #animales_peces .diferentes_peces .tipospeces:nth-child(4) {
+    grid-area: peces4;
+  }
+  #animales_peces .diferentes_peces .tipospeces:nth-child(5) {
+    grid-area: peces5;
+  }
+  #animales_peces .diferentes_peces .tipospeces:nth-child(6) {
+    grid-area: peces6;
+  }
+  #animales_peces .diferentes_peces .tipospeces:hover {
+    transform: scale(1.1, 1.1);
+    transition: 0.3s;
+  }
+  #animales_peces .peces_articulo {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+    margin-top: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  #animales_peces .peces_articulo .titulo_peces {
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  #animales_peces .peces_articulo .texto_peces {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #animales_peces {
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+  }
+  #animales_peces .titulo_pagina {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+    width: 90% !important;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+  #animales_peces .titulo_pagina .titulo {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  #animales_peces .titulo_pagina .texto_titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+  #animales_peces .variedad_titulo {
+    display: flex;
+    padding-left: 5%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 2%;
+    margin-top: 10%;
+  }
+  #animales_peces .diferentes_peces {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "peces1 peces2" "peces3 peces4" "peces5 peces6";
+    padding-top: 5%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #animales_peces .diferentes_peces .tipospeces {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5%;
+    background-color: #FBFCFC;
+    margin-top: 10%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    width: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  #animales_peces .peces_articulo {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+    margin-top: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  #animales_peces .peces_articulo .titulo_peces {
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  #animales_peces .peces_articulo .texto_peces {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: auto;
+    padding-bottom: 1%;
+  }
+}
+/* HAMSTERS COBAYOS */
+#animales_cobayoshamsters {
+  text-align: center;
+}
+#animales_cobayoshamsters .titulo_pagina {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
@@ -600,101 +1970,261 @@ body header {
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   margin: auto;
-  margin-top: 10%;
-  padding-top: 2%;
-  padding-bottom: 2%;
 }
-.peces_articulo .titulo_peces {
+#animales_cobayoshamsters .titulo_pagina .titulo {
   text-align: center;
-  padding-top: 1%;
   padding-bottom: 1%;
 }
-.peces_articulo .texto_peces {
+#animales_cobayoshamsters .titulo_pagina .texto_titulo {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 95%;
+  text-align: center;
+  width: 70%;
   margin: auto;
   padding-bottom: 1%;
 }
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-  .diferentes_peces {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
-    grid-template-areas: "peces1 peces2" "peces3 peces4" "peces5 peces6";
-    padding-top: 5%;
-    margin: auto;
-    gap: 5%;
-    padding-bottom: 10%;
-    text-align: center;
-  }
-  .diferentes_peces .tipospeces {
-    width: 100% !important;
-  }
-  .peces_articulo {
-    display: flex;
-    flex-direction: column;
-    background: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    margin-top: 20%;
-    width: 100%;
-    text-align: center;
-  }
-  .variedad_titulo {
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30%;
-    border-top-style: solid;
-    border-width: 1px;
-    padding-top: 5%;
-  }
-}
-/* ANIMALES COBAYOS */
-#animales_cobayos {
-  text-align: center;
-}
-
-.diferentes_cobayos {
+#animales_cobayoshamsters .diferentes_cobayos {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
-  grid-template-areas: "cobayo1 cobayo2 cobayo3" "cobayo4 cobayo5 cobayo6";
+  grid-template-areas: "cobayo1 cobayo2 cobayo3 cobayo4" "cobayo5 cobayo6 cobayo7 cobayo8";
   padding-top: 5%;
   margin: auto;
-  gap: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
-.diferentes_cobayos .tiposcobayos {
+#animales_cobayoshamsters .diferentes_cobayos .tiposcobayos {
   grid-area: cobayo1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5%;
+  background-color: #FBFCFC;
+  margin-top: 10%;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+  width: 80%;
+  margin-left: 8%;
+  margin-right: 8%;
 }
-.diferentes_cobayos .tiposcobayos:nth-child(2) {
+#animales_cobayoshamsters .diferentes_cobayos .tiposcobayos:nth-child(2) {
   grid-area: cobayo2;
 }
-.diferentes_cobayos .tiposcobayos:nth-child(3) {
+#animales_cobayoshamsters .diferentes_cobayos .tiposcobayos:nth-child(3) {
   grid-area: cobayo3;
 }
-.diferentes_cobayos .tiposcobayos:nth-child(4) {
+#animales_cobayoshamsters .diferentes_cobayos .tiposcobayos:nth-child(4) {
   grid-area: cobayo4;
 }
-.diferentes_cobayos .tiposcobayos:nth-child(5) {
+#animales_cobayoshamsters .diferentes_cobayos .tiposcobayos:nth-child(5) {
   grid-area: cobayo5;
 }
-.diferentes_cobayos .tiposcobayos:nth-child(6) {
+#animales_cobayoshamsters .diferentes_cobayos .tiposcobayos:nth-child(6) {
   grid-area: cobayo6;
 }
-.diferentes_cobayos .tiposcobayos:hover {
+#animales_cobayoshamsters .diferentes_cobayos .tiposcobayos:nth-child(7) {
+  grid-area: cobayo7;
+}
+#animales_cobayoshamsters .diferentes_cobayos .tiposcobayos:nth-child(8) {
+  grid-area: cobayo8;
+}
+#animales_cobayoshamsters .diferentes_cobayos .tiposcobayos:hover {
   transform: scale(1.1, 1.1);
   transition: 0.3s;
+}
+#animales_cobayoshamsters .accesorios_cobayos {
+  margin-bottom: 20%;
+}
+#animales_cobayoshamsters .accesorios_cobayos .accesorio_articulo {
+  margin-top: 20% !important;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: auto;
+  grid-template-areas: "accesoco1 accesoco2 accesoco3 accesoco4" "accesoco5 accesoco6 accesoco7 accesoco8" "accesoco9 accesoco10 accesoco11 accesoco12" "accesoco13 accesoco14 accesoco15";
+  padding-top: 5%;
+  margin: auto;
+  gap: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos {
+  grid-area: accesoco1;
+  display: flex;
+  flex-direction: column;
+  background-color: #FBFCFC;
+  margin-top: 15%;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+  margin-left: 8%;
+  margin-right: 8%;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(2) {
+  grid-area: accesoco2;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(3) {
+  grid-area: accesoco3;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(4) {
+  grid-area: accesoco4;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(5) {
+  grid-area: accesoco5;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(6) {
+  grid-area: accesoco6;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(7) {
+  grid-area: accesoco7;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(8) {
+  grid-area: accesoco8;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(9) {
+  grid-area: accesoco9;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(10) {
+  grid-area: accesoco10;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(11) {
+  grid-area: accesoco11;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(12) {
+  grid-area: accesoco12;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(13) {
+  grid-area: accesoco13;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(14) {
+  grid-area: accesoco14;
+}
+#animales_cobayoshamsters .accesorios_cobayos .diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(15) {
+  grid-area: accesoco15;
+}
+#animales_cobayoshamsters .diferentes_hamsters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "hamster1 hamster2 hamster3 hamster4" "hamster5 hamster6 hamster7 hamster8";
+  padding-top: 5%;
+  margin: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#animales_cobayoshamsters .diferentes_hamsters .tiposhamsters {
+  grid-area: hamster1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5%;
+  background-color: #FBFCFC;
+  margin-top: 10%;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+  width: 80%;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+#animales_cobayoshamsters .diferentes_hamsters .tiposhamsters:nth-child(2) {
+  grid-area: hamster2;
+}
+#animales_cobayoshamsters .diferentes_hamsters .tiposhamsters:nth-child(3) {
+  grid-area: hamster3;
+}
+#animales_cobayoshamsters .diferentes_hamsters .tiposhamsters:nth-child(4) {
+  grid-area: hamster4;
+}
+#animales_cobayoshamsters .diferentes_hamsters .tiposhamsters:nth-child(5) {
+  grid-area: hamster5;
+}
+#animales_cobayoshamsters .diferentes_hamsters .tiposhamsters:nth-child(6) {
+  grid-area: hamster6;
+}
+#animales_cobayoshamsters .diferentes_hamsters .tiposhamsters:nth-child(7) {
+  grid-area: hamster7;
+}
+#animales_cobayoshamsters .diferentes_hamsters .tiposhamsters:nth-child(8) {
+  grid-area: hamster8;
+}
+#animales_cobayoshamsters .diferentes_hamsters .tiposhamsters:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.3s;
+}
+#animales_cobayoshamsters .diferentes_hamstersaccesorios {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: auto;
+  grid-template-areas: "accesoham1 accesoham2 accesoham3 accesoham4" "accesoham5 accesoham6 accesoham7 accesoham8" "accesoham9 accesoham10 accesoham11 accesoham12";
+  padding-top: 5%;
+  margin: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#animales_cobayoshamsters .diferentes_hamstersaccesorios .tiposaccesohamsters {
+  grid-area: accesoham1;
+  display: flex;
+  flex-direction: column;
+  background-color: #FBFCFC;
+  margin-top: 15%;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+  margin-left: 8%;
+  margin-right: 8%;
+}
+#animales_cobayoshamsters .diferentes_hamstersaccesorios .tiposaccesohamsters:nth-child(2) {
+  grid-area: accesoham2;
+}
+#animales_cobayoshamsters .diferentes_hamstersaccesorios .tiposaccesohamsters:nth-child(3) {
+  grid-area: accesoham3;
+}
+#animales_cobayoshamsters .diferentes_hamstersaccesorios .tiposaccesohamsters:nth-child(4) {
+  grid-area: accesoham4;
+}
+#animales_cobayoshamsters .diferentes_hamstersaccesorios .tiposaccesohamsters:nth-child(5) {
+  grid-area: accesoham5;
+}
+#animales_cobayoshamsters .diferentes_hamstersaccesorios .tiposaccesohamsters:nth-child(6) {
+  grid-area: accesoham6;
+}
+#animales_cobayoshamsters .diferentes_hamstersaccesorios .tiposaccesohamsters:nth-child(7) {
+  grid-area: accesoham7;
+}
+#animales_cobayoshamsters .diferentes_hamstersaccesorios .tiposaccesohamsters:nth-child(8) {
+  grid-area: accesoham8;
+}
+#animales_cobayoshamsters .variedad_titulo .video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  margin: auto;
+  border-width: 1px;
+  width: 90%;
+}
+
+.acceso_cobayos_texto {
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: baseline;
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
@@ -730,49 +2260,14 @@ body header {
     grid-area: cobayo6;
   }
 }
-/* ACCESORIOS */
-#accesorios {
-  display: grid;
-  grid-template-columns: repeat(3, 33%);
-  grid-template-rows: 1fr;
-  grid-template-areas: "acceso_pajaros acceso_peces acceso_cobayos";
+/*ERIZOS*/
+#erizos {
   padding-bottom: 5%;
-  margin-left: 10%;
   padding-left: 10%;
   padding-right: 10%;
+  margin-bottom: 5%;
 }
-#accesorios .accesorios {
-  grid-area: acceso_pajaros;
-  background-color: #FBFCFC;
-  border-radius: 10%;
-  padding-block: 5%;
-  width: 60%;
-  height: 80%;
-  text-align: center;
-}
-#accesorios:hover {
-  transform: scale(1.1, 1.1);
-  transition: 0.3s;
-}
-#accesorios .accesorios:nth-child(2) {
-  grid-area: acceso_peces;
-}
-#accesorios .accesorios:nth-child(3) {
-  grid-area: acceso_cobayos;
-}
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-  #accesorios {
-    display: grid;
-    grid-template-columns: 90%;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "acceso_pajaros" "acceso_peces" "acceso_cobayos";
-    padding-top: 10%;
-    padding-bottom: 10%;
-    margin-left: 30%;
-  }
-}
-.accesorio_articulo {
+#erizos .titulo_pagina {
   display: flex;
   flex-direction: column;
   width: 65%;
@@ -786,11 +2281,11 @@ body header {
   border: 1px solid rgba(255, 255, 255, 0.18);
   margin: auto;
 }
-.accesorio_articulo .titulo_accesorio {
+#erizos .titulo_pagina .titulo {
   text-align: center;
   padding-bottom: 1%;
 }
-.accesorio_articulo .texto_accesorio {
+#erizos .titulo_pagina .texto_titulo {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -799,23 +2294,28 @@ body header {
   margin: auto;
   padding-bottom: 1%;
 }
-
-.texto-box {
+#erizos .variedad_titulo {
   display: flex;
-  justify-content: center;
-  margin-bottom: 3%;
-  padding: 5%;
+  padding-left: 5%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-top-style: solid;
+  border-width: 1px;
+  padding-top: 2%;
+  margin-top: 10%;
 }
-
-.acceso_p {
-  font-size: medium;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 5%;
+#erizos .diferentes_erizos {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: auto;
+  grid-template-areas: "erizo1 erizo2 erizo3" "erizo4 erizo5 erizo6" "erizo7 erizo8 erizo9";
+  padding-top: 5%;
+  margin: auto;
+  padding-left: 5%;
+  padding-right: 5%;
 }
-
-.box-style-accesorios, .diferentes_cobayosaccesorios .tiposaccesocobayos, .diferentes_pecesaccesorios .tiposaccesopeces, .diferentes_pajarosaccesorios .tiposaccesopajaros {
+#erizos .diferentes_erizos .tiposerizos {
   display: flex;
   flex-direction: column;
   background-color: #FBFCFC;
@@ -824,385 +2324,246 @@ body header {
   border-style: solid;
   border-width: 1px;
   border-color: rgb(209, 209, 209);
+  margin-left: 8%;
+  margin-right: 8%;
+  grid-area: erizo1;
+}
+#erizos .diferentes_erizos .tiposerizos:nth-child(2) {
+  grid-area: erizo2;
+}
+#erizos .diferentes_erizos .tiposerizos:nth-child(3) {
+  grid-area: erizo3;
+}
+#erizos .diferentes_erizos .tiposerizos:nth-child(4) {
+  grid-area: erizo4;
+}
+#erizos .diferentes_erizos .tiposerizos:nth-child(5) {
+  grid-area: erizo5;
+}
+#erizos .diferentes_erizos .tiposerizos:nth-child(6) {
+  grid-area: erizo6;
+}
+#erizos .diferentes_erizos .tiposerizos:nth-child(7) {
+  grid-area: erizo7;
+}
+#erizos .diferentes_erizos .tiposerizos:nth-child(8) {
+  grid-area: erizo8;
+}
+#erizos .accesorio_articulo {
+  margin-top: 10%;
+}
+#erizos .subtitulo_pagina {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: auto;
+  margin-top: 10%;
+}
+#erizos .subtitulo_pagina .titulo {
+  text-align: center;
+  padding-bottom: 1%;
+}
+#erizos .subtitulo_pagina .texto_titulo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  padding-bottom: 1%;
+}
+#erizos .video_youtube {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  margin: auto;
+  border-width: 1px;
+  width: 90%;
 }
 
-/* ACCESORIOS PAJAROS */
-#accesorios_pajaros, #accesorios_cobayos, #accesorios_peces {
+/*ALIMENTOS*/
+#alimento_pajaropeces {
   padding-bottom: 5%;
   padding-left: 10%;
   padding-right: 10%;
   margin-bottom: 5%;
 }
-
-.diferentes_pajarosaccesorios {
+#alimento_pajaropeces .titulo_pagina {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: auto;
+}
+#alimento_pajaropeces .titulo_pagina .titulo {
+  text-align: center;
+  padding-bottom: 1%;
+}
+#alimento_pajaropeces .titulo_pagina .texto_titulo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  padding-bottom: 1%;
+}
+#alimento_pajaropeces .variedad_titulo {
+  display: flex;
+  padding-left: 5%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-top-style: solid;
+  border-width: 1px;
+  padding-top: 2%;
+  margin-top: 10%;
+}
+#alimento_pajaropeces .alimentos_variedades {
   display: grid;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(3, 33%);
   grid-template-rows: auto;
-  grid-template-areas: "accesopa1 accesopa2 accesopa3 accesopa4" "accesopa5 accesopa6 accesopa7 accesopa8" "accesopa9 accesopa10 accesopa11 accesopa12";
+  grid-template-areas: "alimen1 alimen2 alimen3" "alimen4 alimen5 alimen6" "alimen7 alimen8 alimen9" "alimen10 alimen11 alimen12";
   padding-top: 5%;
   margin: auto;
-  gap: 2%;
   padding-left: 5%;
   padding-right: 5%;
 }
-.diferentes_pajarosaccesorios .tiposaccesopajaros {
-  grid-area: accesopa1;
-}
-.diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(2) {
-  grid-area: accesopa2;
-}
-.diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(3) {
-  grid-area: accesopa3;
-}
-.diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(4) {
-  grid-area: accesopa4;
-}
-.diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(5) {
-  grid-area: accesopa5;
-}
-.diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(6) {
-  grid-area: accesopa6;
-}
-.diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(7) {
-  grid-area: accesopa7;
-}
-.diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(8) {
-  grid-area: accesopa8;
-}
-.diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(9) {
-  grid-area: accesopa9;
-}
-.diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(10) {
-  grid-area: accesopa10;
-}
-.diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(11) {
-  grid-area: accesopa11;
-}
-.diferentes_pajarosaccesorios .tiposaccesopajaros:nth-child(12) {
-  grid-area: accesopa12;
-}
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-  #accesorios_pajaros, #accesorios_cobayos, #accesorios_peces {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .diferentes_pajarosaccesorios {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(6, 2fr);
-    grid-template-areas: "accesopa1 accesopa2" "accesopa3 accesopa4" "accesopa5 accesopa6" "accesopa7 accesopa8" "accesopa9 accesopa10" "accesopa11 accesopa12";
-    padding-top: 5%;
-    margin: auto;
-    gap: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-}
-/* ACCESORIOS PECES */
-#accesorios_peces {
-  margin-bottom: 10%;
-}
-
-.diferentes_pecesaccesorios {
-  display: grid;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: auto;
-  grid-template-areas: "accesope1 accesope2 accesope3 accesope5" "accesope4 accesope4 accesope4 accesope4" "accesope6 accesope7 accesope8 accesope9" "accesope10 accesope11 accesope12 accesope15";
-  padding-top: 5%;
-  margin: auto;
-  gap: 2%;
-  padding-left: 5%;
-  padding-right: 5%;
-  /* TABLA */
-  /* FIN TABLA */
-}
-.diferentes_pecesaccesorios .tiposaccesopeces {
-  grid-area: accesope1;
-}
-.diferentes_pecesaccesorios .tiposaccesopeces:nth-child(2) {
-  grid-area: accesope2;
-}
-.diferentes_pecesaccesorios .tiposaccesopeces:nth-child(3) {
-  grid-area: accesope3;
-}
-.diferentes_pecesaccesorios .tabla_peceras {
-  grid-area: accesope4;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos {
   display: flex;
   flex-direction: column;
   background-color: #FBFCFC;
-  margin-top: 5%;
-  padding-bottom: 5%;
-  text-align: center;
+  margin-top: 15%;
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
   border-color: rgb(209, 209, 209);
+  margin-left: 8%;
+  margin-right: 8%;
+  grid-area: alimen1;
 }
-.diferentes_pecesaccesorios .tabla_peceras .variedad_titulo_accesopeces, .diferentes_pecesaccesorios .tabla_peceras .variedad_titulo_accesopeces_2 {
-  display: flex;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3%;
-  margin-bottom: 3%;
-  box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  width: 33%;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos:nth-child(2) {
+  grid-area: alimen2;
 }
-.diferentes_pecesaccesorios .tabla_peceras .variedad_titulo_accesopeces_2 {
-  margin-top: 6%;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos:nth-child(3) {
+  grid-area: alimen3;
 }
-.diferentes_pecesaccesorios .tiposaccesopeces:nth-child(5) {
-  grid-area: accesope5;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos:nth-child(4) {
+  grid-area: alimen4;
 }
-.diferentes_pecesaccesorios .tiposaccesopeces:nth-child(6) {
-  grid-area: accesope6;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos:nth-child(5) {
+  grid-area: alimen5;
 }
-.diferentes_pecesaccesorios .tiposaccesopeces:nth-child(7) {
-  grid-area: accesope7;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos:nth-child(6) {
+  grid-area: alimen6;
 }
-.diferentes_pecesaccesorios .tiposaccesopeces:nth-child(8) {
-  grid-area: accesope8;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos:nth-child(7) {
+  grid-area: alimen7;
 }
-.diferentes_pecesaccesorios .tiposaccesopeces:nth-child(9) {
-  grid-area: accesope9;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos:nth-child(8) {
+  grid-area: alimen8;
 }
-.diferentes_pecesaccesorios .tiposaccesopeces:nth-child(10) {
-  grid-area: accesope10;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos:nth-child(9) {
+  grid-area: alimen9;
 }
-.diferentes_pecesaccesorios .tiposaccesopeces:nth-child(11) {
-  grid-area: accesope11;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos:nth-child(10) {
+  grid-area: alimen10;
 }
-.diferentes_pecesaccesorios .tiposaccesopeces:nth-child(12) {
-  grid-area: accesope12;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos:nth-child(11) {
+  grid-area: alimen11;
 }
-.diferentes_pecesaccesorios .tiposaccesopeces:nth-child(13) {
-  grid-area: accesope13;
+#alimento_pajaropeces .alimentos_variedades .tiposalimentos:nth-child(12) {
+  grid-area: alimen12;
 }
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-  #accesorios_peces {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .accesorio_articulo {
-    width: 100%;
-  }
-  .diferentes_pecesaccesorios {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(7, 2fr);
-    grid-template-areas: "accesope1 accesope2" "accesope4 accesope4" "accesope3 accesope5" "accesope6 accesope7" "accesope8 accesope9" "accesope10 accesope11" "accesope12 accesope12";
-    padding-top: 5%;
-    margin: auto;
-    gap: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .diferentes_pecesaccesorios .tiposaccesopeces {
-    grid-area: accesope1;
-    display: flex;
-    flex-direction: column;
-    background-color: #FBFCFC;
-    padding: 1%;
-    text-align: center;
-  }
-  .variedad_titulo_accesopeces, .diferentes_pecesaccesorios .tabla_peceras .variedad_titulo_accesopeces_2 {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    width: 80%;
-  }
-  .variedad_titulo_accesopeces_2 {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 6%;
-    margin-bottom: 3%;
-    box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    width: 80%;
-  }
-}
-/* ACCESORIOS COBAYOS */
-.diferentes_cobayosaccesorios {
+#alimento_pajaropeces .producto_tratamiento {
   display: grid;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(3, 33%);
   grid-template-rows: auto;
-  grid-template-areas: "accesoco1 accesoco2 accesoco3 accesoco4" "accesoco5 accesoco6 accesoco7 accesoco8" "accesoco9 accesoco10 accesoco11 accesoco12";
+  grid-template-areas: "alimen1 alimen2 alimen3";
   padding-top: 5%;
   margin: auto;
-  gap: 2%;
   padding-left: 5%;
   padding-right: 5%;
 }
-.diferentes_cobayosaccesorios .tiposaccesocobayos {
-  grid-area: accesoco1;
-}
-.diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(2) {
-  grid-area: accesoco2;
-}
-.diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(3) {
-  grid-area: accesoco3;
-}
-.diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(4) {
-  grid-area: accesoco4;
-}
-.diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(5) {
-  grid-area: accesoco5;
-}
-.diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(6) {
-  grid-area: accesoco6;
-}
-.diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(7) {
-  grid-area: accesoco7;
-}
-.diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(8) {
-  grid-area: accesoco8;
-}
-.diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(9) {
-  grid-area: accesoco9;
-}
-.diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(10) {
-  grid-area: accesoco10;
-}
-.diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(11) {
-  grid-area: accesoco11;
-}
-.diferentes_cobayosaccesorios .tiposaccesocobayos:nth-child(12) {
-  grid-area: accesoco12;
-}
-
-.acceso_cobayos_texto {
-  font-size: medium;
+#alimento_pajaropeces .producto_tratamiento .tiposalimentos {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: baseline;
+  background-color: #FBFCFC;
+  margin-top: 15%;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+  margin-left: 8%;
+  margin-right: 8%;
+  grid-area: alimen1;
 }
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-  #accesorios_cobayos {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .diferentes_cobayosaccesorios {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(4, 2fr);
-    grid-template-areas: "accesoco1 accesoco2" "accesoco3 accesoco4" "accesoco5 accesoco6" "accesoco7 accesoco8";
-    padding-top: 5%;
-    margin: auto;
-    gap: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
+#alimento_pajaropeces .producto_tratamiento .tiposalimentos:nth-child(2) {
+  grid-area: alimen2;
 }
-/* PROMOCIONES */
-#promociones .titulo_promociones {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 50%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  margin: auto;
+#alimento_pajaropeces .producto_tratamiento .tiposalimentos:nth-child(3) {
+  grid-area: alimen3;
 }
-#promociones .metodosdepago {
+#alimento_pajaropeces .tiposalimentos_peces {
   display: grid;
   grid-template-columns: repeat(3, 33%);
-  grid-template-rows: 1fr;
-  grid-template-areas: "tarjeta mercadopago efectivo";
+  grid-template-rows: auto;
+  grid-template-areas: "alimen1 alimen2 alimen3" "alimen4 alimen5 alimen6";
   padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
+  margin: auto;
+  padding-left: 5%;
+  padding-right: 5%;
 }
-#promociones .metodosdepago .pagos {
-  grid-area: tarjeta;
-  padding-block: 5%;
-  width: 80%;
-  height: 80%;
-  margin-left: 10%;
-  text-align: center;
-  line-height: 0.7;
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+#alimento_pajaropeces .tiposalimentos_peces .tiposalimentos {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: #FBFCFC;
+  margin-top: 15%;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+  margin-left: 8%;
+  margin-right: 8%;
+  grid-area: alimen1;
 }
-#promociones .metodosdepago .pagos:nth-child(2) {
-  grid-area: mercadopago;
-  padding-bottom: 20%;
+#alimento_pajaropeces .tiposalimentos_peces .tiposalimentos:nth-child(2) {
+  grid-area: alimen2;
 }
-#promociones .metodosdepago .pagos:nth-child(3) {
-  grid-area: efectivo;
+#alimento_pajaropeces .tiposalimentos_peces .tiposalimentos:nth-child(3) {
+  grid-area: alimen3;
+}
+#alimento_pajaropeces .tiposalimentos_peces .tiposalimentos:nth-child(4) {
+  grid-area: alimen4;
+}
+#alimento_pajaropeces .tiposalimentos_peces .tiposalimentos:nth-child(5) {
+  grid-area: alimen5;
+}
+#alimento_pajaropeces .accesorio_articulo {
+  margin-top: 10%;
 }
 
-@media screen and (min-width: 0px) and (max-width: 768px) {
-  #promociones {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  #promociones .titulo_promociones {
-    display: flex;
-    width: 100%;
-    margin-bottom: 15%;
-  }
-  #promociones .metodosdepago {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: "tarjeta" "mercadopago" "efectivo";
-  }
-  #promociones .metodosdepago .pagos {
-    grid-area: tarjeta;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #promociones .metodosdepago .pagos:nth-child(2) {
-    grid-area: mercadopago;
-  }
-  #promociones .metodosdepago .pagos:nth-child(3) {
-    grid-area: efectivo;
-  }
-}
 /* CONTACTO */
 .contacto_articulo {
   display: flex;

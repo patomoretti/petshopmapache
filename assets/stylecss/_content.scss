@@ -1,5 +1,7 @@
 @use "commons" as c;
 
+/*PAGINA EN GENERAL*/
+
 * {
 
     margin: 0;
@@ -30,7 +32,6 @@ body {
 .d-flex {
     margin-left: 5%;
 }
-
 
 @media screen and (min-width: 768px) {
 
@@ -125,6 +126,162 @@ body {
 
 }
 
+/*MIXINS*/
+
+@mixin box-style-animales{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5%;
+    background-color: c.$fondo-box;
+    margin-top: 10%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    width: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+@mixin box-style-accesorios{
+    display: flex;
+    flex-direction: column;
+    background-color: c.$fondo-box;
+    margin-top: 15%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(209, 209, 209);
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+@mixin animales_articulo {
+
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: auto;
+
+
+    .titulo_animales {
+        text-align: center;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+
+    .texto_animales {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 95%;
+        margin: auto;
+        padding-bottom: 1%;
+    }
+
+}
+
+@mixin titulo-pagina {
+
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: c.$fondo-texto;
+    box-shadow: c.$sombra;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    border: c.$borde;
+    margin: auto;
+
+    .titulo {
+        text-align: center;
+        padding-bottom: 1%;
+    }
+
+    .texto_titulo {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 70%;
+        margin: auto;
+        padding-bottom: 1%;
+    }
+}
+
+@mixin variedad-titulo {
+    display: flex;
+    padding-left: 5%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-style: solid;
+    border-width: 1px;
+    padding-top: 2%;
+    margin-top: 10%;
+
+}
+
+@mixin pagina-espacios{
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+}
+
+@mixin subpagina-espacios{
+    padding-top: 5%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+@mixin texto-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+    padding: 5%;
+
+}
+
+@mixin acceso_p {
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5%;
+
+}
+
+@mixin video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin: auto;
+    border-width: 1px;
+    width: 90%;
+
+}
+
+
 
 /* INDEX */
 
@@ -139,13 +296,11 @@ body {
             "titulo titulo"
             "galeria galeria"
             "fotolocal sobrenosotros_texto_foto"
-            "mascotas mascotas"
-            "articulos articulos"
+            "novedades novedades"
 
         ;
 
-        padding-left: 10%;
-        padding-right: 10%;
+        @include pagina-espacios;
 
         #titulo {
             grid-area: titulo;
@@ -215,8 +370,8 @@ body {
 
         }
 
-        .mascotas {
-            grid-area: mascotas;
+        .novedades {
+            grid-area: novedades;
             display: flex;
             flex-direction: column;
             border-top: solid;
@@ -226,7 +381,7 @@ body {
             padding-top: 3%;
             padding-bottom: 3%;
 
-            .tipos_mascotas {
+            .tipos_novedades {
                 display: grid;
                 grid-template-columns: repeat(4, 25%);
                 grid-template-rows: auto;
@@ -234,16 +389,18 @@ body {
 
                     "card1 card2 card3 card4"
                     "card5 card6 card7 card8"
+                    "card9 card10 card11 card12"
+                    
 
                 ;
 
                 padding-top: 5%;
                 padding-bottom: 5%;
-                gap: 3%;
 
                 .card {
                     grid-area: card1;
-                    margin-bottom: 5%;
+                    margin-left: 8%;
+                    margin-right: 8%;
                 }
 
                 .card:nth-child(2) {
@@ -273,51 +430,37 @@ body {
                 .card:nth-child(8) {
                     grid-area: card8;
                 }
+
+                .card:nth-child(9) {
+                    grid-area: card9;
+                }
+
+                .card:nth-child(10) {
+                    grid-area: card10;
+                }
+
+                .card:nth-child(11) {
+                    grid-area: card11;
+                }
+
+                .card:nth-child(12) {
+                    grid-area: card12;
+                }
+
+                .card {
+                    width: 18rem;
+                    margin-bottom: 5%;
+                }
+    
             }
-        }
-
-        .articulos {
-            grid-area: articulos;
-            display: flex;
-            flex-direction: column;
-            border-top: solid;
-            border-width: 1px;
-            padding-left: 10%;
-            padding-right: 10%;
-            padding-top: 3%;
-            padding-bottom: 3%;
-            margin-bottom: 5%;
-
-
-            .tipos_articulos {
-                display: grid;
-                grid-template-columns: repeat(4, 25%);
-                grid-template-rows: auto;
-                grid-template-areas:
-
-                    "card1 card2 card3 card4"
-                    "card5 card6 card7 card8"
-
-                ;
-
-                padding-top: 5%;
-                padding-bottom: 5%;
-                gap: 3%;
-            }
-
-            .card{
+    
+            .card {
                 width: 18rem;
-                margin-bottom: 5%;
             }
-
         }
 
-        .card{
-            width: 18rem;
-        }
     }
 }
-
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
 
@@ -339,8 +482,7 @@ body {
             "galeria"
             "fotolocal"
             "sobrenosotros_texto"
-            "mascotas"
-            "articulos"
+            "novedades"
 
         ;
 
@@ -407,584 +549,1736 @@ body {
     }
 
     .novedades {
+        grid-area: novedades;
 
-        .titulo_novedades {
+        .titulo_novedades{
             display: flex;
             justify-content: center;
-            border-top: solid;
-            border-width: 1px;
-            margin-top: 10%;
             margin-bottom: 10%;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: 5%;
-
-        }
-
-        .mascotas {
-
-            .tipos_mascotas {
-                display: grid;
-                grid-template-columns: 50% 50%;
-                grid-template-rows: auto;
-                grid-template-areas:
-
-                    "card1 card2"
-                    "card3 card4"
-                    "card5 card6"
-                    "card7 card8"
-
-                ;
-
-                padding-left: 5%;
-                padding-bottom: 10%;
-
-                .card {
-                    width: 90%;
-                    margin-bottom: 15%;
-                }
-
-            }
-
-            
-        }
-
-        .articulos {
-
-
-            .tipos_articulos {
-                display: grid;
-                grid-template-columns: 50% 50%;
-                grid-template-rows: auto;
-                grid-template-areas:
-
-                    "card1 card2"
-                    "card3 card4"
-                    "card5 card6"
-                    "card7 card8"
-
-                ;
-
-                padding-left: 5%;
-                padding-bottom: 10%;
-
-                .card {
-                    width: 90%;
-                    margin-bottom: 15%;
-                }
-            }
-
-        }
-
-    }
-
-}
-
-
-
-/* ANIMALES */
-#animales {
-
-    display: grid;
-    grid-template-columns:33% 33% 33%;
-    grid-template-rows: auto;
-    grid-template-areas:
-
-        "animal_pajaro animal_peces animal_cobayos"
-
-    ;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    margin-left: 10%;
-    padding-left: 10%;
-    padding-right: 10%;
-
-    .animales-cat{
-        grid-area: animal_pajaro;
-        background-color: c.$fondo-box;
-        border-radius: 10%;
-        padding-block: 5%;
-        width: 60%;
-        height: 80%;
-        text-align: center;
-    
-    }
-
-    .animales-cat:nth-child(2) {
-        grid-area: animal_peces;
-    }
-
-    .animales-cat:nth-child(3) {
-        grid-area: animal_cobayos;
-    }
-
-    .animales-cat:hover {
-        transform: scale(1.1, 1.1);
-        transition: 0.3s;
-    }
-}
-
-.animales_articulo {
-
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    background: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    margin: auto;
-
-
-    .titulo_animales {
-        text-align: center;
-        padding-top: 1%;
-        padding-bottom: 1%;
-    }
-
-    .texto_animales {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: center;
-        width: 95%;
-        margin: auto;
-        padding-bottom: 1%;
-    }
-
-}
-
-.variedad_titulo {
-    display: flex;
-    padding-left: 5%;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    border-top-style: solid;
-    border-width: 1px;
-    padding-top: 2%;
-    margin-top: 10%;
-
-}
-
-.box-style-animales {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 5%;
-    background-color: c.$fondo-box;
-    margin-top: 10%;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(209, 209, 209);
-    width: 80%;
-}
-
-
-/* ANIMALES PAJAROS */
-
-#animales_pajaros {
-    padding-bottom: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
-
-}
-
-.diferentes_pajaros {
-
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: auto;
-    grid-template-areas:
-
-        "pajaro1 pajaro2 pajaro3"
-        "pajaro4 pajaro5 pajaro6"
-        "pajaro7 pajaro8 pajaro9"
-        "video_pajaros video_pajaros video_pajaros"
-
-    ;
-
-    padding-top: 5%;
-    margin: auto;
-    gap: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-bottom: 20%;
-
-    .tipospajaros {
-        grid-area: pajaro1;
-        @extend .box-style-animales;
-    }
-
-    .tipospajaros:nth-child(2) {
-        grid-area: pajaro2;
-    }
-
-    .tipospajaros:nth-child(3) {
-        grid-area: pajaro3;
-    }
-
-    .tipospajaros:nth-child(4) {
-        grid-area: pajaro4;
-    }
-
-    .tipospajaros:nth-child(5) {
-        grid-area: pajaro5;
-    }
-
-    .tipospajaros:nth-child(6) {
-        grid-area: pajaro6;
-    }
-
-    .tipospajaros:nth-child(7) {
-        grid-area: pajaro7;
-    }
-
-    .tipospajaros:nth-child(8) {
-        grid-area: pajaro8;
-    }
-
-    .tipospajaros:nth-child(9) {
-        grid-area: pajaro9;
-    }
-
-    .tipospajaros:hover {
-        transform: scale(1.1, 1.1);
-        transition: 0.3s;
-    }
-}
-
-.video_pajaros {
-    grid-area: video_pajaros;
-    
-    .video {
-        display: flex;
-        justify-content: center;
-        padding-left: 5%;
-        padding-bottom: 5%;
-        padding-top: 2%;
-        margin-top: 10%;
-        margin: auto;
-        border-bottom-style: solid;
-        border-width: 1px;
-        width: 90%;
-        
-    }
-
-}
-
-.pajaros_articulo {
-
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    background: c.$fondo-texto;
-    box-shadow: c.$sombra;
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-radius: 10px;
-    border: c.$borde;
-    margin: auto;
-    margin-top: 10%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-
-
-    .titulo_pajaros {
-        text-align: center;
-        padding-top: 1%;
-        padding-bottom: 1%;
-    }
-
-    .texto_pajaros {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 95%;
-        margin: auto;
-        padding-bottom: 1%;
-    }
-}
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-
-    .diferentes_pajaros {
-
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: auto;
-        grid-template-areas:
-
-            "pajaro1 pajaro2"
-            "pajaro3 pajaro4"
-            "pajaro5 pajaro6"
-            "pajaro7 pajaro8"
-            "pajaro9 pajaro9"
-
-        ;
-
-        padding-top: 5%;
-        padding-bottom: 10%;
-        margin: auto;
-
-        
-        .tipospajaros {
-            width: 100%;
-        }
-    }
-
-    .video_pajaros {
-        grid-area: video_pajaros;
-        margin-top: 80%;
-    
-        .video {
-            display: flex;
-            border-bottom-style: solid;
+            border-top-style: solid;
             border-width: 1px;
-            padding-bottom: 5%;
-            height: 50%!important;
+            padding-top: 5%;
+            width: 80%;
             margin: auto;
         }
+
+        .tipos_novedades {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto;
+            grid-template-areas:
+
+                "card1 card2"
+                "card3 card4"
+                "card5 card6"
+                "card7 card8"
+                "card9 card10"
+                "card11 card12"
+            
+            ;
+
+            .card {
+                margin-bottom: 20%;
+                margin: auto;
+                height: 100%!important;
+            }
+
+
+        }
+    }
+
+}
+
+
+/*-----------------------------------------------------------*/
+
+/* AVES */
+
+/* AVES_ACCESORIOS */
+
+@media screen and (min-width: 768px){
+    #accesorios_pajaros {
+        @include pagina-espacios;
     
-    }
-
-    .animales_articulo {
-        width: 100%;
-        margin-top: 7%;
-    }
-
-    .pajaros_articulo {
-
-        display: flex;
-        flex-direction: column;
-        background: rgba(255, 255, 255, 0.35);
-        box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(0px);
-        -webkit-backdrop-filter: blur(0px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        margin-top: 20%;
-        width: 100%;
-        margin-bottom: 10%;
-
-        .texto_pajaros {
-            text-align: center;
-            width: 90%;
+        .titulo_pagina{
+            @include titulo-pagina;
+        }
+    
+        .diferentes_pajarosaccesorios {
+    
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+            grid-template-rows: auto;
+            grid-template-areas:
+        
+                "accesopa1 accesopa2 accesopa3 accesopa4"
+                "accesopa5 accesopa6 accesopa7 accesopa8"
+                "accesopa9 accesopa10 accesopa11 accesopa12"
+                "accesopa13 accesopa14 accesopa15 accesopa16"
+                "accesopa17 accesopa18 accesopa19 accesopa20"
+                "accesopa21 accesopa22 accesopa23 accesopa24"
+                "accesopa25 accesopa26 accesopa27 accesopa28"
+                "accesopa29 accesopa30 accesopa31 accesopa32"
+            ;
+        
+        
+            .tiposaccesopajaros {
+                grid-area: accesopa1;
+                @include box-style-accesorios;
+            }
+        
+            .tiposaccesopajaros:nth-child(2) {
+                grid-area: accesopa2;
+            }
+        
+            .tiposaccesopajaros:nth-child(3) {
+                grid-area: accesopa3;
+        
+            }
+        
+            .tiposaccesopajaros:nth-child(4) {
+                grid-area: accesopa4;
+            }
+        
+            .tiposaccesopajaros:nth-child(5) {
+                grid-area: accesopa5;
+            }
+        
+            .tiposaccesopajaros:nth-child(6) {
+                grid-area: accesopa6;
+            }
+        
+            .tiposaccesopajaros:nth-child(7) {
+                grid-area: accesopa7;
+            }
+        
+            .tiposaccesopajaros:nth-child(8) {
+                grid-area: accesopa8;
+            }
+        
+            .tiposaccesopajaros:nth-child(9) {
+                grid-area: accesopa9;
+            }
+        
+            .tiposaccesopajaros:nth-child(10) {
+                grid-area: accesopa10;
+            }
+        
+            .tiposaccesopajaros:nth-child(11) {
+                grid-area: accesopa11;
+            }
+        
+            .tiposaccesopajaros:nth-child(12) {
+                grid-area: accesopa12;
+            }
+        
+            .tiposaccesopajaros:nth-child(13) {
+                grid-area: accesopa13;
+            }
+        
+            .tiposaccesopajaros:nth-child(14) {
+                grid-area: accesopa14;
+            }
+        
+            .tiposaccesopajaros:nth-child(15) {
+                grid-area: accesopa15;
+            }
+        
+            .tiposaccesopajaros:nth-child(16) {
+                grid-area: accesopa16;
+            }
+        
+            .tiposaccesopajaros:nth-child(17) {
+                grid-area: accesopa17;
+            }
+        
+            .tiposaccesopajaros:nth-child(18) {
+                grid-area: accesopa18;
+            }
+        
+            .tiposaccesopajaros:nth-child(19) {
+                grid-area: accesopa19;
+            }
+        
+            .tiposaccesopajaros:nth-child(20) {
+                grid-area: accesopa20;
+            }
+        
+            .tiposaccesopajaros:nth-child(21) {
+                grid-area: accesopa21;
+            }
+        
+            .tiposaccesopajaros:nth-child(22) {
+                grid-area: accesopa22;
+            }
+        
+            .tiposaccesopajaros:nth-child(23) {
+                grid-area: accesopa23;
+            }
+        
+            .tiposaccesopajaros:nth-child(24) {
+                grid-area: accesopa24;
+            }
+        
+            .tiposaccesopajaros:nth-child(25) {
+                grid-area: accesopa25;
+            }
+        
+            .tiposaccesopajaros:nth-child(26) {
+                grid-area: accesopa26;
+            }
+        
+            .tiposaccesopajaros:nth-child(27) {
+                grid-area: accesopa27;
+            }
+        
+            .tiposaccesopajaros:nth-child(28) {
+                grid-area: accesopa28;
+            }
+        
+            .tiposaccesopajaros:nth-child(29) {
+                grid-area: accesopa29;
+            }
+        
+            .tiposaccesopajaros:nth-child(30) {
+                grid-area: accesopa30;
+            }
         }
     }
 }
-
-
-/* ANIMALES PECES */
-#animales_peces {
-    @extend #animales_pajaros;
-}
-
-.diferentes_peces {
-
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: auto;
-    grid-template-areas:
-
-        "peces1 peces2 peces3"
-        "peces4 peces5 peces6"
-
-    ;
-
-    padding-top: 5%;
-    margin: auto;
-    gap: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
-
-    .tipospeces {
-        grid-area: peces1;
-        @extend .box-style-animales
-    }
-
-    .tipospeces:nth-child(2) {
-        grid-area: peces2;
-    }
-
-    .tipospeces:nth-child(3) {
-        grid-area: peces3;
-    }
-
-    .tipospeces:nth-child(4) {
-        grid-area: peces4;
-    }
-
-    .tipospeces:nth-child(5) {
-        grid-area: peces5;
-    }
-
-    .tipospeces:nth-child(6) {
-        grid-area: peces6;
-    }
-
-    .tipospeces:hover {
-        transform: scale(1.1, 1.1);
-        transition: 0.3s;
-    }
-}
-
-.peces_articulo {
-
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    background: c.$fondo-texto;
-    box-shadow: c.$sombra;
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-radius: 5px;
-    border: c.$borde;
-    margin: auto;
-    margin-top: 10%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-
-
-    .titulo_peces {
-        text-align: center;
-        padding-top: 1%;
-        padding-bottom: 1%;
-    }
-
-    .texto_peces {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 95%;
-        margin: auto;
-        padding-bottom: 1%;
-    }
-}
-
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
 
-    .diferentes_peces {
+    #accesorios_pajaros {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+            width: 90%!important;
+            margin-top: 5%;
+            margin-bottom: 10%;
+        }
 
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: auto;
-        grid-template-areas:
+        .diferentes_pajarosaccesorios {
 
-            "peces1 peces2"
-            "peces3 peces4"
-            "peces5 peces6"
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto;
+            grid-template-areas:
+        
+                "accesopa1 accesopa2"
+                "accesopa3 accesopa4"
+                "accesopa5 accesopa6"
+                "accesopa7 accesopa8"
+                "accesopa9 accesopa10"
+                "accesopa11 accesopa12"
+                "accesopa13 accesopa14"
+                "accesopa15 accesopa16"
+                "accesopa17 accesopa18"
+                "accesopa19 accesopa20"
+                "accesopa21 accesopa22"
+                "accesopa23 accesopa24"
+                "accesopa25 accesopa26"
+                "accesopa27 accesopa28"
+                "accesopa29 accesopa30"
+                "accesopa31 accesopa32"
+            ;
 
-        ;
+            .tiposaccesopajaros {
+                @include box-style-accesorios;
 
-        padding-top: 5%;
-        margin: auto;
-        gap: 5%;
-        padding-bottom: 10%;
-        text-align: center;
-
-        .tipospeces {
-            width: 100% !important;
+            }
         }
     }
 
-    .peces_articulo {
+}
 
-        display: flex;
-        flex-direction: column;
-        background: rgba(255, 255, 255, 0.35);
-        box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(0px);
-        -webkit-backdrop-filter: blur(0px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        margin-top: 20%;
-        width: 100%;
-        text-align: center;
 
+/* AVES CANARIOS */
+
+@media screen and (min-width: 768px){
+    #animales_pajaros {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+        }
+    
+        .variedad_titulo{
+            @include variedad-titulo;
+        }
+    
+        .diferentes_pajaros {
+    
+            display: grid;
+            grid-template-columns: repeat(3,33%);
+            grid-template-rows: auto;
+            grid-template-areas:
+        
+                "pajaro1 pajaro2 pajaro3"
+                "pajaro4 pajaro5 pajaro6"
+                "pajaro7 pajaro8 pajaro9"
+                "pajaro10 pajaro11 pajaro12"
+                "video_pajaros video_pajaros video_pajaros"
+        
+            ;
+        
+            @include subpagina-espacios;
+        
+            .tipospajaros {
+                grid-area: pajaro1;
+                @include box-style-animales;
+            }
+        
+            .tipospajaros:nth-child(2) {
+                grid-area: pajaro2;
+            }
+        
+            .tipospajaros:nth-child(3) {
+                grid-area: pajaro3;
+            }
+        
+            .tipospajaros:nth-child(4) {
+                grid-area: pajaro4;
+            }
+        
+            .tipospajaros:nth-child(5) {
+                grid-area: pajaro5;
+            }
+        
+            .tipospajaros:nth-child(6) {
+                grid-area: pajaro6;
+            }
+        
+            .tipospajaros:nth-child(7) {
+                grid-area: pajaro7;
+            }
+        
+            .tipospajaros:nth-child(8) {
+                grid-area: pajaro8;
+            }
+        
+            .tipospajaros:nth-child(9) {
+                grid-area: pajaro9;
+            }
+        
+            .tipospajaros:nth-child(10) {
+                grid-area: pajaro10;
+            }
+        
+            .tipospajaros:nth-child(11) {
+                grid-area: pajaro11;
+            }
+        
+            .tipospajaros:nth-child(12) {
+                grid-area: pajaro12;
+            }
+        
+            .tipospajaros:hover {
+                transform: scale(1.1, 1.1);
+                transition: 0.3s;
+            }
+        }
+        
+        .video_youtube {
+            grid-area: video_pajaros;
+        
+            .video{
+                @include video;
+            }
+        }
+        
+        .pajaros_articulo {
+        
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            background: c.$fondo-texto;
+            box-shadow: c.$sombra;
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            border-radius: 10px;
+            border: c.$borde;
+            margin: auto;
+            margin-top: 10%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        
+        
+            .titulo_pajaros {
+                text-align: center;
+                padding-top: 1%;
+                padding-bottom: 1%;
+            }
+        
+            .texto_pajaros {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 95%;
+                margin: auto;
+                padding-bottom: 1%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    #animales_pajaros {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+            width: 90%!important;
+            margin-top: 5%;
+            margin-bottom: 10%;
+        }
+    
+        .variedad_titulo{
+            @include variedad-titulo;
+        }
+    
+        .diferentes_pajaros {
+    
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto;
+            grid-template-areas:
+        
+                "pajaro1 pajaro2"
+                "pajaro3 pajaro4"
+                "pajaro5 pajaro6"
+                "pajaro7 pajaro8"
+                "pajaro9 pajaro10"
+                "pajaro11 pajaro12"
+                "video_pajaros video_pajaros"
+        
+            ;
+        
+            @include subpagina-espacios;
+        
+            .tipospajaros {
+                @include box-style-animales;
+            }
+        }
+
+        .video_pajaros {
+            grid-area: video_pajaros;
+            margin-top: 80%;
+
+            .video {
+                display: flex;
+                border-bottom-style: solid;
+                border-width: 1px;
+                padding-bottom: 5%;
+                height: 50% !important;
+                margin: auto;
+                width: 50%!important;
+            }
+
+        }
+
+        .animales_articulo {
+            width: 100%;
+            margin-top: 7%;
+        }
+
+        .pajaros_articulo {
+
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            margin-top: 20%;
+            width: 100%;
+            margin-bottom: 10%;
+
+            .texto_pajaros {
+                text-align: center;
+                width: 90%;
+            }
+        }
+    }
+}
+
+
+/*AVES CRIADERO*/
+
+@media screen and (min-width: 768px){
+    #criadero {
+        @include pagina-espacios;;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+        }
+    
+        .crias {
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: auto;
+            grid-template-areas:
+    
+                "crias1 crias2 crias3"
+                "crias4 crias5 crias6"
+    
+            ;
+    
+            @include subpagina-espacios;
+    
+            .tiposcrias {
+                grid-area: crias1;
+                @include box-style-accesorios;
+                margin-left: 8%;
+                margin-right: 8%;
+            }
+    
+            .tiposcrias:nth-child(2) {
+                grid-area: crias2;
+            }
+    
+            .tiposcrias:nth-child(3) {
+                grid-area: crias3;
+            }
+    
+            .tiposcrias:nth-child(4) {
+                grid-area: crias4;
+            }
+    
+            .tiposcrias:nth-child(5) {
+                grid-area: crias5;
+            }
+    
+            .tiposcrias:nth-child(6) {
+                grid-area: crias6;
+            }
+    
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+    #criadero {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+            width: 90%!important;
+            margin-top: 5%;
+            margin-bottom: 10%;
+        }
+    
+        .crias {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto;
+            grid-template-areas:
+    
+                "crias1 crias2"
+                "crias3 crias4"
+                "crias5 crias6"
+    
+            ;
+    
+            .tiposcrias {
+                @include box-style-accesorios;
+            }
+        }
+    }
+}
+
+
+/*AVES JAULAS*/
+@media screen and (min-width: 768px){
+    #jaulas {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+        }
+    
+        .variedad_titulo{
+            @include variedad-titulo;
+        }
+    
+        .variedad_jaulas {
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: auto;
+            grid-template-areas:
+    
+                "jaula1 jaula2 jaula3"
+                "jaula4 jaula5 jaula6"
+                "jaula7 jaula8 jaula9"
+                "jaula10 jaula11 jaula12"
+                "jaula13 jaula14 jaula15"
+                "jaula16 jaula17 jaula18"
+                "jaula19 jaula20 jaula21"
+                "jaula22 jaula23 jaula24"
+                "jaula25 jaula26 jaula27"
+                "jaula28 jaula29 jaula30"
+                "jaula31 jaula999 jaula998"
+    
+            ;
+    
+            @include subpagina-espacios;
+    
+    
+            .tiposjaulas {
+                grid-area: jaula1;
+                @include box-style-accesorios;
+            }
+    
+            .tiposjaulas:nth-child(2) {
+                grid-area: jaula2;
+            }
+    
+            .tiposjaulas:nth-child(3) {
+                grid-area: jaula3;
+            }
+    
+            .tiposjaulas:nth-child(4) {
+                grid-area: jaula4;
+            }
+    
+            .tiposjaulas:nth-child(5) {
+                grid-area: jaula5;
+            }
+    
+            .tiposjaulas:nth-child(6) {
+                grid-area: jaula6;
+            }
+    
+            .tiposjaulas:nth-child(7) {
+                grid-area: jaula7;
+            }
+    
+            .tiposjaulas:nth-child(8) {
+                grid-area: jaula8;
+            }
+    
+            .tiposjaulas:nth-child(9) {
+                grid-area: jaula9;
+            }
+    
+            .tiposjaulas:nth-child(10) {
+                grid-area: jaula10;
+            }
+    
+            .tiposjaulas:nth-child(11) {
+                grid-area: jaula11;
+            }
+    
+            .tiposjaulas:nth-child(12) {
+                grid-area: jaula12;
+            }
+    
+            .tiposjaulas:nth-child(13) {
+                grid-area: jaula13;
+            }
+    
+            .tiposjaulas:nth-child(14) {
+                grid-area: jaula14;
+            }
+    
+            .tiposjaulas:nth-child(15) {
+                grid-area: jaula15;
+            }
+    
+            .tiposjaulas:nth-child(16) {
+                grid-area: jaula16;
+            }
+    
+            .tiposjaulas:nth-child(17) {
+                grid-area: jaula17;
+            }
+    
+            .tiposjaulas:nth-child(18) {
+                grid-area: jaula18;
+            }
+    
+            .tiposjaulas:nth-child(19) {
+                grid-area: jaula19;
+            }
+    
+            .tiposjaulas:nth-child(20) {
+                grid-area: jaula20;
+            }
+    
+            .tiposjaulas:nth-child(21) {
+                grid-area: jaula21;
+            }
+    
+            .tiposjaulas:nth-child(22) {
+                grid-area: jaula22;
+            }
+    
+            .tiposjaulas:nth-child(23) {
+                grid-area: jaula23;
+            }
+    
+            .tiposjaulas:nth-child(24) {
+                grid-area: jaula24;
+            }
+    
+            .tiposjaulas:nth-child(25) {
+                grid-area: jaula25;
+            }
+    
+            .tiposjaulas:nth-child(26) {
+                grid-area: jaula26;
+            }
+    
+            .tiposjaulas:nth-child(27) {
+                grid-area: jaula27;
+            }
+    
+            .tiposjaulas:nth-child(28) {
+                grid-area: jaula28;
+            }
+    
+            .tiposjaulas:nth-child(29) {
+                grid-area: jaula29;
+            }
+    
+            .tiposjaulas:nth-child(30) {
+                grid-area: jaula30;
+            }
+    
+            .tiposjaulas:nth-child(31) {
+                grid-area: jaula31;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+    #jaulas {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+            width: 90%!important;
+            margin-top: 5%;
+            margin-bottom: 10%;
+        }
+    
+        .variedad_titulo{
+            @include variedad-titulo;
+        }
+    
+        .variedad_jaulas {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto;
+            grid-template-areas:
+    
+                "jaula1 jaula2"
+                "jaula3 jaula4"
+                "jaula5 jaula6"
+                "jaula7 jaula8"
+                "jaula9 jaula10"
+                "jaula11 jaula12"
+                "jaula13 jaula14"
+                "jaula15 jaula16"
+                "jaula17 jaula18"
+                "jaula19 jaula20"
+                "jaula21 jaula22"
+                "jaula23 jaula24"
+                "jaula25 jaula26"
+                "jaula27 jaula28"
+                "jaula29 jaula30"
+                "jaula31 jaula999"
+    
+            ;
+    
+            @include subpagina-espacios;
+    
+    
+            .tiposjaulas {
+                @include box-style-accesorios;
+            }
+        }
+    }
+}
+
+
+/*AVES PAJARERIA*/
+#avespajareria {
+    @include pagina-espacios;
+
+    .pajareria {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: auto;
+        grid-template-areas:
+
+            "paja1 paja2 paja3"
+            "paja4 paja5 paja6"
+        ;
+
+        @include subpagina-espacios;
+
+
+
+        .tipospajareria {
+            grid-area: paja1;
+            @include box-style-animales;
+        }
+
+        .tipospajareria:nth-child(2) {
+            grid-area: paja2;
+        }
+
+        .tipospajareria:nth-child(3) {
+            grid-area: paja3;
+        }
+
+        .tipospajareria:nth-child(4) {
+            grid-area: paja4;
+        }
+
+        .tipospajareria:nth-child(5) {
+            grid-area: paja5;
+        }
+
+        .tipospajareria:nth-child(6) {
+            grid-area: paja6;
+        }
+    }
+}
+
+/*AVES EXOTICOS*/
+@media screen and (min-width: 768px){
+    #avesexoticos {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+        }
+    
+        .variedad_titulo{
+            @include variedad-titulo;
+        }
+    
+        .exoticos {
+    
+            display: grid;
+            grid-template-columns: repeat(3,33%);
+            grid-template-rows: auto;
+            grid-template-areas:
+    
+                "exoticos1 exoticos2 exoticos3"
+                "exoticos4 exoticos5 exoticos6"
+                "exoticos7 exoticos8 exoticos9"
+                "exoticos10 exoticos11 exoticos12"
+                "exoticos13 exoticos14 exoticos15"
+                "exoticos16 exoticos17 exoticos18"
+    
+            ;
+    
+            @include subpagina-espacios;
+    
+            .tiposexoticos {
+                grid-area: exoticos1;
+                @include box-style-animales;
+            }
+    
+            .tiposexoticos:nth-child(2) {
+                grid-area: exoticos2;
+            }
+    
+            .tiposexoticos:nth-child(3) {
+                grid-area: exoticos3;
+    
+            }
+    
+            .tiposexoticos:nth-child(4) {
+                grid-area: exoticos4;
+            }
+    
+            .tiposexoticos:nth-child(5) {
+                grid-area: exoticos5;
+            }
+    
+            .tiposexoticos:nth-child(6) {
+                grid-area: exoticos6;
+            }
+    
+            .tiposexoticos:nth-child(7) {
+                grid-area: exoticos7;
+            }
+    
+            .tiposexoticos:nth-child(8) {
+                grid-area: exoticos8;
+            }
+    
+            .tiposexoticos:nth-child(9) {
+                grid-area: exoticos9;
+            }
+    
+            .tiposexoticos:nth-child(10) {
+                grid-area: exoticos10;
+            }
+    
+            .tiposexoticos:nth-child(11) {
+                grid-area: exoticos11;
+            }
+    
+            .tiposexoticos:nth-child(12) {
+                grid-area: exoticos12;
+            }
+    
+            .tiposexoticos:nth-child(13) {
+                grid-area: exoticos13;
+            }
+    
+            .tiposexoticos:nth-child(14) {
+                grid-area: exoticos14;
+            }
+    
+            .tiposexoticos:nth-child(15) {
+                grid-area: exoticos15;
+            }
+    
+            .tiposexoticos:nth-child(16) {
+                grid-area: exoticos16;
+            }
+    
+            .tiposexoticos:nth-child(17) {
+                grid-area: exoticos17;
+            }
+    
+            .tiposexoticos:nth-child(18) {
+                grid-area: exoticos18;
+            }
+    
+        }
+    
+        .video_youtube {
+            grid-area: video_pajaros;
+        
+            .video{
+                @include video;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+    #avesexoticos {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+            width: 90%!important;
+            margin-top: 5%;
+            margin-bottom: 10%;
+        }
+    
+        .variedad_titulo{
+            @include variedad-titulo;
+        }
+    
+        .exoticos {
+    
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto;
+            grid-template-areas:
+    
+                "exoticos1 exoticos2"
+                "exoticos3 exoticos4"
+                "exoticos5 exoticos6"
+                "exoticos7 exoticos8"
+                "exoticos9 exoticos10"
+                "exoticos11 exoticos12"
+                "exoticos13 exoticos14"
+                "exoticos15 exoticos16"
+                "exoticos17 exoticos18"
+    
+            ;
+    
+            @include subpagina-espacios;
+    
+            .tiposexoticos {
+                @include box-style-animales;
+            }
+        }
+    }
+}
+
+/*-----------------------------------------------------------*/
+
+
+/*PECES ACCESORIOS*/
+
+@media screen and (min-width: 768px){
+    #peces_accesorios {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+        }
+    
+        .diferentes_pecesaccesorios {
+    
+            display: grid;
+            grid-template-columns: repeat(4,25%);
+            grid-template-rows: auto;
+            grid-template-areas:
+        
+                "accesope1 accesope2 accesope3 accesope5"
+                "accesope4 accesope4 accesope4 accesope4"
+                "accesope6 accesope7 accesope8 accesope9"
+                "accesope10 accesope11 accesope12 accesope13"
+                "accesope14 accesope15 accesope16 accesope17"
+                "accesope18 accesope19 accesope20 accesope21"
+                "accesope22 accesope23 accesope24 accesope25"
+                "accesope26 accesope27 accesope28 accesope29"
+        
+            ;
+        
+            @include subpagina-espacios;
+        
+            .tiposaccesopeces {
+                grid-area: accesope1;
+                @include box-style-accesorios;
+            }
+        
+            .tiposaccesopeces:nth-child(2) {
+                grid-area: accesope2;
+            }
+        
+            .tiposaccesopeces:nth-child(3) {
+                grid-area: accesope3;
+        
+            }
+        
+            /* TABLA */
+            .tabla_peceras {
+                grid-area: accesope4;
+                display: flex;
+                flex-direction: column;
+                background-color: c.$fondo-box;
+                margin-top: 5%;
+                padding-bottom: 5%;
+                text-align: center;
+                border-radius: 5px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(209, 209, 209);
+        
+                .variedad_titulo_accesopeces {
+                    display: flex;
+                    justify-content: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 3%;
+                    margin-bottom: 3%;
+                    box-shadow: c.$sombra;
+                    backdrop-filter: blur(0px);
+                    -webkit-backdrop-filter: blur(0px);
+                    border-radius: 10px;
+                    border: c.$borde;
+                    width: 33%;
+                }
+        
+                .variedad_titulo_accesopeces_2 {
+                    display: flex;
+                    justify-content: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 3%;
+                    margin-bottom: 3%;
+                    box-shadow: c.$sombra;
+                    backdrop-filter: blur(0px);
+                    -webkit-backdrop-filter: blur(0px);
+                    border-radius: 10px;
+                    border: c.$borde;
+                    width: 33%;
+                    margin-top: 6%;
+                }
+        
+            }
+        
+        
+            /* FIN TABLA */
+        
+            .tiposaccesopeces:nth-child(5) {
+                grid-area: accesope5;
+            }
+        
+            .tiposaccesopeces:nth-child(6) {
+                grid-area: accesope6;
+            }
+        
+            .tiposaccesopeces:nth-child(7) {
+                grid-area: accesope7;
+            }
+        
+            .tiposaccesopeces:nth-child(8) {
+                grid-area: accesope8;
+            }
+        
+            .tiposaccesopeces:nth-child(9) {
+                grid-area: accesope9;
+            }
+        
+            .tiposaccesopeces:nth-child(10) {
+                grid-area: accesope10;
+            }
+        
+            .tiposaccesopeces:nth-child(11) {
+                grid-area: accesope11;
+            }
+        
+            .tiposaccesopeces:nth-child(12) {
+                grid-area: accesope12;
+            }
+        
+            .tiposaccesopeces:nth-child(13) {
+                grid-area: accesope13;
+            }
+        
+            .tiposaccesopeces:nth-child(14) {
+                grid-area: accesope14;
+            }
+        
+            .tiposaccesopeces:nth-child(15) {
+                grid-area: accesope15;
+            }
+        
+            .tiposaccesopeces:nth-child(16) {
+                grid-area: accesope16;
+            }
+        
+            .tiposaccesopeces:nth-child(17) {
+                grid-area: accesope17;
+            }
+        
+            .tiposaccesopeces:nth-child(18) {
+                grid-area: accesope18;
+            }
+        
+            .tiposaccesopeces:nth-child(19) {
+                grid-area: accesope19;
+            }
+        
+            .tiposaccesopeces:nth-child(20) {
+                grid-area: accesope20;
+            }
+        
+            .tiposaccesopeces:nth-child(21) {
+                grid-area: accesope21;
+            }
+        
+            .tiposaccesopeces:nth-child(22) {
+                grid-area: accesope22;
+            }
+        
+            .tiposaccesopeces:nth-child(23) {
+                grid-area: accesope23;
+            }
+        
+            .tiposaccesopeces:nth-child(24) {
+                grid-area: accesope24;
+            }
+        
+            .tiposaccesopeces:nth-child(25) {
+                grid-area: accesope25;
+            }
+        
+            .tiposaccesopeces:nth-child(26) {
+                grid-area: accesope26;
+            }
+        
+            .tiposaccesopeces:nth-child(27) {
+                grid-area: accesope27;
+            }
+        
+            .tiposaccesopeces:nth-child(28) {
+                grid-area: accesope28;
+            }
+        
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    #peces_accesorios {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+            width: 90%!important;
+            margin-top: 5%;
+            margin-bottom: 10%;
+        }
+    
+        .diferentes_pecesaccesorios {
+    
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto;
+            grid-template-areas:
+        
+                "accesope1 accesope2"
+                "accesope3 accesope5"
+                "accesope4 accesope4"
+                "accesope6 accesope7"
+                "accesope8 accesope9"
+                "accesope10 accesope11"
+                "accesope12 accesope13"
+                "accesope14 accesope15"
+                "accesope16 accesope17"
+                "accesope18 accesope19"
+                "accesope20 accesope21"
+                "accesope22 accesope23"
+                "accesope24 accesope25"
+                "accesope26 accesope27"
+                "accesope28 accesope29"
+        
+            ;
+        
+            @include subpagina-espacios;
+        
+            .tiposaccesopeces {
+                @include box-style-accesorios;
+            }
+        }
+
+        .variedad_titulo_accesopeces {
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 80%;
+    
+        }
+    
+        .variedad_titulo_accesopeces_2 {
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 6%;
+            margin-bottom: 3%;
+            box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 80%;
+        }
     }
 
-    .variedad_titulo {
-        display: flex;
-        justify-content: center;
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 30%;
-        border-top-style: solid;
-        border-width: 1px;
-        padding-top: 5%;
+}
 
+/*PECES ACUARIO*/
+#pecesacuario {
+    @include pagina-espacios;
+
+    .acuario {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: auto;
+        grid-template-areas:
+
+            "acua1 acua2 acua3"
+            "acua4 acua5 acua6"
+            "acua7 acua8 acua9"
+        ;
+
+        @include subpagina-espacios;
+
+        .tiposacuario {
+            grid-area: acua1;
+            @include box-style-animales;
+
+        }
+
+        .tiposacuario:nth-child(2) {
+            grid-area: acua2;
+        }
+
+        .tiposacuario:nth-child(3) {
+            grid-area: acua3;
+        }
+
+        .tiposacuario:nth-child(4) {
+            grid-area: acua4;
+        }
+
+        .tiposacuario:nth-child(5) {
+            grid-area: acua5;
+        }
+
+        .tiposacuario:nth-child(6) {
+            grid-area: acua6;
+        }
+
+        .tiposacuario:nth-child(7) {
+            grid-area: acua7;
+        }
+
+        .tiposacuario:nth-child(8) {
+            grid-area: acua8;
+        }
+    }
+}
+
+
+/* PECES ANIMALES */
+@media screen and (min-width: 768px){
+    #animales_peces {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+        }
+    
+        .variedad_titulo{
+            @include variedad-titulo;
+        }
+    
+        .diferentes_peces {
+    
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: auto;
+            grid-template-areas:
+        
+                "peces1 peces2 peces3"
+                "peces4 peces5 peces6"
+        
+            ;
+        
+            @include subpagina-espacios;
+        
+            .tipospeces {
+                grid-area: peces1;
+                @include box-style-animales;
+            }
+        
+            .tipospeces:nth-child(2) {
+                grid-area: peces2;
+            }
+        
+            .tipospeces:nth-child(3) {
+                grid-area: peces3;
+            }
+        
+            .tipospeces:nth-child(4) {
+                grid-area: peces4;
+            }
+        
+            .tipospeces:nth-child(5) {
+                grid-area: peces5;
+            }
+        
+            .tipospeces:nth-child(6) {
+                grid-area: peces6;
+            }
+        
+            .tipospeces:hover {
+                transform: scale(1.1, 1.1);
+                transition: 0.3s;
+            }
+        }
+        
+        .peces_articulo {
+        
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            background: c.$fondo-texto;
+            box-shadow: c.$sombra;
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            border-radius: 5px;
+            border: c.$borde;
+            margin: auto;
+            margin-top: 10%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        
+        
+            .titulo_peces {
+                text-align: center;
+                padding-top: 1%;
+                padding-bottom: 1%;
+            }
+        
+            .texto_peces {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 95%;
+                margin: auto;
+                padding-bottom: 1%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+    #animales_peces {
+        @include pagina-espacios;
+    
+        .titulo_pagina{
+            @include titulo-pagina;
+            width: 90%!important;
+            margin-top: 5%;
+            margin-bottom: 10%;
+        }
+    
+        .variedad_titulo{
+            @include variedad-titulo;
+        }
+    
+        .diferentes_peces {
+    
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto;
+            grid-template-areas:
+        
+                "peces1 peces2"
+                "peces3 peces4"
+                "peces5 peces6"
+        
+            ;
+        
+            @include subpagina-espacios;
+        
+            .tipospeces {
+                @include box-style-animales;
+            }
+        }
+
+        .peces_articulo {
+        
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            background: c.$fondo-texto;
+            box-shadow: c.$sombra;
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            border-radius: 5px;
+            border: c.$borde;
+            margin: auto;
+            margin-top: 10%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        
+        
+            .titulo_peces {
+                text-align: center;
+                padding-top: 1%;
+                padding-bottom: 1%;
+            }
+        
+            .texto_peces {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 95%;
+                margin: auto;
+                padding-bottom: 1%;
+            }
+        }
     }
 
 }
 
 
+/* HAMSTERS COBAYOS */
 
-/* ANIMALES COBAYOS */
-
-#animales_cobayos {
+#animales_cobayoshamsters {
     @extend #animales_pajaros;
     text-align: center;
+
+    .titulo_pagina{
+        @include titulo-pagina;
+    }
+
+    .diferentes_cobayos {
+
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+    
+            "cobayo1 cobayo2 cobayo3 cobayo4"
+            "cobayo5 cobayo6 cobayo7 cobayo8"
+        ;
+    
+        @include subpagina-espacios;
+    
+        .tiposcobayos {
+            grid-area: cobayo1;
+            @include box-style-animales;
+    
+        }
+    
+        .tiposcobayos:nth-child(2) {
+            grid-area: cobayo2;
+        }
+    
+        .tiposcobayos:nth-child(3) {
+            grid-area: cobayo3;
+        }
+    
+        .tiposcobayos:nth-child(4) {
+            grid-area: cobayo4;
+        }
+    
+        .tiposcobayos:nth-child(5) {
+            grid-area: cobayo5;
+        }
+    
+        .tiposcobayos:nth-child(6) {
+            grid-area: cobayo6;
+        }
+    
+        .tiposcobayos:nth-child(7) {
+            grid-area: cobayo7;
+        }
+    
+        .tiposcobayos:nth-child(8) {
+            grid-area: cobayo8;
+        }
+    
+        .tiposcobayos:hover {
+            transform: scale(1.1, 1.1);
+            transition: 0.3s;
+        }
+    }
+
+    .accesorios_cobayos {
+        margin-bottom: 20%;
+    
+        .accesorio_articulo {
+            margin-top: 20% !important;
+        }
+
+        .diferentes_cobayosaccesorios {
+
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+            grid-template-rows: auto;
+            grid-template-areas:
+        
+                "accesoco1 accesoco2 accesoco3 accesoco4"
+                "accesoco5 accesoco6 accesoco7 accesoco8"
+                "accesoco9 accesoco10 accesoco11 accesoco12"
+                "accesoco13 accesoco14 accesoco15"
+            ;
+        
+            padding-top: 5%;
+            margin: auto;
+            gap: 2%;
+            padding-left: 5%;
+            padding-right: 5%;
+        
+            .tiposaccesocobayos {
+                grid-area: accesoco1;
+                @include box-style-accesorios;
+            }
+        
+            .tiposaccesocobayos:nth-child(2) {
+                grid-area: accesoco2;
+            }
+        
+            .tiposaccesocobayos:nth-child(3) {
+                grid-area: accesoco3;
+        
+            }
+        
+            .tiposaccesocobayos:nth-child(4) {
+                grid-area: accesoco4;
+            }
+        
+            .tiposaccesocobayos:nth-child(5) {
+                grid-area: accesoco5;
+            }
+        
+            .tiposaccesocobayos:nth-child(6) {
+                grid-area: accesoco6;
+            }
+        
+            .tiposaccesocobayos:nth-child(7) {
+                grid-area: accesoco7;
+            }
+        
+            .tiposaccesocobayos:nth-child(8) {
+                grid-area: accesoco8;
+            }
+        
+            .tiposaccesocobayos:nth-child(9) {
+                grid-area: accesoco9;
+            }
+        
+            .tiposaccesocobayos:nth-child(10) {
+                grid-area: accesoco10;
+            }
+        
+            .tiposaccesocobayos:nth-child(11) {
+                grid-area: accesoco11;
+            }
+        
+            .tiposaccesocobayos:nth-child(12) {
+                grid-area: accesoco12;
+            }
+        
+            .tiposaccesocobayos:nth-child(13) {
+                grid-area: accesoco13;
+            }
+        
+            .tiposaccesocobayos:nth-child(14) {
+                grid-area: accesoco14;
+            }
+        
+            .tiposaccesocobayos:nth-child(15) {
+                grid-area: accesoco15;
+            }
+        
+        }
+    }
+
+    .diferentes_hamsters {
+
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+    
+            "hamster1 hamster2 hamster3 hamster4"
+            "hamster5 hamster6 hamster7 hamster8"
+        ;
+    
+        @include subpagina-espacios;
+    
+        .tiposhamsters {
+            grid-area: hamster1;
+            @include box-style-animales;
+        }
+    
+        .tiposhamsters:nth-child(2) {
+            grid-area: hamster2;
+        }
+    
+        .tiposhamsters:nth-child(3) {
+            grid-area: hamster3;
+        }
+    
+        .tiposhamsters:nth-child(4) {
+            grid-area: hamster4;
+        }
+    
+        .tiposhamsters:nth-child(5) {
+            grid-area: hamster5;
+        }
+    
+        .tiposhamsters:nth-child(6) {
+            grid-area: hamster6;
+        }
+    
+        .tiposhamsters:nth-child(7) {
+            grid-area: hamster7;
+        }
+    
+        .tiposhamsters:nth-child(8) {
+            grid-area: hamster8;
+        }
+    
+        .tiposhamsters:hover {
+            transform: scale(1.1, 1.1);
+            transition: 0.3s;
+        }
+    }
+
+    .diferentes_hamstersaccesorios {
+
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: auto;
+        grid-template-areas:
+    
+            "accesoham1 accesoham2 accesoham3 accesoham4"
+            "accesoham5 accesoham6 accesoham7 accesoham8"
+            "accesoham9 accesoham10 accesoham11 accesoham12"
+        ;
+    
+        @include subpagina-espacios;
+    
+        .tiposaccesohamsters {
+            grid-area: accesoham1;
+            @include box-style-accesorios;
+        }
+    
+        .tiposaccesohamsters:nth-child(2) {
+            grid-area: accesoham2;
+        }
+    
+        .tiposaccesohamsters:nth-child(3) {
+            grid-area: accesoham3;
+        }
+    
+        .tiposaccesohamsters:nth-child(4) {
+            grid-area: accesoham4;
+        }
+    
+        .tiposaccesohamsters:nth-child(5) {
+            grid-area: accesoham5;
+        }
+    
+        .tiposaccesohamsters:nth-child(6) {
+            grid-area: accesoham6;
+        }
+    
+        .tiposaccesohamsters:nth-child(7) {
+            grid-area: accesoham7;
+        }
+    
+        .tiposaccesohamsters:nth-child(8) {
+            grid-area: accesoham8;
+        }
+    }
+
+    .variedad_titulo{
+
+        .video{
+            @include video;
+        }
+    }
+
+    
 }
 
-.diferentes_cobayos {
+.acceso_cobayos_texto {
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-
-        "cobayo1 cobayo2 cobayo3"
-        "cobayo4 cobayo5 cobayo6"
-    ;
-
-    padding-top: 5%;
-    margin: auto;
-    gap: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
-
-
-
-    .tiposcobayos {
-        grid-area: cobayo1;
-        @extend .box-style-animales;
-
-    }
-
-    .tiposcobayos:nth-child(2) {
-        grid-area: cobayo2;
-    }
-
-    .tiposcobayos:nth-child(3) {
-        grid-area: cobayo3;
-    }
-
-    .tiposcobayos:nth-child(4) {
-        grid-area: cobayo4;
-    }
-
-    .tiposcobayos:nth-child(5) {
-        grid-area: cobayo5;
-    }
-
-    .tiposcobayos:nth-child(6) {
-        grid-area: cobayo6;
-    }
-
-    .tiposcobayos:hover {
-        transform: scale(1.1, 1.1);
-        transition: 0.3s;
-    }
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: baseline;
 }
-
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
 
@@ -1039,696 +2333,233 @@ body {
 }
 
 
+/*ERIZOS*/
+#erizos {
+    @include pagina-espacios;
 
-/* ACCESORIOS */
-
-#accesorios {
-
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
-    grid-template-rows: 1fr;
-    grid-template-areas:
-
-        "acceso_pajaros acceso_peces acceso_cobayos"
-
-    ;
-
-    padding-bottom: 5%;
-    margin-left: 10%;
-    padding-left: 10%;
-    padding-right: 10%;
-
-    .accesorios {
-        grid-area: acceso_pajaros;
-        background-color: c.$fondo-box;
-        border-radius: 10%;
-        padding-block: 5%;
-        width: 60%;
-        height: 80%;
-        text-align: center;
-
+    .titulo_pagina{
+        @include titulo-pagina;
     }
 
-    &:hover {
-        transform: scale(1.1, 1.1);
-        transition: 0.3s;
+    .variedad_titulo{
+        @include variedad-titulo;
     }
 
-    .accesorios:nth-child(2) {
-        grid-area: acceso_peces;
-    }
-
-    .accesorios:nth-child(3) {
-        grid-area: acceso_cobayos;
-    }
-
-}
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-
-    #accesorios {
-
+    .diferentes_erizos {
         display: grid;
-        grid-template-columns: 90%;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: auto;
         grid-template-areas:
 
-            "acceso_pajaros"
-            "acceso_peces"
-            "acceso_cobayos"
-
-        ;
-        padding-top: 10%;
-        padding-bottom: 10%;
-        margin-left: 30%;
-
-
-    }
-
-}
-
-
-.accesorio_articulo {
-
-    display: flex;
-    flex-direction: column;
-    width: 65%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    background: c.$fondo-texto;
-    box-shadow: c.$sombra;
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-radius: 5px;
-    border: c.$borde;
-    margin: auto;
-
-    .titulo_accesorio {
-        text-align: center;
-        padding-bottom: 1%;
-    }
-
-    .texto_accesorio {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: center;
-        width: 70%;
-        margin: auto;
-        padding-bottom: 1%;
-    }
-}
-
-.texto-box {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3%;
-    padding: 5%;
-
-}
-
-.acceso_p {
-    font-size: medium;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 5%;
-
-}
-
-.box-style-accesorios {
-    display: flex;
-    flex-direction: column;
-    background-color: c.$fondo-box;
-    margin-top: 15%;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(209, 209, 209);
-}
-
-
-/* ACCESORIOS PAJAROS */
-
-#accesorios_pajaros {
-    padding-bottom: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-bottom: 5%;
-}
-
-.diferentes_pajarosaccesorios {
-
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows: auto;
-    grid-template-areas:
-
-        "accesopa1 accesopa2 accesopa3 accesopa4"
-        "accesopa5 accesopa6 accesopa7 accesopa8"
-        "accesopa9 accesopa10 accesopa11 accesopa12"
-    ;
-
-    padding-top: 5%;
-    margin: auto;
-    gap: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-
-    .tiposaccesopajaros {
-        grid-area: accesopa1;
-        @extend .box-style-accesorios
-    }
-
-    .tiposaccesopajaros:nth-child(2) {
-        grid-area: accesopa2;
-    }
-
-    .tiposaccesopajaros:nth-child(3) {
-        grid-area: accesopa3;
-
-    }
-
-    .tiposaccesopajaros:nth-child(4) {
-        grid-area: accesopa4;
-    }
-
-    .tiposaccesopajaros:nth-child(5) {
-        grid-area: accesopa5;
-    }
-
-    .tiposaccesopajaros:nth-child(6) {
-        grid-area: accesopa6;
-    }
-
-    .tiposaccesopajaros:nth-child(7) {
-        grid-area: accesopa7;
-    }
-
-    .tiposaccesopajaros:nth-child(8) {
-        grid-area: accesopa8;
-    }
-
-    .tiposaccesopajaros:nth-child(9) {
-        grid-area: accesopa9;
-    }
-
-    .tiposaccesopajaros:nth-child(10) {
-        grid-area: accesopa10;
-    }
-
-    .tiposaccesopajaros:nth-child(11) {
-        grid-area: accesopa11;
-    }
-
-    .tiposaccesopajaros:nth-child(12) {
-        grid-area: accesopa12;
-    }
-
-}
-
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-
-    #accesorios_pajaros {
-        padding-top: 5%;
-        padding-bottom: 5%;
-        padding-left: 5%;
-        padding-right: 5%;
-
-    }
-
-    .diferentes_pajarosaccesorios {
-
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: repeat(6, 2fr);
-        grid-template-areas:
-
-            "accesopa1 accesopa2"
-            "accesopa3 accesopa4"
-            "accesopa5 accesopa6"
-            "accesopa7 accesopa8"
-            "accesopa9 accesopa10"
-            "accesopa11 accesopa12"
+            "erizo1 erizo2 erizo3"
+            "erizo4 erizo5 erizo6"
+            "erizo7 erizo8 erizo9"
         ;
 
-        padding-top: 5%;
-        margin: auto;
-        gap: 2%;
-        padding-left: 5%;
-        padding-right: 5%;
+        @include subpagina-espacios;
 
-    }
+        .tiposerizos {
+            @include box-style-accesorios;
+            grid-area: erizo1;
 
-}
-
-
-
-/* ACCESORIOS PECES */
-#accesorios_peces {
-    @extend #accesorios_pajaros;
-    margin-bottom: 10%;
-}
-
-.diferentes_pecesaccesorios {
-
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows: auto;
-    grid-template-areas:
-
-        "accesope1 accesope2 accesope3 accesope5"
-        "accesope4 accesope4 accesope4 accesope4"
-        "accesope6 accesope7 accesope8 accesope9"
-        "accesope10 accesope11 accesope12 accesope15"
-
-    ;
-
-    padding-top: 5%;
-    margin: auto;
-    gap: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-
-    .tiposaccesopeces {
-        grid-area: accesope1;
-        @extend .box-style-accesorios;
-    }
-
-    .tiposaccesopeces:nth-child(2) {
-        grid-area: accesope2;
-    }
-
-    .tiposaccesopeces:nth-child(3) {
-        grid-area: accesope3;
-
-    }
-
-    /* TABLA */
-    .tabla_peceras {
-        grid-area: accesope4;
-        display: flex;
-        flex-direction: column;
-        background-color: c.$fondo-box;
-        margin-top: 5%;
-        padding-bottom: 5%;
-        text-align: center;
-        border-radius: 5px;
-        border-style: solid;
-        border-width: 1px;
-        border-color: rgb(209, 209, 209);
-
-        .variedad_titulo_accesopeces {
-            display: flex;
-            justify-content: center;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 3%;
-            margin-bottom: 3%;
-            box-shadow: c.$sombra;
-            backdrop-filter: blur(0px);
-            -webkit-backdrop-filter: blur(0px);
-            border-radius: 10px;
-            border: c.$borde;
-            width: 33%;
         }
 
-        .variedad_titulo_accesopeces_2 {
-            @extend .variedad_titulo_accesopeces;
-            margin-top: 6%;
+        .tiposerizos:nth-child(2) {
+            grid-area: erizo2;
         }
 
-    }
+        .tiposerizos:nth-child(3) {
+            grid-area: erizo3;
 
+        }
 
-    /* FIN TABLA */
+        .tiposerizos:nth-child(4) {
+            grid-area: erizo4;
+        }
 
-    .tiposaccesopeces:nth-child(5) {
-        grid-area: accesope5;
-    }
+        .tiposerizos:nth-child(5) {
+            grid-area: erizo5;
 
-    .tiposaccesopeces:nth-child(6) {
-        grid-area: accesope6;
-    }
+        }
 
-    .tiposaccesopeces:nth-child(7) {
-        grid-area: accesope7;
-    }
+        .tiposerizos:nth-child(6) {
+            grid-area: erizo6;
 
-    .tiposaccesopeces:nth-child(8) {
-        grid-area: accesope8;
-    }
+        }
 
-    .tiposaccesopeces:nth-child(9) {
-        grid-area: accesope9;
-    }
+        .tiposerizos:nth-child(7) {
+            grid-area: erizo7;
 
-    .tiposaccesopeces:nth-child(10) {
-        grid-area: accesope10;
-    }
+        }
 
-    .tiposaccesopeces:nth-child(11) {
-        grid-area: accesope11;
-    }
+        .tiposerizos:nth-child(8) {
+            grid-area: erizo8;
 
-    .tiposaccesopeces:nth-child(12) {
-        grid-area: accesope12;
-    }
-
-    .tiposaccesopeces:nth-child(13) {
-        grid-area: accesope13;
-    }
-
-}
-
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-
-    #accesorios_peces {
-        padding-top: 5%;
-        padding-bottom: 5%;
-        padding-left: 5%;
-        padding-right: 5%;
+        }
     }
 
     .accesorio_articulo {
-        width: 100%;
+        margin-top: 10%;
     }
 
-    .diferentes_pecesaccesorios {
+    .subtitulo_pagina{
 
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: repeat(7, 2fr);
-        grid-template-areas:
-
-            "accesope1 accesope2"
-            "accesope4 accesope4"
-            "accesope3 accesope5"
-            "accesope6 accesope7"
-            "accesope8 accesope9"
-            "accesope10 accesope11"
-            "accesope12 accesope12"
-
-        ;
-
-        padding-top: 5%;
-        margin: auto;
-        gap: 2%;
-        padding-left: 5%;
-        padding-right: 5%;
-
-        .tiposaccesopeces {
-            grid-area: accesope1;
-            display: flex;
-            flex-direction: column;
-            background-color: #FBFCFC;
-            padding: 1%;
-            text-align: center;
-        }
+        @include titulo_pagina;
+        margin-top:10%;
     }
 
-    .variedad_titulo_accesopeces {
-        display: flex;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 3%;
-        margin-bottom: 3%;
-        box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(0px);
-        -webkit-backdrop-filter: blur(0px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        width: 80%;
-
+    .video_youtube{
+        @include video;
     }
-
-    .variedad_titulo_accesopeces_2 {
-        display: flex;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 6%;
-        margin-bottom: 3%;
-        box-shadow: 0px 0px 5px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(0px);
-        -webkit-backdrop-filter: blur(0px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        width: 80%;
-    }
-
-
 }
 
 
+/*ALIMENTOS*/
+#alimento_pajaropeces {
+    @include pagina-espacios;
 
-/* ACCESORIOS COBAYOS */
-
-#accesorios_cobayos {
-    @extend #accesorios_pajaros;
-
-}
-
-.diferentes_cobayosaccesorios {
-
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows: auto;
-    grid-template-areas:
-
-        "accesoco1 accesoco2 accesoco3 accesoco4"
-        "accesoco5 accesoco6 accesoco7 accesoco8"
-        "accesoco9 accesoco10 accesoco11 accesoco12"
-    ;
-
-    padding-top: 5%;
-    margin: auto;
-    gap: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-
-    .tiposaccesocobayos {
-        grid-area: accesoco1;
-        @extend .box-style-accesorios
+    .titulo_pagina{
+        @include titulo-pagina;
     }
 
-    .tiposaccesocobayos:nth-child(2) {
-        grid-area: accesoco2;
+    .variedad_titulo{
+        @include variedad-titulo;
     }
 
-    .tiposaccesocobayos:nth-child(3) {
-        grid-area: accesoco3;
-
-    }
-
-    .tiposaccesocobayos:nth-child(4) {
-        grid-area: accesoco4;
-    }
-
-    .tiposaccesocobayos:nth-child(5) {
-        grid-area: accesoco5;
-    }
-
-    .tiposaccesocobayos:nth-child(6) {
-        grid-area: accesoco6;
-    }
-
-    .tiposaccesocobayos:nth-child(7) {
-        grid-area: accesoco7;
-    }
-
-    .tiposaccesocobayos:nth-child(8) {
-        grid-area: accesoco8;
-    }
-
-    .tiposaccesocobayos:nth-child(9) {
-        grid-area: accesoco9;
-    }
-
-    .tiposaccesocobayos:nth-child(10) {
-        grid-area: accesoco10;
-    }
-
-    .tiposaccesocobayos:nth-child(11) {
-        grid-area: accesoco11;
-    }
-
-    .tiposaccesocobayos:nth-child(12) {
-        grid-area: accesoco12;
-    }
-
-}
-
-
-.acceso_cobayos_texto {
-
-    font-size: medium;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: baseline;
-}
-
-@media screen and (min-width: 0px) and (max-width: 768px) {
-
-    #accesorios_cobayos {
-        padding-top: 5%;
-        padding-bottom: 5%;
-        padding-left: 5%;
-        padding-right: 5%;
-
-    }
-
-    .diferentes_cobayosaccesorios {
-
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: repeat(4, 2fr);
-        grid-template-areas:
-
-            "accesoco1 accesoco2"
-            "accesoco3 accesoco4"
-            "accesoco5 accesoco6"
-            "accesoco7 accesoco8"
-        ;
-
-        padding-top: 5%;
-        margin: auto;
-        gap: 2%;
-        padding-left: 5%;
-        padding-right: 5%;
-
-    }
-
-}
-
-
-/* PROMOCIONES */
-
-#promociones {
-
-    .titulo_promociones {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        width: 50%;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        background: c.$fondo-texto;
-        box-shadow: c.$sombra;
-        backdrop-filter: blur(0px);
-        -webkit-backdrop-filter: blur(0px);
-        border-radius: 10px;
-        border: c.$borde;
-        margin: auto;
-
-
-    }
-
-    .metodosdepago {
-
+    .alimentos_variedades {
         display: grid;
         grid-template-columns: repeat(3, 33%);
-        grid-template-rows: 1fr;
+        grid-template-rows: auto;
         grid-template-areas:
 
-            "tarjeta mercadopago efectivo"
+            "alimen1 alimen2 alimen3"
+            "alimen4 alimen5 alimen6"
+            "alimen7 alimen8 alimen9"
+            "alimen10 alimen11 alimen12"
 
         ;
-        padding-top: 5%;
-        padding-bottom: 5%;
-        padding-left: 10%;
-        padding-right: 10%;
 
+        @include subpagina-espacios;
 
-        .pagos {
-            grid-area: tarjeta;
-            padding-block: 5%;
-            width: 80%;
-            height: 80%;
-            margin-left: 10%;
-            text-align: center;
-            line-height: 0.7;
-            background: c.$fondo-texto;
-            box-shadow: c.$sombra;
-            backdrop-filter: blur(0px);
-            -webkit-backdrop-filter: blur(0px);
-            border-radius: 10px;
-            border: c.$borde;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
+        .tiposalimentos {
+            @include box-style-accesorios;
+            grid-area: alimen1;
         }
 
-        .pagos:nth-child(2) {
-            grid-area: mercadopago;
-            padding-bottom: 20%;
+        .tiposalimentos:nth-child(2) {
+            grid-area: alimen2;
         }
 
-        .pagos:nth-child(3) {
-            grid-area: efectivo;
+        .tiposalimentos:nth-child(3) {
+            grid-area: alimen3;
+        }
+
+        .tiposalimentos:nth-child(4) {
+            grid-area: alimen4;
+        }
+
+        .tiposalimentos:nth-child(5) {
+            grid-area: alimen5;
+        }
+
+        .tiposalimentos:nth-child(6) {
+            grid-area: alimen6;
+        }
+
+        .tiposalimentos:nth-child(7) {
+            grid-area: alimen7;
+        }
+
+        .tiposalimentos:nth-child(8) {
+            grid-area: alimen8;
+        }
+
+        .tiposalimentos:nth-child(9) {
+            grid-area: alimen9;
+        }
+
+        .tiposalimentos:nth-child(10) {
+            grid-area: alimen10;
+        }
+
+        .tiposalimentos:nth-child(11) {
+            grid-area: alimen11;
+        }
+
+        .tiposalimentos:nth-child(12) {
+            grid-area: alimen12;
         }
 
     }
 
-}
+    .producto_tratamiento {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: auto;
+        grid-template-areas:
 
+            "alimen1 alimen2 alimen3"
 
-@media screen and (min-width: 0px) and (max-width: 768px) {
+        ;
 
-    #promociones {
-        padding-top: 5%;
-        padding-bottom: 5%;
-        padding-left: 5%;
-        padding-right: 5%;
+        @include subpagina-espacios;
 
-
-        .titulo_promociones {
-            display: flex;
-            width: 100%;
-            margin-bottom: 15%;
+        .tiposalimentos {
+            @include box-style-accesorios;
+            grid-area: alimen1;
         }
 
-        .metodosdepago {
-
-            display: grid;
-            grid-template-columns: 100%;
-            grid-template-rows: repeat(3, 1fr);
-            grid-template-areas:
-
-                "tarjeta"
-                "mercadopago"
-                "efectivo"
-
-            ;
-
-
-            .pagos {
-                grid-area: tarjeta;
-                width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-
-            }
-
-            .pagos:nth-child(2) {
-                grid-area: mercadopago;
-            }
-
-            .pagos:nth-child(3) {
-                grid-area: efectivo;
-            }
-
+        .tiposalimentos:nth-child(2) {
+            grid-area: alimen2;
         }
+
+        .tiposalimentos:nth-child(3) {
+            grid-area: alimen3;
+        }
+
     }
 
+    .tiposalimentos_peces {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: auto;
+        grid-template-areas:
 
+            "alimen1 alimen2 alimen3"
+            "alimen4 alimen5 alimen6"
+
+        ;
+
+        @include subpagina-espacios;
+
+
+        .tiposalimentos {
+            @include box-style-accesorios;
+            grid-area: alimen1;
+        }
+
+        .tiposalimentos:nth-child(2) {
+            grid-area: alimen2;
+        }
+
+        .tiposalimentos:nth-child(3) {
+            grid-area: alimen3;
+        }
+
+        .tiposalimentos:nth-child(4) {
+            grid-area: alimen4;
+        }
+
+        .tiposalimentos:nth-child(5) {
+            grid-area: alimen5;
+        }
+
+    }
+
+    .accesorio_articulo {
+        margin-top: 10%;
+    }
 }
-
 
 
 /* CONTACTO */
@@ -2014,5 +2845,4 @@ body {
             }
         }
     }
-
 }
