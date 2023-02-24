@@ -1,12 +1,10 @@
-/*let userName = parseInt(prompt("Ingresa tu nombre"));
-
-alert("Bienvenido a Pet Shop Mapache " +userName);*/
-
+let userName = parseInt(prompt("Ingresa tu nombre"));
+alert("¡Bienvenido a Pet Shop Mapache!");
 
 
 
 
-/*let edadUsuario = parseInt(prompt("Cual es tu edad?"));
+let edadUsuario = parseInt(prompt("Cual es tu edad?"));
 let edadMayor = 18;
 let edadMenor = 17;
 
@@ -19,7 +17,7 @@ if(edadUsuario>=edadMayor){
 while (edadUsuario<edadMenor){
     alert("Volve a intentar");
     edadUsuario = parseInt(prompt("Cual es tu edad?"));
-}*/
+}
 
 
 
@@ -39,20 +37,16 @@ if(opcion=="1"){
 
 let gustoAnimal = prompt("Porque te gusta ese animal?");
 
-let preguntaMas = prompt("Vamos con una pregunta mas? Es para conocerte un poco mas. Responde Si o No.")
+let preguntaMas = prompt("Vamos con una pregunta mas? Responde Si o No. Es para conocerte un poco mas.")
 if(opcion=="Si"){
-    console.log("Elegiste si");
+    alert("Elegiste si");
 }else if(opcion=="No"){
-    console.log("Elegiste no");
+    alert("Buuu :(");
 }
 
 
 
-
-
-
-
-/*Carrito de compras*/
+/*Carrito de compras (EN PROCESO)*/ 
 
 /*function calcular(primerNumero, segundoNumero, operacion){
 
